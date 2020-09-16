@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "819cc2a3-20fe-4a02-82c5-feba785c2917",
+		"name": "Query examples - full Lucene syntax",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Query NYCJOBS - Empty search, get doc count (*)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "252044BE3886FE4A8E3BAA4F595114BB"
+					}
+				],
+				"url": {
+					"raw": "https://azs-playground.search.windows.net/indexes/nycjobs/docs?search=*&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"azs-playground",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"nycjobs",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "*"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query NYCJOBS - Fielded boolean search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "252044BE3886FE4A8E3BAA4F595114BB"
+					}
+				],
+				"url": {
+					"raw": "https://azs-playground.search.windows.net/indexes/nycjobs/docs?search=business_title:(senior NOT junior) AND posting_type:external&$select=business_title, posting_type&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"azs-playground",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"nycjobs",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "business_title:(senior NOT junior) AND posting_type:external"
+						},
+						{
+							"key": "$select",
+							"value": "business_title, posting_type"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query NYCJOBS - Fuzzy search (one search term)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "252044BE3886FE4A8E3BAA4F595114BB"
+					}
+				],
+				"url": {
+					"raw": "https://azs-playground.search.windows.net/indexes/nycjobs/docs?search=business_title:asosiate~&$select=business_title&searchFields=business_title&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"azs-playground",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"nycjobs",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "business_title:asosiate~"
+						},
+						{
+							"key": "$select",
+							"value": "business_title"
+						},
+						{
+							"key": "searchFields",
+							"value": "business_title"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query NYCJOBS - Fuzzy search (two search terms)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "252044BE3886FE4A8E3BAA4F595114BB"
+					}
+				],
+				"url": {
+					"raw": "https://azs-playground.search.windows.net/indexes/nycjobs/docs?search=business_title:asosiate~ AND comm~ &$select=business_title&searchFields=business_title&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"azs-playground",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"nycjobs",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "business_title:asosiate~ AND comm~ "
+						},
+						{
+							"key": "$select",
+							"value": "business_title"
+						},
+						{
+							"key": "searchFields",
+							"value": "business_title"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query NYCJOBS - Proximity search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "252044BE3886FE4A8E3BAA4F595114BB"
+					}
+				],
+				"url": {
+					"raw": "https://azs-playground.search.windows.net/indexes/nycjobs/docs?search=business_title:%22senior%20analyst%22~1&$select=business_title&searchFields=business_title&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"azs-playground",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"nycjobs",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "business_title:%22senior%20analyst%22~1"
+						},
+						{
+							"key": "$select",
+							"value": "business_title"
+						},
+						{
+							"key": "searchFields",
+							"value": "business_title"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query NYCJOBS - Term boosting",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "252044BE3886FE4A8E3BAA4F595114BB"
+					}
+				],
+				"url": {
+					"raw": "https://azs-playground.search.windows.net/indexes/nycjobs/docs?search=business_title:computer analyst^2&$select=business_title&searchFields=business_title&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"azs-playground",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"nycjobs",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "business_title:computer analyst^2"
+						},
+						{
+							"key": "$select",
+							"value": "business_title"
+						},
+						{
+							"key": "searchFields",
+							"value": "business_title"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query NYCJOBS - RegEx",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "252044BE3886FE4A8E3BAA4F595114BB"
+					}
+				],
+				"url": {
+					"raw": "https://azs-playground.search.windows.net/indexes/nycjobs/docs?search=business_title:/(Sen|Jun)ior/&$select=business_title&searchFields=business_title&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"azs-playground",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"nycjobs",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "business_title:/(Sen|Jun)ior/"
+						},
+						{
+							"key": "$select",
+							"value": "business_title"
+						},
+						{
+							"key": "searchFields",
+							"value": "business_title"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7f4c6af0-1a0a-4987-b047-a2f9634912ee",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6a5a123a-da95-40ec-a5b5-3605c15d8fa7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

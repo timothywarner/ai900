@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "cbfa7c8e-996c-4685-96e9-8c82adff7776",
+		"name": "Query examples - autocomplete, suggestions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DeleteIndex",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "{{api-admin-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/search-as-you-type-idx?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"search-as-you-type-idx"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateIndex Suggester - standard analyzer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"id\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": true,\r\n      \"filterable\": true,\r\n      \"key\": true,\r\n      \"retrievable\": true,\r\n      \"searchable\": false,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    },\r\n    {\r\n      \"name\": \"title\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": false,\r\n      \"filterable\": false,\r\n      \"key\": false,\r\n      \"retrievable\": true,\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    },\r\n    {\r\n      \"name\": \"rating\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": false,\r\n      \"filterable\": false,\r\n      \"key\": false,\r\n      \"retrievable\": true,\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    },\r\n    {\r\n      \"name\": \"description\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": false,\r\n      \"filterable\": false,\r\n      \"key\": false,\r\n      \"retrievable\": true,\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    }\r\n  ],\r\n  \"scoringProfiles\": [],\r\n  \"suggesters\": [\r\n    {\r\n      \"name\": \"sg\",\r\n      \"searchMode\": \"analyzingInfixMatching\",\r\n      \"sourceFields\": [\"title\"]\r\n    }\r\n  ],\r\n  \"defaultScoringProfile\": null,\r\n  \"corsOptions\": null,\r\n  \"analyzers\": [],\r\n  \"charFilters\": [],\r\n  \"tokenFilters\": [],\r\n  \"tokenizers\": [],\r\n  \"@odata.etag\": \"\\\"0x8D6FB2F498F9AD2\\\"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/search-as-you-type-idx?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"search-as-you-type-idx"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "application",
+							"disabled": true
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateIndex Suggester - en.microsoft analyzer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"id\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": true,\r\n      \"filterable\": true,\r\n      \"key\": true,\r\n      \"retrievable\": true,\r\n      \"searchable\": false,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    },\r\n    {\r\n      \"name\": \"title\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": false,\r\n      \"filterable\": false,\r\n      \"key\": false,\r\n      \"retrievable\": true,\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"analyzer\": \"en.microsoft\",\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    },\r\n    {\r\n      \"name\": \"rating\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": false,\r\n      \"filterable\": false,\r\n      \"key\": false,\r\n      \"retrievable\": true,\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    },\r\n    {\r\n      \"name\": \"description\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": false,\r\n      \"filterable\": false,\r\n      \"key\": false,\r\n      \"retrievable\": true,\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"analyzer\": \"en.microsoft\",\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    }\r\n  ],\r\n  \"scoringProfiles\": [],\r\n  \"suggesters\": [\r\n    {\r\n      \"name\": \"sg\",\r\n      \"searchMode\": \"analyzingInfixMatching\",\r\n      \"sourceFields\": [\"title\"]\r\n    }\r\n  ],\r\n  \"defaultScoringProfile\": null,\r\n  \"corsOptions\": null,\r\n  \"analyzers\": [],\r\n  \"charFilters\": [],\r\n  \"tokenFilters\": [],\r\n  \"tokenizers\": [],\r\n  \"@odata.etag\": \"\\\"0x8D6FB2F498F9AD2\\\"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/search-as-you-type-idx?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"search-as-you-type-idx"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "application",
+							"disabled": true
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoadDocuments - Xbox games",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"value\": [\r\n    {         \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"1\",\r\n      \"title\": \"Minecraft\",\r\n      \"rating\": \"5.0\",\r\n      \"description\": \"Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off the dangerous mobs.\"    \r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"2\",\r\n      \"title\": \"Minion Masters\",\r\n      \"rating\": \"4.5\",\r\n      \"description\": \"Minion Masters is a fast-paced, easy to learn and hard to master strategy-brawler. Choose your Minion Master and collect your minions for epic 1vs1 & 2vs2 battles with other players.\"\r\n    }, \r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"3\",\r\n      \"title\": \"The Witcher 3: Wild Hunt\",\r\n      \"rating\": \"5.0\",\r\n      \"description\": \"The Witcher 3: Wild Hunt is a story-driven, next-generation open world role-playing game set in a visually stunning fantasy universe full of meaningful choices and impactful consequences. In The Witcher, you play as a professional monster hunter, Geralt of Rivia, tasked with finding a child of prophecy in a vast open world rich with merchant cities, pirate islands, dangerous mountain passes, and forgotten caverns to explore.\"\r\n    }, \r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"4\",  \r\n      \"title\": \"The Witcher 3: Wild Hunt – Game of the Year Edition\",\r\n      \"rating\": \"4.5\",\r\n      \"description\": \"The most awarded game of 2015! Become a monster slayer for hire and embark on an epic journey to track down the child of prophecy, a living weapon capable of untold destruction.\"\r\n    },\r\n        {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"5\",\r\n      \"title\": \"The Wolf Among Us\",\r\n      \"rating\": \"5.0\",\r\n      \"description\": \"Based on the award-winning Fables comic book series by Bill Willingham (published by DC Comics' Vertigo imprint), The Wolf Among Us is a dark, often brutally violent, and mature take on the characters and creatures of fairytale and legend.\"\r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"6\",\r\n      \"title\": \"Wolfenstein: The Old Blood\",\r\n      \"rating\": \"4.5\",\r\n      \"description\": \"Wolfenstein: The Old Blood is a standalone prequel to the critically acclaimed first-person action-adventure shooter, Wolfenstein: The New Order. The adventure, which spans eight chapters and two interconnected stories, features the hallmarks of MachineGames – thrilling action, immersive story and intense first-person combat.\"\r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"7\",\r\n      \"title\": \"BioShock: The Collection\",\r\n      \"rating\": \"5.0\",\r\n      \"description\": \"Return to the cities of Rapture and Columbia and experience the award-winning BioShock franchise like never before. BioShock: The Collection retells the epic journeys of the BioShock universe beautifully remastered in 1080p.\"\r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"8\",\r\n      \"title\": \"Borderlands: The Handsome Collection\",\r\n      \"rating\": \"4.5\",\r\n      \"description\": \"Shoot and loot as you explore the mayhem-filled world of Pandora in BORDERLANDS 2 and the lunar madness of BORDERLANDS: THE PRE-SEQUEL in BORDERLANDS: THE HANDSOME COLLECTION. Experience the award-winning FPS-RPG series, including its bazillions of guns, trademark cooperative gameplay, and all bonus add-on content, with high performance like never before on a new generation of consoles.\"\r\n    }\r\n  ]  \r\n}"
+				},
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/search-as-you-type-idx/docs/index?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"search-as-you-type-idx",
+						"docs",
+						"index"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analyze Text",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"text\": \"BioShock: The Collection\",\r\n  \"analyzer\": \"en.microsoft\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/search-as-you-type-idx/analyze?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"search-as-you-type-idx",
+						"analyze"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - Empty search, get doc count (*)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/search-as-you-type-idx/docs?search=*&api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"search-as-you-type-idx",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "*"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - Suggested results",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/search-as-you-type-idx/docs/suggest?search=b&suggesterName=sg&api-version=2019-05-06&queryType=simple",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"search-as-you-type-idx",
+						"docs",
+						"suggest"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "b"
+						},
+						{
+							"key": "suggesterName",
+							"value": "sg"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "queryType",
+							"value": "simple"
+						},
+						{
+							"key": "$count",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - Suggested results with fuzzy search and highlights",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/search-as-you-type-idx/docs/suggest?search=wulf&suggesterName=sg&fuzzy=true&api-version=2019-05-06&highlightPreTag=<em>&highlightPostTag=</em>",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"search-as-you-type-idx",
+						"docs",
+						"suggest"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "wulf"
+						},
+						{
+							"key": "suggesterName",
+							"value": "sg"
+						},
+						{
+							"key": "fuzzy",
+							"value": "true"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "highlightPreTag",
+							"value": "<em>"
+						},
+						{
+							"key": "highlightPostTag",
+							"value": "</em>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - Autocomplete query (one term)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/search-as-you-type-idx/docs/autocomplete?search=min&suggesterName=sg&api-version=2019-05-06&queryType=simple",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"search-as-you-type-idx",
+						"docs",
+						"autocomplete"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "min"
+						},
+						{
+							"key": "suggesterName",
+							"value": "sg"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "queryType",
+							"value": "simple"
+						},
+						{
+							"key": "$count",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - Autocomplete query (two terms)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/search-as-you-type-idx/docs/autocomplete?search=min&suggesterName=sg&api-version=2019-05-06&queryType=simple",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"search-as-you-type-idx",
+						"docs",
+						"autocomplete"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "min"
+						},
+						{
+							"key": "suggesterName",
+							"value": "sg"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "queryType",
+							"value": "simple"
+						},
+						{
+							"key": "$count",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7f4c6af0-1a0a-4987-b047-a2f9634912ee",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6a5a123a-da95-40ec-a5b5-3605c15d8fa7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e3055632-5f28-489b-854d-b7a498f92a36",
+			"key": "service-name",
+			"value": "service-name",
+			"type": "string"
+		},
+		{
+			"id": "1b615926-eaf5-444c-8f74-3d8aea08c5ba",
+			"key": "api-admin-key",
+			"value": "api-admin-key",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

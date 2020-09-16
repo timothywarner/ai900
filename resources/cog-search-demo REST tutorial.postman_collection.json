@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "bcd06aea-a9ff-4884-aa60-552be6a7d37c",
+		"name": "cog-search-demo REST tutorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 - Create data source",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "<YOUR-ADMIN-API-KEY>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\" : \"cog-search-demo-ds2\",\r\n  \"description\" : \"Demo files to demonstrate cognitive search capabilities.\",\r\n  \"type\" : \"azureblob\",\r\n  \"credentials\" :\r\n  { \"connectionString\" :\r\n    \"DefaultEndpointsProtocol=https;AccountName=<STORAGE-ACCOUNT-NAME>;AccountKey=<STORAGE-ACCESS-KEY>;EndpointSuffix=core.windows.net;\"\r\n  },\r\n  \"container\" : { \"name\" : \"cog-search-demo\" }\r\n}"
+				},
+				"url": {
+					"raw": "https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/datasources?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"<YOUR-SEARCH-SERVICE-NAME>",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"datasources"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2 - Create Skills",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "<YOUR-ADMIN-API-KEY>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"Extract entities, detect language and extract key-phrases\",\r\n  \"skills\":\r\n  [\r\n    {\r\n      \"@odata.type\": \"#Microsoft.Skills.Text.EntityRecognitionSkill\",\r\n      \"categories\": [ \"Person\", \"Organization\", \"Location\" ],\r\n      \"defaultLanguageCode\": \"en\",\r\n      \"inputs\": [\r\n        { \"name\": \"text\", \"source\": \"/document/content\" }\r\n      ],\r\n      \"outputs\": [\r\n        { \"name\": \"persons\", \"targetName\": \"persons\" },\r\n        { \"name\": \"organizations\", \"targetName\": \"organizations\" },\r\n        { \"name\": \"locations\", \"targetName\": \"locations\" }\r\n      ]\r\n    },\r\n    {\r\n      \"@odata.type\": \"#Microsoft.Skills.Text.LanguageDetectionSkill\",\r\n      \"inputs\": [\r\n        { \"name\": \"text\", \"source\": \"/document/content\" }\r\n      ],\r\n      \"outputs\": [\r\n        { \"name\": \"languageCode\", \"targetName\": \"languageCode\" }\r\n      ]\r\n    },\r\n    {\r\n      \"@odata.type\": \"#Microsoft.Skills.Text.SplitSkill\",\r\n      \"textSplitMode\" : \"pages\",\r\n      \"maximumPageLength\": 4000,\r\n      \"inputs\": [\r\n        { \"name\": \"text\", \"source\": \"/document/content\" },\r\n        { \"name\": \"languageCode\", \"source\": \"/document/languageCode\" }\r\n      ],\r\n      \"outputs\": [\r\n        { \"name\": \"textItems\", \"targetName\": \"pages\" }\r\n      ]\r\n    },\r\n    {\r\n      \"@odata.type\": \"#Microsoft.Skills.Text.KeyPhraseExtractionSkill\",\r\n      \"context\": \"/document/pages/*\",\r\n      \"inputs\": [\r\n        { \"name\": \"text\", \"source\": \"/document/pages/*\" },\r\n        { \"name\":\"languageCode\", \"source\": \"/document/languageCode\" }\r\n      ],\r\n      \"outputs\": [\r\n        { \"name\": \"keyPhrases\", \"targetName\": \"keyPhrases\" }\r\n      ]\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/skillsets/cog-search-demo-ss?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"<YOUR-SEARCH-SERVICE-NAME>",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"skillsets",
+						"cog-search-demo-ss"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3 - Create index",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "<YOUR-ADMIN-API-KEY>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"id\",\r\n      \"type\": \"Edm.String\",\r\n      \"key\": true,\r\n      \"searchable\": true,\r\n      \"filterable\": false,\r\n      \"facetable\": false,\r\n      \"sortable\": true\r\n    },\r\n    {\r\n      \"name\": \"metadata_storage_name\",\r\n      \"type\": \"Edm.String\",\r\n      \"searchable\": false,\r\n      \"filterable\": false,\r\n      \"facetable\": false,\r\n      \"sortable\": false\r\n    },\r\n    {\r\n      \"name\": \"content\",\r\n      \"type\": \"Edm.String\",\r\n      \"sortable\": false,\r\n      \"searchable\": true,\r\n      \"filterable\": false,\r\n      \"facetable\": false\r\n    },\r\n    {\r\n      \"name\": \"languageCode\",\r\n      \"type\": \"Edm.String\",\r\n      \"searchable\": true,\r\n      \"filterable\": false,\r\n      \"facetable\": false\r\n    },\r\n    {\r\n      \"name\": \"keyPhrases\",\r\n      \"type\": \"Collection(Edm.String)\",\r\n      \"searchable\": true,\r\n      \"filterable\": false,\r\n      \"facetable\": false\r\n    },\r\n    {\r\n      \"name\": \"persons\",\r\n      \"type\": \"Collection(Edm.String)\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"organizations\",\r\n      \"type\": \"Collection(Edm.String)\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"locations\",\r\n      \"type\": \"Collection(Edm.String)\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/cog-search-demo-idx?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"<YOUR-SEARCH-SERVICE-NAME>",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"cog-search-demo-idx"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4 - Create indexer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "<YOUR-ADMIN-API-KEY>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"cog-search-demo-idxr\",\t\r\n  \"dataSourceName\" : \"cog-search-demo-ds\",\r\n  \"targetIndexName\" : \"cog-search-demo-idx\",\r\n  \"skillsetName\" : \"cog-search-demo-ss\",\r\n  \"fieldMappings\" : [\r\n    {\r\n      \"sourceFieldName\" : \"metadata_storage_path\",\r\n      \"targetFieldName\" : \"id\",\r\n      \"mappingFunction\" :\r\n        { \"name\" : \"base64Encode\" }\r\n    },\r\n    {\r\n      \"sourceFieldName\" : \"metadata_storage_name\",\r\n      \"targetFieldName\" : \"metadata_storage_name\",\r\n      \"mappingFunction\" :\r\n        { \"name\" : \"base64Encode\" }\r\n    },\r\n    {\r\n      \"sourceFieldName\" : \"content\",\r\n      \"targetFieldName\" : \"content\"\r\n    }\r\n  ],\r\n  \"outputFieldMappings\" :\r\n  [\r\n    {\r\n      \"sourceFieldName\" : \"/document/persons\",\r\n      \"targetFieldName\" : \"persons\"\r\n    },\r\n    {\r\n      \"sourceFieldName\" : \"/document/organizations\",\r\n      \"targetFieldName\" : \"organizations\"\r\n    },\r\n    {\r\n      \"sourceFieldName\" : \"/document/locations\",\r\n      \"targetFieldName\" : \"locations\"\r\n    },\r\n    {\r\n      \"sourceFieldName\" : \"/document/pages/*/keyPhrases/*\",\r\n      \"targetFieldName\" : \"keyPhrases\"\r\n    },\r\n    {\r\n      \"sourceFieldName\": \"/document/languageCode\",\r\n      \"targetFieldName\": \"languageCode\"\r\n    }\r\n  ],\r\n  \"parameters\":\r\n  {\r\n    \"maxFailedItems\":-1,\r\n    \"maxFailedItemsPerBatch\":-1,\r\n    \"configuration\":\r\n    {\r\n      \"dataToExtract\": \"contentAndMetadata\",\r\n      \"parsingMode\": \"default\",\r\n      \"firstLineContainsHeaders\": false,\r\n      \"delimitedTextDelimiter\": \",\"\r\n    }\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexers/cog-search-demo-idxr?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"<YOUR-SEARCH-SERVICE-NAME>",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexers",
+						"cog-search-demo-idxr"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5 - Get Indexer Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "<YOUR-ADMIN-API-KEY>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexers/cog-search-demo-idxr/status?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"<YOUR-SEARCH-SERVICE-NAME>",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexers",
+						"cog-search-demo-idxr",
+						"status"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6 - Query content field",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "<YOUR-ADMIN-API-KEY>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/cog-search-demo-idx/docs?search=*&$select=content&$count=true&api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"<YOUR-SEARCH-SERVICE-NAME>",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"cog-search-demo-idx",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "*"
+						},
+						{
+							"key": "$select",
+							"value": "content"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6 - Add a filter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "<YOUR-ADMIN-API-KEY>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/cog-search-demo-idx/docs?search=*&$filter=organizations/any(organizations: organizations eq 'NASDAQ')&$select=metadata_storage_name,organizations&$count=true&api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"<YOUR-SEARCH-SERVICE-NAME>",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"cog-search-demo-idx",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "*"
+						},
+						{
+							"key": "$filter",
+							"value": "organizations/any(organizations: organizations eq 'NASDAQ')"
+						},
+						{
+							"key": "$select",
+							"value": "metadata_storage_name,organizations"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

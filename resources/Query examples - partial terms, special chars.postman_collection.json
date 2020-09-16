@@ -1,0 +1,592 @@
+{
+	"info": {
+		"_postman_id": "f99bc762-d0ba-464e-b18b-fe69a8cceb2d",
+		"name": "Query examples - partial terms, special chars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DeleteIndex",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "{{api-admin-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateIndex - standard analyzer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"id\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": true,\r\n      \"filterable\": true,\r\n      \"key\": true,\r\n      \"retrievable\": true,\r\n      \"searchable\": false,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    },\r\n    {\r\n      \"name\": \"testString\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": false,\r\n      \"filterable\": false,\r\n      \"key\": false,\r\n      \"retrievable\": true,\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    },\r\n    {\r\n      \"name\": \"longerText\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": false,\r\n      \"filterable\": false,\r\n      \"key\": false,\r\n      \"retrievable\": true,\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    }\r\n  ],\r\n  \"scoringProfiles\": [],\r\n  \"defaultScoringProfile\": null,\r\n  \"corsOptions\": null,\r\n  \"analyzers\": [],\r\n  \"charFilters\": [],\r\n  \"tokenFilters\": [],\r\n  \"tokenizers\": [],\r\n  \"@odata.etag\": \"\\\"0x8D6FB2F498F9AD2\\\"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateIndex - custom analyzer (Keyword_v2 tokenizer, lowercase filter)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"id\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": true,\r\n      \"filterable\": true,\r\n      \"key\": true,\r\n      \"retrievable\": true,\r\n      \"searchable\": false,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    },\r\n    {\r\n      \"name\": \"testString\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": false,\r\n      \"filterable\": false,\r\n      \"key\": false,\r\n      \"retrievable\": true,\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"analyzer\": \"my-keyword-analyzer\",\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    },\r\n    {\r\n      \"name\": \"longerText\",\r\n      \"type\": \"Edm.String\",\r\n      \"facetable\": false,\r\n      \"filterable\": false,\r\n      \"key\": false,\r\n      \"retrievable\": true,\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"analyzer\": null,\r\n      \"indexAnalyzer\": null,\r\n      \"searchAnalyzer\": null,\r\n      \"synonymMaps\": [],\r\n      \"fields\": []\r\n    }\r\n  ],\r\n  \"scoringProfiles\": [],\r\n  \"defaultScoringProfile\": null,\r\n  \"corsOptions\": null,\r\n  \"analyzers\": [\r\n  \t  {\r\n      \"name\": \"my-keyword-analyzer\",\r\n      \"@odata.type\": \"#Microsoft.Azure.Search.CustomAnalyzer\",\r\n      \"charFilters\":[],\r\n      \"tokenizer\": \"keyword_v2\",\r\n      \"tokenFilters\":[\"lowercase\"]\r\n\t   }\r\n  \t],\r\n  \"charFilters\": [],\r\n  \"tokenFilters\": [],\r\n  \"tokenizers\": [],\r\n  \"@odata.etag\": \"\\\"0x8D6FB2F498F9AD2\\\"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoadDocuments - multiple terms, special chars",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"value\": [\r\n    {         \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"1\",\r\n      \"testString\": \"V5K 0A2\",\r\n      \"longerText\": \"Alphanumeric postal code, example 1, pattern search on 0A2 or K 0\"    \r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"2\",\r\n      \"testString\": \"K1A 0A2\",\r\n      \"longerText\": \"Alphanumeric postal code, example 2, pattern search on 0A2 \"\r\n    }, \r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"3\",\r\n      \"testString\": \"B0K 0B5\",\r\n      \"longerText\": \"Alphanumeric postal code, example 3, pattern search on K 0\"\r\n    }, \r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"4\",  \r\n      \"testString\": \"https://docs.microsoft.com/azure/search/\",\r\n      \"longerText\": \"URL example, search on docs.microsoft, or https:// with escaping\"\r\n    },\r\n        {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"5\",\r\n      \"testString\": \"+1 (800) 642-2432\",\r\n      \"longerText\": \"Formatted phone number with spaces, query should include escape char\"\r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"6\",\r\n      \"testString\": \"+41 (64) 22-333\",\r\n      \"longerText\": \"Another formatted phone number with spaces, query should include escape cha\"\r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"7\",\r\n      \"testString\": \"98072-1222\",\r\n      \"longerText\": \"US ZIP code with embedded dash, example 1, search on 980?2\"\r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"8\",\r\n      \"testString\": \"98052-1234\",\r\n      \"longerText\": \"US ZIP code with embedded dash, example 2, search on 980?2\"\r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"9\",\r\n      \"testString\": \"SVP10-NOR-00-00-B-00\",\r\n      \"longerText\": \"String with dashes, pattern search on NOR-00 or B-00\"\r\n    },\r\n    {          \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"10\",\r\n      \"testString\": \"MSFT/SQL.2017/Linux\",\r\n      \"longerText\": \"Mix of special characters, plus strings for MSFT, SQL, 2017, Linux.\"    \r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"11\",\r\n      \"testString\": \"MSFT/SQL.2019/Linux&Java-Ext\",\r\n      \"longerText\": \"Mix of special characters, plus strings for MSFT, SQL, 2019, Linux, Java.\"\r\n    }, \r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"12\",  \r\n      \"testString\": \"MSFT/SQL.2019/Win&Java-Ext\",\r\n      \"longerText\": \"Mix of special characters, plus strings for MSFT, SQL, 2019, Win, Java.\"\r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"13\",  \r\n      \"testString\": \"3352CDD0-EF30-4A2E-A512-3B30AF40F3FD\",\r\n      \"longerText\": \"GUID\"\r\n    },    \r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"14\",  \r\n      \"testString\": \"4*4=16\",\r\n      \"longerText\": \"string, multiplication, backslash escape char where asterisk is part of the string\"\r\n    }, \r\n        {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"15\",  \r\n      \"testString\": \"<placeholder> {another-one} [last-one]\",\r\n      \"longerText\": \"string with brackets, backslash escape char for special char\"\r\n    },   \r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"16\",  \r\n      \"testString\": \"what %age are we talking about?\",\r\n      \"longerText\": \"test query for strings containing percent and ?\"\r\n    },\r\n        {          \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"17\",\r\n      \"testString\": \"Mouse\",\r\n      \"longerText\": \"test lexical analyzer, en.microsoft also tokenizes mice\"    \r\n    },\r\n    {  \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"18\",\r\n      \"testString\": \"Goose\",\r\n      \"longerText\": \"test lexical analyzer, en.microsoft also tokenizes geese\"\r\n    }, \r\n        {          \r\n      \"@search.action\": \"upload\",  \r\n      \"id\": \"19\",\r\n      \"testString\": \"yes there are no bananas\",\r\n      \"longerText\": \"test lexical analyzer, en.microsoft also tokenizes yea, yeah, banana\"    \r\n    }\r\n  ]  \r\n}"
+				},
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx/docs/index?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx",
+						"docs",
+						"index"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analyze Text",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"text\": \"MSFT/SQL.2019/Win&Java-Ext\",\r\n  \"analyzer\": \"standard.lucene\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx/analyze?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx",
+						"analyze"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - Empty search, get doc count (*)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx/docs?search=*&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "*"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - Wildcard infix and prefix search (? and *, \"980?2*\")",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx/docs?search=980?2*&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "980?2*"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - Wildcard suffix search (/.*numeric.*/)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx/docs?search=/.*numeric.*/&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "/.*numeric.*/"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						},
+						{
+							"key": "searchFields",
+							"value": "longerText",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - RegEx pattern (/.*??? 0A?.*/) - use custom or whitespace analyzer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx/docs?search=/.*??? 0A?.*/&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "/.*??? 0A?.*/"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						},
+						{
+							"key": "searchMode",
+							"value": "all",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - Partial term (/.*10-NOR.*/) - use custom analyzer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx/docs?search=testString:/.*10-NOR.*/ &api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "testString:/.*10-NOR.*/ "
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocs - URL, escaping https://* - requires custom analyzer and full syntax",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-admin-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service-name}}.search.windows.net/indexes/patterns-dashes-idx/docs?search=https\\:\\/\\/*&api-version=2019-05-06&$count=true&queryType=full",
+					"protocol": "https",
+					"host": [
+						"{{service-name}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"patterns-dashes-idx",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "https\\:\\/\\/*"
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						},
+						{
+							"key": "queryType",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7f4c6af0-1a0a-4987-b047-a2f9634912ee",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6a5a123a-da95-40ec-a5b5-3605c15d8fa7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "20fa3522-efa9-42e4-914a-880a434267e3",
+			"key": "service-name",
+			"value": "service-name",
+			"type": "string"
+		},
+		{
+			"id": "ea87ad9f-4946-4d56-87db-8ed1d2b3cc57",
+			"key": "api-admin-key",
+			"value": "api-admin-key",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
