@@ -5,29 +5,36 @@
 * prediction
 * anomaly detection
 * computer vision
-* NLP
+* natural language processing
 * conversational
+* Model evaluation
+    * Feature engineering
+    * Feature selection
+    * Data labels
 
-### Responsible AI
+### Review Responsible AI
 
 * Describe atributes
 
 ## Describe ML (33%)
 
 * ML types
+    * Regression
+    * Classification
+    * Clustering
 * Azure Machine Learning service
+    * Split Data module
+    * Auto ML
+        * Confusion matrix
+    * https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#classification
 
-## Computer Vision Workloads (17%)
 
-* image classification
-* object detection
-* semantic segmentation
+## Work with Computer Vision Workloads (17%)
+
+* Computer Vision / Custom Vision
+    * image classification
+    * object /facial detection
 * OCR
-* facial detection, recognition
-
-* Computer Vision
-* Custom Vision
-* Face
-* Form Recognizer
-
-
+    * Form Recognizer
+* Facial detection, recognition
+    * Face API
