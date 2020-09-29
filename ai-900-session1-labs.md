@@ -14,7 +14,7 @@
 
 ### Review Responsible AI
 
-* Describe atributes
+* Describe attributes
 
 ## Describe ML (33%)
 
