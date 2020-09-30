@@ -1,4 +1,4 @@
-# Exam AI-100 Certification Study Blueprint
+# Exam AI-900 Microsoft Azure AI Fundamentmals Certification Study Blueprint
 
 ## Theoretical Knowledge
 
@@ -6,7 +6,9 @@
 * [Azure Cognitive Services home page](https://azure.microsoft.com/en-us/services/cognitive-services/)
 * [Azure Machine Learning docs](https://docs.microsoft.com/en-us/azure/machine-learning/)
 * [Azure Bot Service docs](https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0)
-* [Pluralsight AI-100 Skill Path](https://app.pluralsight.com/paths/skills/microsoft-azure-ai-engineer-ai-100)
+* [Microsoft Responsible AI](https://www.microsoft.com/en-us/ai/responsible-ai?activetab=pivot1:primaryr6)
+* [Responsible AI Examples](https://www.microsoft.com/en-us/ai/responsible-ai-resources?activetab=pivot1:primaryr4)
+* [Cognitive Services REST API docs](https://westcentralus.dev.cognitive.microsoft.com/docs/services)
 
 ## Hands-on Skill Development
 
@@ -18,15 +20,17 @@
 * [Learn AI - Airlift](https://github.com/Azure/LearnAI-Airlift)
 * [Cloud Academy AI-100 course](https://cloudacademy.com/course/ai-100-exam-preparation-introduction/ai-100-exam-preparation-introduction/)
 * [Linux Academy AI-100 course](https://acloud.guru/learn/ac55b4f9-5ee6-4632-a400-940546dc2cbf?utm_source=legacyla&utm_medium=redirect&utm_campaign=one_platform)
+* [Microsoft AI Demos](https://aidemos.microsoft.com/)
+*
 
 ## Practice exam
 
-* [Whizlabs AI-100 Certification](https://www.whizlabs.com/microsoft-azure-certification-ai-100/)
+* [Whizlabs AI-900](https://www.whizlabs.com/microsoft-azure-certification-ai-900/)
+* [MeasureUp AI-900](https://www.measureup.com/ai-900-microsoft-azure-ai-fundamentals.html)
 
 ## About the exam
 
-* [Microsoft Certified: Azure AI Engineer Associate](https://docs.microsoft.com/en-us/learn/certifications/azure-ai-engineer)
-* [Exam AI-100: Designing and Implementing an Azure AI Solution](https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100)
+* [Exam AI-900 home page](https://docs.microsoft.com/en-us/learn/certifications/exams/ai-900)
 * [About online exams with Pearson VUE](https://docs.microsoft.com/en-us/learn/certifications/online-exams)
 * [Tim's video "How to Have a Successful Experience with Microsoft Online Testing"](https://www.youtube.com/watch?v=myf6r5nulj0&t=154s)
 * [Microsoft certification policies and FAQs](https://docs.microsoft.com/en-us/learn/certifications/certification-exam-policies)
