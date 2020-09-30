@@ -24,8 +24,7 @@ Language
 ## Develop an AI-900 Exam Strategy
 
 * About role-based certs
-* Registration process
-* Online testing
-* Item types
-* Practice questions
+*
 * Post-exam next steps
+
+* Cert dashboard / badges
