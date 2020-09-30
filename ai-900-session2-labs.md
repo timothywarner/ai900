@@ -1,27 +1,25 @@
 # AI-900 Session 2 Labs
 
+## Sweep up the shavings
+
+* Vision
+    * Face API
+
 ## Work with NLP Workloads (17%)
 
-* key phrase extraction
-* entity recognition
-* sentiment analysis
-* speech recognition and synthesis
-* translation
-
-* Text Analytics
-* LUIS
+Language
+    * Text Analytics
+    * Translator
 * Speech
-* Translator Text
+    * Speech to text
+    * Text to speech
+    * Translation
+    * LUIS
 
 ## Work with Conversational AI Workloads (17%)
 
-* webchat bots
-    * Reduce load on support desk
-* telephone voice menus
-* personal digital assistants
-
 * QnA Maker
-* Bot Framework
+* Bot Framework/Composer
 
 ## Develop an AI-900 Exam Strategy
 
