@@ -1,4 +1,4 @@
-# Exam AI-900 Microsoft Azure AI Fundamentmals Certification Study Blueprint
+# Exam AI-900 Microsoft Azure AI Fundamentals Certification Study Blueprint
 
 ## Theoretical Knowledge
 
