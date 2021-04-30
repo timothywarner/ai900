@@ -1,0 +1,214 @@
+-------------------------------------------------
+DESCRIBE IMAGE
+
+--- Downloading file to local directory from: https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/celebrities.jpg
+   ... Downloaded successfully
+Analyzing URL image to describe... celebrities.jpg
+This may be Satya Nadella, Bill Gates, Steve Ballmer posing for a photo (0.98 confidence)
+
+Analyzing local image to describe... celebrities.jpg
+This may be Satya Nadella, Bill Gates, Steve Ballmer posing for a photo (0.98 confidence)
+
+-------------------------------------------------
+DETECT FACES
+
+Analyzing faces in image... faces.jpg
+6 faces found:
+    Gender: Male     Age: 39  at top=159   left=118  bottom=253  right=212 (94x94)
+    Gender: Male     Age: 54  at top=111   left=492  bottom=201  right=582 (90x90)
+    Gender: Female   Age: 55  at top=153   left=18   bottom=237  right=102 (84x84)
+    Gender: Female   Age: 33  at top=166   left=386  bottom=247  right=467 (81x81)
+    Gender: Female   Age: 18  at top=158   left=235  bottom=234  right=311 (76x76)
+    Gender: Female   Age: 8   at top=163   left=323  bottom=231  right=391 (68x68)
+
+-------------------------------------------------
+DETECT OBJECTS
+
+Analyzing objects in image... image.jpg
+
+1 object found:
+    dog (0.90) at top=134   left=263  bottom=385  right=498 (235x251)
+
+-------------------------------------------------
+DETECT TAGS
+
+Analyzing tags in image... sample16.png
+Tags: grass (1.00), dog (1.00), outdoor (1.00), carnivore (0.97), animal (0.91), cute (0.85), mammal (0.83), laying (0.66), tan (0.13)
+
+-------------------------------------------------
+DETECT TYPE
+
+Analyzing type in image... make_things_happen.jpg
+Image appears to be clip art
+
+-------------------------------------------------
+DETECT CATEGORY
+
+Analyzing category in image... sample16.png
+Categories: animal_dog (1.00)
+
+-------------------------------------------------
+DETECT BRAND
+
+Analyzing brands in image... red-shirt-logo.jpg
+1 brand found:
+    Microsoft (0.88 confidence)
+
+-------------------------------------------------
+DETECT COLOR SCHEME
+
+Analyzing image for color scheme... celebrities.jpg
+
+Image is in black and white
+Dominant colors: Black, Grey, White
+Dominant foreground color: Grey
+Dominant background color: Black
+Suggested accent color: #666666
+
+-------------------------------------------------
+GENERATE THUMBNAIL
+
+Generating thumbnail...
+Thumbnail saved.
+
+-------------------------------------------------
+DETECT DOMAIN-SPECIFIC CONTENT
+
+Analyzing image for landmarks... landmark.jpg
+1 landmark found:
+    Colosseum       (0.94 confidence)   
+
+-------------------------------------------------
+DETECT ADULT CONTENT
+
+Analyzing image for racy/adult content... celebrities.jpg
+This probably isn't adult content (0.0080 score)
+This probably isn't racy content (0.0113 score)
+
+-------------------------------------------------
+READ
+
+--- Downloading file to local directory from: https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/handwritten_text.jpg
+   ... Downloaded successfully
+
+Reading URL image for text in ... printed_text.jpg
+
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: succeeded
+The Read File operation was a success.
+
+Read File URL image result:
+Nutrition Facts Amount Per Serving
+Serving size: 1 bar (40g)
+Serving Per Package: 4
+Total Fat 13g
+Saturated Fat 1.5g
+Amount Per Serving
+Trans Fat 0g
+alories 190
+Cholesterol 0mg
+ories from Fat 110
+Sodium 20mg
+nt Daily Values are based on Vitamin A 50%
+calorie diet.
+
+Reading local image for text in ... handwritten_text.jpg
+
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: running
+Read status: succeeded
+The Read File operation was a success.
+
+Read File local image result:
+You must be the change
+you want to see in the world !
+
+-------------------------------------------------
+READ PRINTED, HANDWRITTEN TEXT AND PDF
+
+Read printed text from URL... sample2.jpg
+Recognized text:
+IF WE DID
+ALL
+THE THINGS
+WE ARE
+CAPABLE
+OF DOING,
+WE WOULD
+LITERALLY
+ASTOUND
+OURSELVES.
+
+Read printed multi-lingual text in a PNG from URL... MultiLingual.png
+Recognized text:
+English: How much is this?
+Dutch: Hoeveel is dit?
+French: combien est-ce que ├ºa co├╗te?
+German: Wie viel ist das?
+Italian: Quanto costa questo?
+Portuguese: Quanto ├⌐ isso? Quanto custa?
+Spanish: ┬┐cuanto cuesta esto?
+
+Read printed and handwritten text from a PDF from URL... MultiPageHandwrittenForm.pdf
+Recognized text:
+==== Page: 0
+Sample Form: Page 1
+Name
+John Smith
+Age
+23
+City
+Seattle
+State
+WA
+Job
+Engineer
+==== Page: 1
+Sample Form: Page 2
+Name
+Mary
+Age
+35
+City
+New York
+State
+NY
+Job
+Teacher
+
+Read handwritten text from local file... C:\Users\tim\Desktop\compvision-js-sdk\handwritten_text.jpg
+Recognized text:
+You must be the change
+you want to see in the world !
+
+-------------------------------------------------
+End of quickstart.
