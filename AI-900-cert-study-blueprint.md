@@ -27,11 +27,13 @@
 
 * [Whizlabs AI-900](https://www.whizlabs.com/microsoft-azure-certification-ai-900/)
 * [MeasureUp AI-900](https://www.measureup.com/ai-900-microsoft-azure-ai-fundamentals.html)
+* [Tim's practice exam comparison](https://www.youtube.com/watch?v=_aH4DbpcJWA&t=2s)
 
 ## About the exam
 
 * [Exam AI-900 home page](https://docs.microsoft.com/en-us/learn/certifications/exams/ai-900)
 * [About online exams with Pearson VUE](https://docs.microsoft.com/en-us/learn/certifications/online-exams)
+* [Tim's Microsoft exam registration video](https://www.youtube.com/watch?v=FOFWbSYbbVI)
 * [Tim's video "How to Have a Successful Experience with Microsoft Online Testing"](https://www.youtube.com/watch?v=myf6r5nulj0&t=154s)
 * [Microsoft certification policies and FAQs](https://docs.microsoft.com/en-us/learn/certifications/certification-exam-policies)
 * [Microsoft Exam Offers](https://docs.microsoft.com/en-us/learn/certifications/deals)
