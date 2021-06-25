@@ -10,6 +10,16 @@
 * [Responsible AI Examples](https://www.microsoft.com/en-us/ai/responsible-ai-resources?activetab=pivot1:primaryr4)
 * [Cognitive Services REST API docs](https://eastus.dev.cognitive.microsoft.com/docs/services)
 
+## Cognitive Services / Power Apps Web Portals
+
+* [LUIS](https://www.luis.ai/)
+* [Video Indexer](https://www.videoindexer.ai/account/login)
+* [Content Moderator](https://contentmoderator.cognitive.microsoft.com/dashboard)
+* [QnA Maker](https://www.qnamaker.ai/)
+* [Power BI](https://app.powerbi.com/home)
+* [Power Apps](https://make.powerapps.com/)
+* [Power Virtual Agents](https://web.powerva.microsoft.com/)
+
 ## Hands-on Skill Development
 
 * [MS Learn AI Fundamentals Labs](https://github.com/MicrosoftDocs/ai-fundamentals)

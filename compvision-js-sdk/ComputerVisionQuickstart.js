@@ -51,8 +51,8 @@ const ApiKeyCredentials = require('@azure/ms-rest-js').ApiKeyCredentials;
  * AUTHENTICATE
  * This single client is used for all examples.
  */
-const key = '530e8cbabf714946806f9f1fa0620599';
-const endpoint = 'https://twai900cog.cognitiveservices.azure.com/';
+const key = '';
+const endpoint = '';
 // </snippet_vars>
 // </snippet_imports_and_vars>
 
