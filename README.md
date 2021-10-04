@@ -32,10 +32,6 @@
 
 - [About](#about)
   - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Support](#support)
 - [Project assistance](#project-assistance)
@@ -51,37 +47,20 @@
 
 ## About
 
-> **[?]**
-> Provide general information about your project here.
-> What problem does it (intend to) solve?
-> What is the purpose of your project?
-> Why did you undertake it?
-> You don't have to answer all the questions - just the ones relevant to your project.
-
-
+This is a six-hour, live instructor-led training course that covers the [AI-900: Microsoft Azure AI Fundamentals](https://docs.microsoft.com/en-us/learn/certifications/exams/ai-900) certification exam.
 
 ### Built With
 
-> **[?]**
-> Please provide the technologies that are used in the project.
-
-## Getting Started
-
-### Prerequisites
-
-> **[?]**
-> What are the project requirements/dependencies?
-
-### Installation
-
-> **[?]**
-> Proceed to describe how to install and get started with the project.
-
-## Usage
-
-> **[?]**
-> How does one go about using it?
-> Provide various use cases and code examples here.
+- [Microsoft Azure](https://azure.microsoft.com/en-us/)
+- [Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint)
+- [Techsmith Snagit](https://www.techsmith.com/screen-capture.html)
+- [Lucidchart](https://www.lucidchart.com/)
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15)
+- [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
+- [Bot Framework Composer](https://docs.microsoft.com/en-us/composer/install-composer?tabs=windows)
+- [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md)
+- [Postman](https://www.postman.com/)
 
 ## Roadmap
 
@@ -93,13 +72,13 @@ See the [open issues](https://github.com/timothywarner/ai900/issues) for a list 
 
 ## Support
 
-> **[?]**
-> Provide additional ways to contact the project maintainer/maintainers.
-
 Reach out to the maintainer at one of the following places:
 
 - [GitHub discussions](https://github.com/timothywarner/ai900/discussions)
 - The email which is located [in GitHub profile](https://github.com/timothywarner)
+- [Twitter](http://twitter.com/techtrainertim)
+- [LinkedIn](https://www.linkedin.com/in/timothywarner)
+- [Website](https://techtrainertim.com/)
 
 ## Project assistance
 
@@ -123,7 +102,7 @@ Thank you for being involved!
 
 The original setup of this repository is by [Tim Warner](https://github.com/timothywarner).
 
-For a full list of all authors and contributors, check [the contributor's page](https://github.com/timothywarner/ai900/contributors).
+For a full list of all authors and contributors, check [the contributors page](https://github.com/timothywarner/ai900/contributors).
 
 ## Security
 
@@ -140,6 +119,4 @@ See [LICENSE](LICENSE) for more information.
 
 ## Acknowledgements
 
-> **[?]**
-> If your work was funded by any organization or institution, acknowledge their support here.
-> In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.
+Thanks to Laura Lewin for the opportunity to make this class and introduce people all over the world to the wonders of Microsoft cloud-based AI solutions.
