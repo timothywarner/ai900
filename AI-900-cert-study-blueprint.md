@@ -28,10 +28,10 @@
 * [Bot Framework Samples](https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md)
 * [Microsoft AI School](https://aischool.microsoft.com/en-us)
 * [Learn AI - Airlift](https://github.com/Azure/LearnAI-Airlift)
-* [Cloud Academy AI-100 course](https://cloudacademy.com/course/ai-100-exam-preparation-introduction/ai-100-exam-preparation-introduction/)
-* [A Cloud Guru AI-100 course](https://acloud.guru/learn/ac55b4f9-5ee6-4632-a400-940546dc2cbf?utm_source=legacyla&utm_medium=redirect&utm_campaign=one_platform)
-* [Pluralsight AI-100 Path](https://www.pluralsight.com/paths/microsoft-azure-ai-engineer-ai-100)
 * [Microsoft AI Demos](https://aidemos.microsoft.com/)
+* [Pluralsight AI-100 Learning Path](https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100)
+* [A Cloud Guru AI-100 Learning Path](https://acloudguru.com/course/azure-ai-100-exam-preparation)
+* [Cloud Academy AI-900 Learning Path](https://cloudacademy.com/learning-paths/ai-900-exam-preparation-microsoft-azure-ai-fundamentals-1968/)
 
 ## Practice exams
 
