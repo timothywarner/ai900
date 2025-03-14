@@ -1,122 +1,82 @@
-<h1 align="center">
-  <a href="https://github.com/timothywarner/ai900">
-    <!-- Please provide path to your logo here -->
-    <img src="docs/images/cover.png" alt="Logo" /">
-  </a>
-</h1>
+# 🤖 ✨ Microsoft Azure AI Fundamentals (AI-900) Certification Prep
 
-<div align="center">
-  Exam AI-900: Microsoft Azure AI Fundamentals
-  <br />
-  <a href="#about"><strong>Explore the docs »</strong></a>
-  <br />
-  <br />
-  <a href="https://github.com/timothywarner/ai900/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
-  ·
-  <a href="https://github.com/timothywarner/ai900/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
-  .<a href="https://github.com/timothywarner/ai900/discussions">Ask a Question</a>
-</div>
+![Microsoft Azure AI Fundamentals](images/cover.png)
 
-<div align="center">
-<br />
+[![Website](https://img.shields.io/badge/Website-TechTrainerTim-blue)](https://techtrainertim.com) [![GitHub](https://img.shields.io/badge/GitHub-timothywarner-blue?logo=github)](https://github.com/timothywarner) [![LinkedIn](https://img.shields.io/badge/LinkedIn-TimothyWarner-blue?logo=linkedin)](https://www.linkedin.com/in/timothywarner)
 
-[![license](https://img.shields.io/github/license/timothywarner/ai900.svg?style=flat-square)](LICENSE)
+Short link: [timw.info/ai900](https://github.com/timothywarner/ai900/)
 
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/timothywarner/ai900/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-[![code with hearth by timothywarner](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-timothywarner-ff1414.svg?style=flat-square)](https://github.com/timothywarner)
+Welcome to the official preparation course for the Microsoft Azure AI Fundamentals (AI-900) certification exam. This training program is designed to help you master Azure AI services and achieve certification. 🎯
 
-</div>
+## 🎓 Course Overview
 
-<details open="open">
-<summary>Table of Contents</summary>
+This course provides hands-on experience and in-depth knowledge of Microsoft Azure AI services, including Azure OpenAI Service, Cognitive Services, Machine Learning, and responsible AI practices.
 
-- [About](#about)
-  - [Built With](#built-with)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [Project assistance](#project-assistance)
-- [Contributing](#contributing)
-- [Authors & contributors](#authors--contributors)
-- [Security](#security)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+## 🎯 Certification Exam Domains (as of April 24, 2024)
 
-</details>
+1. **Describe Artificial Intelligence workloads and considerations (15-20%)**
+2. **Describe fundamental principles of machine learning on Azure (20-25%)**
+3. **Describe features of computer vision workloads on Azure (15-20%)**
+4. **Describe features of Natural Language Processing (NLP) workloads on Azure (15-20%)**
+5. **Describe features of generative AI workloads on Azure (15-20%)**
 
----
+## 🎯 Learning Objectives
 
-## About
+By completing this course, you will:
+- 🚀 Understand core AI concepts and Microsoft's approach to responsible AI
+- 💻 Gain practical experience with Azure Machine Learning
+- 🔍 Implement computer vision solutions using Azure Cognitive Services
+- 🗣️ Build natural language processing solutions with Azure services
+- 🤖 Create generative AI solutions with Azure OpenAI Service
+- 📝 Prepare effectively for the AI-900 certification exam
 
-This is a six-hour, live instructor-led training course that covers the [AI-900: Microsoft Azure AI Fundamentals](https://docs.microsoft.com/en-us/learn/certifications/exams/ai-900) certification exam.
+## 📚 Official Learning Resources
 
-### Built With
+### Microsoft Learn Paths
+- [Get started with artificial intelligence on Azure](https://docs.microsoft.com/en-us/learn/paths/get-started-with-artificial-intelligence-on-azure/)
+- [Create no-code predictive models with Azure Machine Learning](https://docs.microsoft.com/en-us/learn/paths/create-no-code-predictive-models-azure-machine-learning/)
+- [Explore computer vision in Microsoft Azure](https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/)
+- [Explore natural language processing](https://docs.microsoft.com/en-us/learn/paths/explore-natural-language-processing/)
+- [Explore Azure OpenAI Service](https://learn.microsoft.com/en-us/training/paths/explore-azure-openai/)
 
-- [Microsoft Azure](https://azure.microsoft.com/en-us/)
-- [Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint)
-- [Techsmith Snagit](https://www.techsmith.com/screen-capture.html)
-- [Lucidchart](https://www.lucidchart.com/)
-- [Visual Studio Code](https://code.visualstudio.com/download)
-- [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15)
-- [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
-- [Bot Framework Composer](https://docs.microsoft.com/en-us/composer/install-composer?tabs=windows)
-- [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md)
-- [Postman](https://www.postman.com/)
+### Azure Documentation
+- [Azure AI Platform](https://azure.microsoft.com/en-us/overview/ai-platform/)
+- [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)
+- [Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/)
+- [Microsoft Responsible AI](https://www.microsoft.com/en-us/ai/responsible-ai)
 
-## Roadmap
+### Practice Resources
+- [Official Microsoft AI-900 Sample Questions](https://learn.microsoft.com/credentials/certifications/resources/practice-assessments)
+- [Microsoft Learn AI-900 Practice Assessment](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/practice/assessment?assessment-type=practice&assessmentId=26)
+- [Whizlabs AI-900](https://www.whizlabs.com/microsoft-azure-certification-ai-900/)
+- [MeasureUp AI-900](https://www.measureup.com/ai-900-microsoft-azure-ai-fundamentals.html)
 
-See the [open issues](https://github.com/timothywarner/ai900/issues) for a list of proposed features (and known issues).
+## 🛠️ Hands-on Labs & Demos
 
-- [Top Feature Requests](https://github.com/timothywarner/ai900/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Top Bugs](https://github.com/timothywarner/ai900/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Newest Bugs](https://github.com/timothywarner/ai900/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
+This repository contains practical demos and hands-on labs for each exam domain:
 
-## Support
+- **AI Workloads & Considerations**: Responsible AI principles, Azure AI services overview
+- **Machine Learning on Azure**: Azure ML workspace, automated ML, no-code ML
+- **Computer Vision**: Image analysis, face detection, OCR, custom vision
+- **Natural Language Processing**: Text analytics, translator, language understanding
+- **Generative AI**: Azure OpenAI Service, prompt engineering, responsible AI practices
 
-Reach out to the maintainer at one of the following places:
+## 📋 Prerequisites
 
-- [GitHub discussions](https://github.com/timothywarner/ai900/discussions)
-- The email which is located [in GitHub profile](https://github.com/timothywarner)
-- [Twitter](http://twitter.com/techtrainertim)
-- [LinkedIn](https://www.linkedin.com/in/timothywarner)
-- [Website](https://techtrainertim.com/)
+- 💻 Basic understanding of cloud computing concepts
+- 🌐 Familiarity with Microsoft Azure (helpful but not required)
+- 🔑 Microsoft Azure subscription (free trial or paid)
+- 📝 Interest in artificial intelligence and machine learning
 
-## Project assistance
+## 👨‍🏫 Instructor Contact
 
-If you want to say **thank you** or/and support active development of Exam AI-900: Microsoft Azure AI Fundamentals:
+- **Name:** Tim Warner
+- **Website:** [techtrainertim.com](https://techtrainertim.com)
+- **GitHub:** [@timothywarner](https://github.com/timothywarner)
+- **LinkedIn:** [Timothy Warner](https://linkedin.com/in/timothywarner)
+- **Email:** [tim@techtrainertim.com](mailto:tim@techtrainertim.com)
 
-- Add a [GitHub Star](https://github.com/timothywarner/ai900) to the project.
-- Tweet about the Exam AI-900: Microsoft Azure AI Fundamentals on your Twitter.
-- Write interesting articles about the project on [Dev.to](https://dev.to/), [Medium](https://medium.com/) or personal blog.
+## 💬 License
 
-Together, we can make Exam AI-900: Microsoft Azure AI Fundamentals **better**!
-
-## Contributing
-
-First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
-
-We have set up a separate document containing our [contribution guidelines](docs/CONTRIBUTING.md).
-
-Thank you for being involved!
-
-## Authors & contributors
-
-The original setup of this repository is by [Tim Warner](https://github.com/timothywarner).
-
-For a full list of all authors and contributors, check [the contributors page](https://github.com/timothywarner/ai900/contributors).
-
-## Security
-
-Exam AI-900: Microsoft Azure AI Fundamentals follows good practices of security, but 100% security can't be granted in software.
-Exam AI-900: Microsoft Azure AI Fundamentals is provided **"as is"** without any **warranty**. Use at your own risk.
-
-_For more info, please refer to the [security](docs/SECURITY.md)._
-
-## License
-
-This project is licensed under the **MIT license**.
-
-See [LICENSE](LICENSE) for more information.
-
-## Acknowledgements
-
-Thanks to Laura Lewin for the opportunity to make this class and introduce people all over the world to the wonders of Microsoft cloud-based AI solutions.
+This course material is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
