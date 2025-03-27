@@ -1,24 +1,35 @@
-# 🤖 ✨ Microsoft Azure AI Fundamentals (AI-900) Certification Prep
+# 🤖 ✨ Microsoft Azure AI Fundamentals (AI-900) Certification Prep (2nd Edition)
 
 ![Microsoft Azure AI Fundamentals](images/cover.png)
 
 [![Website](https://img.shields.io/badge/Website-TechTrainerTim-blue)](https://techtrainertim.com) [![GitHub](https://img.shields.io/badge/GitHub-timothywarner-blue?logo=github)](https://github.com/timothywarner) [![LinkedIn](https://img.shields.io/badge/LinkedIn-TimothyWarner-blue?logo=linkedin)](https://www.linkedin.com/in/timothywarner)
 
-Short link: [timw.info/ai900](https://github.com/timothywarner/ai900/)
+Short link: [go.techtrainertim.com/ai900](https://github.com/timothywarner/ai900/)
 
 Welcome to the official preparation course for the Microsoft Azure AI Fundamentals (AI-900) certification exam. This training program is designed to help you master Azure AI services and achieve certification. 🎯
+
+## 📝 Exam Information
+
+- **Name**: Microsoft Azure AI Fundamentals
+- **Exam Code**: AI-900
+- **Last Updated**: April 24, 2024
+- **Official Page**: [Microsoft Learn AI-900](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/)
 
 ## 🎓 Course Overview
 
 This course provides hands-on experience and in-depth knowledge of Microsoft Azure AI services, including Azure OpenAI Service, Cognitive Services, Machine Learning, and responsible AI practices.
 
-## 🎯 Certification Exam Domains (as of April 24, 2024)
+## 🎯 Certification Exam Domains
 
-1. **Describe Artificial Intelligence workloads and considerations (15-20%)**
-2. **Describe fundamental principles of machine learning on Azure (20-25%)**
-3. **Describe features of computer vision workloads on Azure (15-20%)**
-4. **Describe features of Natural Language Processing (NLP) workloads on Azure (15-20%)**
-5. **Describe features of generative AI workloads on Azure (15-20%)**
+| Domain                                                    | Weight     |
+|------------------------------------------------------------|------------|
+| Describe Artificial Intelligence workloads and considerations | 15-20%     |
+| Describe fundamental principles of machine learning on Azure  | 20-25%     |
+| Describe features of computer vision workloads on Azure       | 15-20%     |
+| Describe features of Natural Language Processing workloads    | 15-20%     |
+| Describe features of generative AI workloads on Azure         | 15-20%     |
+
+For the complete, detailed exam objectives, see [AI-900-exam-objectives.md](./AI-900-exam-objectives.md)
 
 ## 🎯 Learning Objectives
 
@@ -72,10 +83,14 @@ This repository contains practical demos and hands-on labs for each exam domain:
 ## 👨‍🏫 Instructor Contact
 
 - **Name:** Tim Warner
+- **Title:** Microsoft MVP & Certified Trainer
 - **Website:** [techtrainertim.com](https://techtrainertim.com)
 - **GitHub:** [@timothywarner](https://github.com/timothywarner)
 - **LinkedIn:** [Timothy Warner](https://linkedin.com/in/timothywarner)
+- **Twitter:** [@TechTrainerTim](https://twitter.com/TechTrainerTim)
+- **YouTube:** [Tech Trainer Tim](https://youtube.com/c/TimothyWarner)
 - **Email:** [tim@techtrainertim.com](mailto:tim@techtrainertim.com)
+- **Microsoft Learn:** [TimothyWarner](https://learn.microsoft.com/users/timothywarner/transcript)
 
 ## 💬 License
 
