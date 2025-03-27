@@ -1,6 +1,6 @@
 # 🤖 ✨ Microsoft Azure AI Fundamentals (AI-900) Certification Prep (2nd Edition)
 
-![Microsoft Azure AI Fundamentals](images/cover.png)
+![Microsoft Azure AI Fundamentals](images/ai900-cover.png)
 
 [![Website](https://img.shields.io/badge/Website-TechTrainerTim-blue)](https://techtrainertim.com) [![GitHub](https://img.shields.io/badge/GitHub-timothywarner-blue?logo=github)](https://github.com/timothywarner) [![LinkedIn](https://img.shields.io/badge/LinkedIn-TimothyWarner-blue?logo=linkedin)](https://www.linkedin.com/in/timothywarner)
 
