@@ -12,7 +12,7 @@ Welcome to the official preparation course for the Microsoft Azure AI Fundamenta
 
 - **Name**: Microsoft Azure AI Fundamentals
 - **Exam Code**: AI-900
-- **Last Updated**: April 24, 2024
+- **Last Updated**: May 2, 2025
 - **Official Page**: [Microsoft Learn AI-900](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/)
 
 ## 🎓 Course Overview
@@ -29,7 +29,7 @@ This course provides hands-on experience and in-depth knowledge of Microsoft Azu
 | Describe features of Natural Language Processing workloads    | 15-20%     |
 | Describe features of generative AI workloads on Azure         | 15-20%     |
 
-For the complete, detailed exam objectives, see [AI-900-exam-objectives.md](./AI-900-exam-objectives.md)
+📄 [Detailed Exam Objectives](./docs/exam-resources/AI-900-exam-objectives.md) | 📚 [All Documentation](./docs/)
 
 ## 🎯 Learning Objectives
 
@@ -53,7 +53,7 @@ By completing this course, you will:
 ### Azure Documentation
 - [Azure AI Platform](https://azure.microsoft.com/en-us/overview/ai-platform/)
 - [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)
+- [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services)
 - [Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/)
 - [Microsoft Responsible AI](https://www.microsoft.com/en-us/ai/responsible-ai)
 
@@ -63,15 +63,21 @@ By completing this course, you will:
 - [Whizlabs AI-900](https://www.whizlabs.com/microsoft-azure-certification-ai-900/)
 - [MeasureUp AI-900](https://www.measureup.com/ai-900-microsoft-azure-ai-fundamentals.html)
 
-## 🛠️ Hands-on Labs & Demos
+## 🛠️ 5-Hour Course Structure
 
-This repository contains practical demos and hands-on labs for each exam domain:
+This repository is organized for a 5-hour O'Reilly Live Learning course with practical demos:
 
-- **AI Workloads & Considerations**: Responsible AI principles, Azure AI services overview
-- **Machine Learning on Azure**: Azure ML workspace, automated ML, no-code ML
-- **Computer Vision**: Image analysis, face detection, OCR, custom vision
-- **Natural Language Processing**: Text analytics, translator, language understanding
-- **Generative AI**: Azure OpenAI Service, prompt engineering, responsible AI practices
+### 📚 Hour-by-Hour Breakdown
+- **Hour 1: AI Fundamentals & Azure AI Platform** (15-20%)
+  - Azure AI services overview, Responsible AI principles, Multi-service demos
+- **Hour 2: Machine Learning on Azure** (15-20%)
+  - Automated ML, Designer, ML concepts, Transformer architecture
+- **Hour 3: Computer Vision Workloads** (15-20%)
+  - Computer Vision, Custom Vision, Face API, OCR capabilities
+- **Hour 4: Natural Language Processing** (15-20%)
+  - Azure AI Language, CLU (replacing LUIS), Custom Question Answering, Speech
+- **Hour 5: Generative AI & Azure AI Foundry** (20-25% - Highest!)
+  - Azure OpenAI Service, Prompt engineering, Azure AI Foundry platform
 
 ## 📋 Prerequisites
 
