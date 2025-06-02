@@ -1,0 +1,36 @@
+version: 2
+updates:
+  # Enable version updates for npm in root only
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Only allow updates for direct dependencies
+    allow:
+      - dependency-type: "direct"
+    # Ignore all subdirectories with sample code
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
+    
+  # Explicitly ignore sample application directories
+  - package-ecosystem: "npm"
+    directory: "/apps/**"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 0
+
+  - package-ecosystem: "npm"
+    directory: "/demos/**"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 0
+
+  - package-ecosystem: "npm"
+    directory: "/docs/archive/lessons/**"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 0
+
+# Configuration to minimize noise from sample code
+# Setting open-pull-requests-limit: 0 effectively disables updates for those paths
