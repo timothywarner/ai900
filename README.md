@@ -15,6 +15,21 @@ Welcome to the official preparation course for the Microsoft Azure AI Fundamenta
 - **Last Updated**: May 2, 2025
 - **Official Page**: [Microsoft Learn AI-900](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/)
 
+## 📂 Repository Structure - Two Learning Paths
+
+This repository serves learners from two different platforms:
+
+### 🎬 **For MS Press/LinkedIn Learning Students**
+- **Folder:** `/ms-press-video-course/`
+- **Course:** [Exam AI-900: Microsoft Azure AI Fundamentals (Video)](https://www.microsoftpressstore.com/store/exam-ai-900-microsoft-azure-ai-fundamentals-video-9780138202842)
+- **Duration:** 4 hours across 8 lessons
+- **Note:** This link is for the 1st edition. The 2nd edition is in production and this link will be updated when available.
+
+### 🚀 **For O'Reilly Live Learning Students**
+- **Folder:** `/demos/`
+- **Course:** 5-hour live online training
+- **Structure:** Hour-by-hour breakdown aligned with May 2025 exam objectives
+
 ## 🎓 Course Overview
 
 This course provides hands-on experience and in-depth knowledge of Microsoft Azure AI services, including Azure OpenAI Service, Cognitive Services, Machine Learning, and responsible AI practices.
@@ -63,9 +78,9 @@ By completing this course, you will:
 - [Whizlabs AI-900](https://www.whizlabs.com/microsoft-azure-certification-ai-900/)
 - [MeasureUp AI-900](https://www.measureup.com/ai-900-microsoft-azure-ai-fundamentals.html)
 
-## 🛠️ 5-Hour Course Structure
+## 🛠️ O'Reilly Live Learning Course Structure (5 Hours)
 
-This repository is organized for a 5-hour O'Reilly Live Learning course with practical demos:
+The `/demos/` folder contains materials for the 5-hour O'Reilly Live Learning course:
 
 ### 📚 Hour-by-Hour Breakdown
 - **Hour 1: AI Fundamentals & Azure AI Platform** (15-20%)
