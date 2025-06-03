@@ -19,7 +19,9 @@
       "Bash(apt-get install:*)",
       "Bash(pip3 install:*)",
       "Bash(sudo apt-get:*)",
-      "Bash(sudo apt-get install:*)"
+      "Bash(sudo apt-get install:*)",
+      "Bash(cp:*)",
+      "Bash(git reset:*)"
     ],
     "deny": []
   }
