@@ -21,7 +21,9 @@
       "Bash(sudo apt-get:*)",
       "Bash(sudo apt-get install:*)",
       "Bash(cp:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(git config:*)",
+      "Bash(git lfs:*)"
     ],
     "deny": []
   }

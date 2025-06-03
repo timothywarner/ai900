@@ -43,18 +43,29 @@ All demos require Azure service credentials. Follow this pattern:
 
 ## Architecture & Organization
 
-The repository follows a 5-hour course structure aligned with May 2025 AI-900 exam objectives:
+The repository serves two distinct audiences with separate content paths:
 
 ```
-demos/                           # Primary demo content organized by course hours
+demos/                           # O'Reilly Live Learning 5-hour course
 ├── hour-1-ai-fundamentals/     # AI workloads & considerations (15-20%)
 ├── hour-2-machine-learning/    # ML principles on Azure (15-20%)
 ├── hour-3-computer-vision/     # Computer vision workloads (15-20%)
 ├── hour-4-nlp/                # Natural Language Processing (15-20%)
 └── hour-5-generative-ai/      # Generative AI workloads (20-25% - HIGHEST!)
 
+ms-press-video-course/          # MS Press/LinkedIn Learning 4-hour video course
+├── README.md                   # Course overview and structure
+└── lessons/                    # 8 lessons aligned with April 2024 objectives
+    ├── lesson-01/             # Common AI workloads
+    ├── lesson-02/             # Responsible AI principles
+    ├── lesson-03/             # Machine learning techniques
+    ├── lesson-04/             # Azure Machine Learning capabilities
+    ├── lesson-05/             # Computer vision solutions
+    ├── lesson-06/             # NLP workload scenarios
+    ├── lesson-07/             # Generative AI features
+    └── lesson-08/             # Azure OpenAI Service
+
 apps/                           # Complete demo applications
-lessons/                        # Legacy materials (being phased out)
 ```
 
 ## Important Development Notes
@@ -83,14 +94,24 @@ lessons/                        # Legacy materials (being phased out)
    - `/People/`, `/Places/`, `/Things/` - Image samples for vision demos
    - `/CSV/` - Datasets for ML demos
 
-## Course Structure
+## Course Structures
 
-The course is designed for a 5-hour O'Reilly Live Learning session:
+### O'Reilly Live Learning (5 hours) - `/demos/`
 - Hour 1: AI Fundamentals & Azure AI Platform (15-20%)
 - Hour 2: Machine Learning on Azure (15-20%) - includes Transformer architecture
 - Hour 3: Computer Vision Workloads (15-20%)
 - Hour 4: Natural Language Processing (15-20%) - CLU & Custom QA
 - Hour 5: Generative AI & Azure AI Foundry (20-25% - HIGHEST!)
+
+### MS Press Video Course (4 hours) - `/ms-press-video-course/`
+- Lesson 1: Identify features of common AI workloads (30 min)
+- Lesson 2: Identify guiding principles for responsible AI (30 min)
+- Lesson 3: Identify common machine learning techniques (30 min)
+- Lesson 4: Describe Azure Machine Learning capabilities (30 min)
+- Lesson 5: Identify common types of computer vision solutions (30 min)
+- Lesson 6: Identify features of common NLP workload scenarios (30 min)
+- Lesson 7: Identify features of generative AI solutions (30 min)
+- Lesson 8: Identify capabilities of Azure OpenAI Service (40 min)
 
 ## Key Updates for May 2025 Exam
 
@@ -107,3 +128,16 @@ The course is designed for a 5-hour O'Reilly Live Learning session:
    - Increased focus on Generative AI (now highest weighted domain)
 
 When creating or modifying demos, ensure they use current service names and align with May 2025 exam objectives.
+
+## Repository Maintenance Notes
+
+1. **Git LFS**: Previously used for binary files but has been removed. The repository now uses standard Git for all files.
+
+2. **Two Course Paths**: 
+   - O'Reilly learners should use `/demos/` (5-hour live course)
+   - MS Press/LinkedIn Learning viewers should use `/ms-press-video-course/` (4-hour video course)
+
+3. **Important Files**:
+   - Root `README.md` clearly explains both learning paths
+   - `/ms-press-video-course/README.md` contains the MS Press course structure
+   - This `CLAUDE.md` file guides AI assistance for the repository
