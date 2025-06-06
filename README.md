@@ -94,12 +94,112 @@ The `/demos/` folder contains materials for the 5-hour O'Reilly Live Learning co
 - **Hour 5: Generative AI & Azure AI Foundry** (20-25% - Highest!)
   - Azure OpenAI Service, Prompt engineering, Azure AI Foundry platform
 
+## 🚀 **NEW! Unified AI-900 Demo Application**
+
+Experience all Azure AI services through our **Contoso Corporation AI Portal** - a comprehensive Node.js application that demonstrates every service covered in the AI-900 exam!
+
+### ⚡ Quick Start
+
+1. **Clone and Setup**
+   ```bash
+   git clone https://github.com/timothywarner/ai900.git
+   cd ai900
+   npm install
+   ```
+
+2. **Configure Environment**
+   ```bash
+   # Copy example environment file
+   cp .env.example .env
+
+   # Edit .env with your Azure AI service credentials
+   # Get these from Azure Portal -> Your AI Services -> Keys and Endpoints
+   ```
+
+3. **Run the Console Demo**
+   ```bash
+   npm start
+   # or for development with auto-reload:
+   npm run dev
+   ```
+
+4. **Launch Web Interface**
+   ```bash
+   npm run web
+   # Open browser to: http://localhost:3000
+   ```
+
+### 🎯 Demo Features
+
+- **🖼️ Computer Vision**: Analyze images, detect objects, extract text
+- **📝 Language Service**: Sentiment analysis, language detection, key phrases
+- **📄 Document Intelligence**: Extract data from receipts, invoices, forms
+- **🎤 Speech Services**: Speech-to-text, text-to-speech, translation
+- **🤖 Azure OpenAI**: GPT chat completions and generative AI
+- **🔍 Cognitive Search**: AI-powered search and knowledge mining
+- **🛡️ Content Safety**: Content moderation and safety checks
+- **🎨 Custom Vision**: Custom image classification models
+
+### 🔧 Environment Variables Required
+
+```bash
+# Multi-Service AI (Primary - works for most demos)
+AI_SERVICES_ENDPOINT=https://your-region.api.cognitive.microsoft.com/
+AI_SERVICES_KEY=your_ai_services_key
+
+# Azure OpenAI Service
+AZURE_OPENAI_ENDPOINT=https://your-openai-resource.openai.azure.com/
+AZURE_OPENAI_KEY=your_openai_key
+
+# Individual Services (optional - for specialized demos)
+COMPUTER_VISION_ENDPOINT=https://your-region.api.cognitive.microsoft.com/
+COMPUTER_VISION_KEY=your_computer_vision_key
+LANGUAGE_SERVICE_ENDPOINT=https://your-region.api.cognitive.microsoft.com/
+LANGUAGE_SERVICE_KEY=your_language_key
+```
+
+**💡 Pro Tip**: Use the **AI Services multi-service** resource for most demos - it provides access to multiple cognitive services with a single endpoint and key!
+
+### 🎮 Using the Demo App
+
+**Console Interface:**
+- Interactive menu with emoji-rich UI
+- Demonstrates real AI-900 exam scenarios
+- Uses actual demo assets from `/assets/` folder
+- Contoso Corporation branding for realistic business context
+
+**Web Interface:**
+- Beautiful Bootstrap 5 UI with Contoso branding
+- File upload for image and document analysis
+- Real-time text analysis and AI chat
+- Mobile-responsive design
+
+### 🔒 Port Management & Idempotency
+
+The app includes **automatic port cleanup**:
+```bash
+# Force close any processes on port 3000
+npm run force-close
+
+# Then start fresh
+npm run web
+```
+
+### 📁 Demo Assets Included
+
+- **People**: Celebrity images, business photos
+- **Products**: Contoso product images (carrots for agricultural AI)
+- **Documents**: Receipts, invoices, business cards
+- **Audio**: Speech samples for voice analysis
+- **Places**: Location images for scene analysis
+
 ## 📋 Prerequisites
 
 - 💻 Basic understanding of cloud computing concepts
 - 🌐 Familiarity with Microsoft Azure (helpful but not required)
 - 🔑 Microsoft Azure subscription (free trial or paid)
 - 📝 Interest in artificial intelligence and machine learning
+- **🆕 Node.js 18+** (for the unified demo application)
 
 ## 👨‍🏫 Instructor Contact
 

@@ -5,6 +5,7 @@
 
 # Tim's stuff
 PDF-mash
+.env
 
 # User-specific files
 *.rsuser
