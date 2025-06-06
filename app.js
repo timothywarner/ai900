@@ -33,13 +33,14 @@ const { CognitiveServicesCredentials } = require('@azure/ms-rest-azure-js');
 const { TextAnalyticsClient, AzureKeyCredential } = require('@azure/ai-text-analytics');
 const { DocumentAnalysisClient } = require('@azure/ai-form-recognizer');
 const { OpenAI } = require('openai');
+const axios = require('axios');
 
 // =============================================================================
 // Global AI Service Client Instances
 // =============================================================================
 // Pattern: Singleton clients for connection pooling and efficiency
 // AI-900 Best Practice: Reuse clients to avoid authentication overhead
-let cognitiveVisionClient, languageAnalyticsClient, documentIntelligenceClient, azureOpenAIClient;
+let cognitiveVisionClient, languageAnalyticsClient, documentIntelligenceClient, azureOpenAIClient, contentSafetyClient;
 
 // =============================================================================
 // Enterprise Configuration Constants - AI-900 Exam Patterns
@@ -286,27 +287,30 @@ class EnterpriseAI900DemoApplication {
     // =============================================================================
     displayEducationalBanner() {
         console.clear();
-        console.log(styles.title(figlet.textSync('AI-900 DEMO', { horizontalLayout: 'full' })));
-        console.log(styles.highlight('🚀 Enterprise Azure AI Services Demonstration'));
-        console.log(styles.info('   By Tim Warner - Microsoft MVP & Azure AI Engineer\n'));
-        console.log(styles.responsibleAI('   Contoso Corporation - Innovation Through Responsible AI\n'));
-
-        // Educational context
-        console.log(styles.examTip('📚 AI-900 Exam Focus Areas Covered:'));
-        console.log(styles.concept('   • Computer Vision & OCR capabilities'));
-        console.log(styles.concept('   • Natural Language Processing & sentiment analysis'));
-        console.log(styles.concept('   • Document Intelligence & form recognition'));
-        console.log(styles.concept('   • Generative AI with Azure OpenAI Service'));
-        console.log(styles.concept('   • Responsible AI principles & best practices\n'));
-
-        console.log(styles.bestPractice('🏗️ Enterprise Patterns Demonstrated:'));
-        console.log(styles.muted('   • Retry logic with exponential backoff'));
-        console.log(styles.muted('   • Input validation & sanitization'));
-        console.log(styles.muted('   • Rate limiting awareness (HTTP 429)'));
-        console.log(styles.muted('   • Connection pooling & client reuse'));
-        console.log(styles.muted('   • Comprehensive error handling\n'));
-
-        console.log(styles.muted('═'.repeat(70)));
+        
+        // Simple but effective banner
+        console.log('\n');
+        console.log(styles.title('════════════════════════════════════════════════════════════'));
+        console.log(styles.title('║                                                          ║'));
+        console.log(styles.title('║            🤖  AZURE AI SERVICES DEMO  🤖             ║'));
+        console.log(styles.title('║                                                          ║'));
+        console.log(styles.title('║                  AI-900 Certification                    ║'));
+        console.log(styles.title('║                                                          ║'));
+        console.log(styles.title('════════════════════════════════════════════════════════════'));
+        console.log('\n');
+        
+        console.log(styles.info('🎓 Welcome to the Azure AI Services Learning Demo!'));
+        console.log(styles.muted('   Each demo shows a simple, practical use case\n'));
+        
+        console.log(styles.highlight('✨ What you\'ll learn:'));
+        console.log('   1️⃣  Content Safety - Keep your apps safe from harmful content');
+        console.log('   2️⃣  Computer Vision - Analyze images automatically');
+        console.log('   3️⃣  Language Analytics - Understand text sentiment');
+        console.log('   4️⃣  Translation - Break down language barriers');
+        console.log('   5️⃣  Document Intelligence - Extract data from documents');
+        console.log('   6️⃣  Azure OpenAI - Generate creative content\n');
+        
+        console.log(styles.muted('─'.repeat(60)) + '\n');
     }
 
     // =============================================================================
@@ -314,13 +318,14 @@ class EnterpriseAI900DemoApplication {
     // =============================================================================
     async showInteractiveMainMenu() {
         const menuChoices = [
-            { name: '🖼️  Computer Vision Analysis - Image Recognition & OCR', value: 'computer_vision' },
-            { name: '📝 Language Analytics - Sentiment & Text Processing', value: 'language_analytics' },
-            { name: '📄 Document Intelligence - Form & Receipt Processing', value: 'document_intelligence' },
-            { name: '🤖 Azure OpenAI - Generative AI & Chat Completions', value: 'azure_openai' },
-            { name: '📊 Service Health Metrics - Monitor AI Operations', value: 'service_metrics' },
+            { name: '🛡️  Content Safety - Text moderation & harm prevention', value: 'content_safety' },
+            { name: '🖼️  Computer Vision - Simple image analysis', value: 'computer_vision' },
+            { name: '📝 Language Analytics - Sentiment analysis', value: 'language_analytics' },
+            { name: '🌍 Translation - Multi-language translation', value: 'translation' },
+            { name: '📄 Document Intelligence - Receipt OCR', value: 'document_intelligence' },
+            { name: '🤖 Azure OpenAI - Text generation', value: 'azure_openai' },
             new inquirer.Separator('─────────────────────────────────────────'),
-            { name: '🌐 Launch Web Interface Portal', value: 'web_interface' },
+            { name: '📊 Service Health Metrics', value: 'service_metrics' },
             { name: '❌ Exit Application', value: 'exit_application' }
         ];
 
@@ -333,6 +338,287 @@ class EnterpriseAI900DemoApplication {
         }]);
 
         return selectedChoice;
+    }
+
+    // =============================================================================
+    // Content Safety Demo - Simple text moderation
+    // =============================================================================
+    async demonstrateContentSafety() {
+        console.clear();
+        console.log(styles.title('\n🛡️  CONTENT SAFETY DEMO'));
+        console.log(styles.info('Simple text moderation to detect harmful content\n'));
+
+        const testTexts = [
+            "I love this new product! It's amazing!",
+            "This is a normal business email about our quarterly results.",
+            "Please contact customer service for assistance."
+        ];
+
+        console.log(styles.highlight('🔍 Analyzing text for harmful content...\n'));
+
+        for (const text of testTexts) {
+            console.log(styles.info(`Text: "${text}"`) );
+            
+            try {
+                if (process.env.CONTENT_SAFETY_KEY && process.env.CONTENT_SAFETY_ENDPOINT) {
+                    const response = await axios.post(
+                        `${process.env.CONTENT_SAFETY_ENDPOINT}/contentsafety/text:analyze?api-version=2023-10-01`,
+                        {
+                            text: text,
+                            categories: ["Hate", "SelfHarm", "Sexual", "Violence"],
+                            outputType: "FourSeverityLevels"
+                        },
+                        {
+                            headers: {
+                                'Ocp-Apim-Subscription-Key': process.env.CONTENT_SAFETY_KEY,
+                                'Content-Type': 'application/json'
+                            }
+                        }
+                    );
+
+                    const results = response.data;
+                    console.log(styles.success('✅ Content is SAFE'));
+                    console.log(styles.muted(`   Hate: ${results.categoriesAnalysis[0].severity}`);
+                    console.log(styles.muted(`   Self-harm: ${results.categoriesAnalysis[1].severity}`);
+                    console.log(styles.muted(`   Sexual: ${results.categoriesAnalysis[2].severity}`);
+                    console.log(styles.muted(`   Violence: ${results.categoriesAnalysis[3].severity}\n`));
+                } else {
+                    console.log(styles.warning('⚠️  Content Safety not configured - using simulation'));
+                    console.log(styles.success('✅ Content appears SAFE (simulated)\n'));
+                }
+            } catch (error) {
+                console.log(styles.error(`❌ Error: ${error.message}\n`));
+            }
+        }
+
+        await this.waitForUserInput();
+    }
+
+    // =============================================================================
+    // Simple Computer Vision Demo - 80% scenario
+    // =============================================================================
+    async demonstrateComputerVisionSimple() {
+        console.clear();
+        console.log(styles.title('\n🖼️  COMPUTER VISION DEMO'));
+        console.log(styles.info('Simple image analysis - detecting objects and describing images\n'));
+
+        if (!cognitiveVisionClient) {
+            console.log(styles.error('❌ Computer Vision not configured. Add keys to .env file.'));
+            await this.waitForUserInput();
+            return;
+        }
+
+        const imagePath = path.join(__dirname, 'assets', 'Things', 'product-placement.png');
+        
+        try {
+            console.log(styles.info('🔍 Analyzing product image...\n'));
+            const imageBuffer = await fs.readFile(imagePath);
+            
+            const result = await cognitiveVisionClient.analyzeImageInStream(imageBuffer, {
+                visualFeatures: ['Description', 'Objects', 'Tags']
+            });
+
+            console.log(styles.success('✅ Analysis Complete!\n'));
+            
+            if (result.description?.captions?.[0]) {
+                console.log(styles.highlight(`📝 Description: "${result.description.captions[0].text}"\n`));
+            }
+
+            if (result.objects?.length > 0) {
+                console.log(styles.highlight('📦 Detected Objects:'));
+                result.objects.slice(0, 5).forEach(obj => {
+                    console.log(`   • ${obj.object} (${Math.round(obj.confidence * 100)}% confidence)`);
+                });
+                console.log('');
+            }
+
+            if (result.tags?.length > 0) {
+                console.log(styles.highlight('🏷️  Tags:'));
+                console.log(`   ${result.tags.slice(0, 5).map(t => t.name).join(', ')}\n`);
+            }
+        } catch (error) {
+            console.log(styles.error(`❌ Error: ${error.message}`));
+        }
+
+        await this.waitForUserInput();
+    }
+
+    // =============================================================================
+    // Simple Language Analytics Demo
+    // =============================================================================
+    async demonstrateLanguageAnalyticsSimple() {
+        console.clear();
+        console.log(styles.title('\n📝 LANGUAGE ANALYTICS DEMO'));
+        console.log(styles.info('Simple sentiment analysis - understanding customer feedback\n'));
+
+        if (!languageAnalyticsClient) {
+            console.log(styles.error('❌ Language Analytics not configured. Add keys to .env file.'));
+            await this.waitForUserInput();
+            return;
+        }
+
+        const customerReviews = [
+            "This product is amazing! Best purchase ever!",
+            "Terrible experience. Very disappointed.",
+            "It's okay, nothing special but does the job."
+        ];
+
+        console.log(styles.highlight('🔍 Analyzing customer sentiments...\n'));
+
+        for (const review of customerReviews) {
+            console.log(styles.info(`Review: "${review}"`) );
+            
+            try {
+                const [result] = await languageAnalyticsClient.analyzeSentiment([review]);
+                
+                const emoji = result.sentiment === 'positive' ? '😊' : 
+                             result.sentiment === 'negative' ? '😞' : '😐';
+                
+                console.log(styles.success(`${emoji} Sentiment: ${result.sentiment.toUpperCase()}\n`));
+            } catch (error) {
+                console.log(styles.error(`❌ Error: ${error.message}\n`));
+            }
+        }
+
+        await this.waitForUserInput();
+    }
+
+    // =============================================================================
+    // Translation Demo
+    // =============================================================================
+    async demonstrateTranslation() {
+        console.clear();
+        console.log(styles.title('\n🌍 TRANSLATION DEMO'));
+        console.log(styles.info('Simple text translation - breaking language barriers\n'));
+
+        const textToTranslate = "Welcome to Contoso! We're happy to help you.";
+        const targetLanguages = ['es', 'fr', 'ja', 'ar'];
+        const languageNames = { es: 'Spanish', fr: 'French', ja: 'Japanese', ar: 'Arabic' };
+
+        console.log(styles.highlight(`💬 Original (English): "${textToTranslate}"\n`));
+        console.log(styles.info('🌐 Translating to multiple languages...\n'));
+
+        try {
+            if (process.env.TRANSLATOR_KEY && process.env.TRANSLATOR_ENDPOINT) {
+                for (const lang of targetLanguages) {
+                    const response = await axios.post(
+                        `${process.env.TRANSLATOR_ENDPOINT}/translate?api-version=3.0&to=${lang}`,
+                        [{ text: textToTranslate }],
+                        {
+                            headers: {
+                                'Ocp-Apim-Subscription-Key': process.env.TRANSLATOR_KEY,
+                                'Content-Type': 'application/json'
+                            }
+                        }
+                    );
+
+                    const translation = response.data[0].translations[0].text;
+                    console.log(styles.success(`✅ ${languageNames[lang]}: "${translation}"`) );
+                }
+            } else {
+                console.log(styles.warning('⚠️  Translator not configured - showing simulated results'));
+                console.log(styles.success('✅ Spanish: "¡Bienvenido a Contoso! Estamos felices de ayudarte."'));
+                console.log(styles.success('✅ French: "Bienvenue chez Contoso! Nous sommes heureux de vous aider."'));
+                console.log(styles.success('✅ Japanese: "Contosoへようこそ！お手伝いできることを嬉しく思います。"'));
+                console.log(styles.success('✅ Arabic: "مرحبًا بكم في Contoso! يسعدنا مساعدتكم."'));
+            }
+        } catch (error) {
+            console.log(styles.error(`\n❌ Error: ${error.message}`));
+        }
+
+        console.log('');
+        await this.waitForUserInput();
+    }
+
+    // =============================================================================
+    // Simple Document Intelligence Demo
+    // =============================================================================
+    async demonstrateDocumentIntelligenceSimple() {
+        console.clear();
+        console.log(styles.title('\n📄 DOCUMENT INTELLIGENCE DEMO'));
+        console.log(styles.info('Simple receipt scanning - extracting key information\n'));
+
+        if (!documentIntelligenceClient) {
+            console.log(styles.error('❌ Document Intelligence not configured. Add keys to .env file.'));
+            await this.waitForUserInput();
+            return;
+        }
+
+        const receiptPath = path.join(__dirname, 'assets', 'OCR', 'contoso-receipt.png');
+
+        try {
+            console.log(styles.info('🔍 Scanning receipt...\n'));
+            const receiptBuffer = await fs.readFile(receiptPath);
+            
+            const poller = await documentIntelligenceClient.beginAnalyzeDocument(
+                'prebuilt-receipt',
+                receiptBuffer,
+                { contentType: 'image/png' }
+            );
+            
+            const result = await poller.pollUntilDone();
+            
+            if (result.documents?.[0]) {
+                const receipt = result.documents[0];
+                console.log(styles.success('✅ Receipt analyzed successfully!\n'));
+                
+                console.log(styles.highlight('🧾 Receipt Information:'));
+                if (receipt.fields.MerchantName?.value) {
+                    console.log(`   🏪 Store: ${receipt.fields.MerchantName.value}`);
+                }
+                if (receipt.fields.TransactionDate?.value) {
+                    console.log(`   📅 Date: ${new Date(receipt.fields.TransactionDate.value).toLocaleDateString()}`);
+                }
+                if (receipt.fields.Total?.value) {
+                    console.log(`   💰 Total: $${receipt.fields.Total.value}`);
+                }
+            }
+        } catch (error) {
+            console.log(styles.error(`❌ Error: ${error.message}`));
+        }
+
+        console.log('');
+        await this.waitForUserInput();
+    }
+
+    // =============================================================================
+    // Simple Azure OpenAI Demo
+    // =============================================================================
+    async demonstrateAzureOpenAISimple() {
+        console.clear();
+        console.log(styles.title('\n🤖 AZURE OPENAI DEMO'));
+        console.log(styles.info('Simple text generation - creating product descriptions\n'));
+
+        if (!azureOpenAIClient) {
+            console.log(styles.error('❌ Azure OpenAI not configured. Add keys to .env file.'));
+            await this.waitForUserInput();
+            return;
+        }
+
+        const prompt = "Write a short, friendly product description for a smart coffee maker that connects to your phone.";
+
+        try {
+            console.log(styles.highlight('📝 Prompt:'));
+            console.log(styles.muted(`"${prompt}"\n`));
+            console.log(styles.info('🤖 Generating response...\n'));
+
+            const response = await azureOpenAIClient.chat.completions.create({
+                messages: [
+                    { role: "system", content: "You are a helpful product description writer." },
+                    { role: "user", content: prompt }
+                ],
+                max_tokens: 150,
+                temperature: 0.7
+            });
+
+            console.log(styles.success('✅ Generated Description:\n'));
+            console.log(styles.highlight(response.choices[0].message.content));
+        } catch (error) {
+            console.log(styles.error(`❌ Error: ${error.message}`));
+        }
+
+        console.log('');
+        await this.waitForUserInput();
     }
 
     // =============================================================================
@@ -508,6 +794,96 @@ class EnterpriseAI900DemoApplication {
     }
 
     // =============================================================================
+    // Document Intelligence Demo
+    // =============================================================================
+    async demonstrateDocumentIntelligenceCapabilities() {
+        console.log(styles.title('\n📄 DOCUMENT INTELLIGENCE - ENTERPRISE DEMO'));
+        console.log(styles.examTip('📚 AI-900 Coverage: Form recognition, receipt processing, business card extraction\n'));
+
+        if (!documentIntelligenceClient) {
+            console.log(styles.error('❌ Document Intelligence client not available. Check configuration.'));
+            await this.waitForUserInput();
+            return;
+        }
+
+        const demoDocumentPath = path.join(__dirname, 'assets', 'OCR', 'contoso-receipt.png');
+
+        try {
+            console.log(styles.info('🔍 Analyzing Contoso receipt with Document Intelligence...'));
+            console.log(styles.concept('📋 Document Intelligence can extract structured data from:'));
+            console.log(styles.muted('   • Receipts and invoices'));
+            console.log(styles.muted('   • Business cards'));
+            console.log(styles.muted('   • ID documents'));
+            console.log(styles.muted('   • Custom forms\n'));
+
+            const documentBuffer = await fs.readFile(demoDocumentPath);
+
+            const analysisResult = await executeAzureAIOperationWithRetry(
+                async () => {
+                    const poller = await documentIntelligenceClient.beginAnalyzeDocument(
+                        'prebuilt-receipt',
+                        documentBuffer,
+                        {
+                            contentType: 'image/png'
+                        }
+                    );
+                    return await poller.pollUntilDone();
+                },
+                'Document Intelligence Receipt Analysis'
+            );
+
+            this.displayDocumentIntelligenceResults(analysisResult);
+
+        } catch (error) {
+            console.log(styles.error(`❌ Document analysis failed: ${error.message}`));
+            console.log(styles.examTip('💡 AI-900 Tip: Document Intelligence requires proper model selection'));
+        }
+
+        await this.waitForUserInput();
+    }
+
+    displayDocumentIntelligenceResults(analysisResult) {
+        console.log(styles.success('\n✅ Document Analysis Complete!\n'));
+
+        if (analysisResult.documents && analysisResult.documents.length > 0) {
+            const receipt = analysisResult.documents[0];
+            
+            console.log(styles.highlight('🧾 Receipt Information:'));
+            
+            // Merchant information
+            if (receipt.fields.MerchantName) {
+                console.log(`   🏪 Merchant: ${receipt.fields.MerchantName.value} (${Math.round(receipt.fields.MerchantName.confidence * 100)}% confidence)`);
+            }
+            
+            // Transaction details
+            if (receipt.fields.TransactionDate) {
+                console.log(`   📅 Date: ${receipt.fields.TransactionDate.value}`);
+            }
+            
+            if (receipt.fields.Total) {
+                console.log(`   💰 Total: $${receipt.fields.Total.value} (${Math.round(receipt.fields.Total.confidence * 100)}% confidence)`);
+            }
+            
+            // Items
+            if (receipt.fields.Items && receipt.fields.Items.values) {
+                console.log(styles.highlight('\n📋 Line Items:'));
+                receipt.fields.Items.values.forEach((item, index) => {
+                    const name = item.properties.Name?.value || 'Unknown';
+                    const price = item.properties.TotalPrice?.value || 0;
+                    console.log(`   ${index + 1}. ${name} - $${price}`);
+                });
+            }
+            
+            // AI-900 educational insights
+            console.log(styles.examTip('\n💡 AI-900 Insights:'));
+            console.log(styles.concept('   • Confidence scores indicate extraction reliability'));
+            console.log(styles.concept('   • Pre-built models handle common document types'));
+            console.log(styles.concept('   • Custom models can be trained for specific forms'));
+            console.log(styles.concept('   • OCR + AI enables structured data extraction'));
+        }
+    }
+
+    // =============================================================================
     // Azure OpenAI Demo with Responsible AI
     // =============================================================================
     async demonstrateAzureOpenAICapabilities() {
@@ -621,25 +997,26 @@ class EnterpriseAI900DemoApplication {
             const userChoice = await this.showInteractiveMainMenu();
 
             switch (userChoice) {
+                case 'content_safety':
+                    await this.demonstrateContentSafety();
+                    break;
                 case 'computer_vision':
-                    await this.demonstrateComputerVisionCapabilities();
+                    await this.demonstrateComputerVisionSimple();
                     break;
                 case 'language_analytics':
-                    await this.demonstrateLanguageAnalyticsCapabilities();
+                    await this.demonstrateLanguageAnalyticsSimple();
+                    break;
+                case 'translation':
+                    await this.demonstrateTranslation();
                     break;
                 case 'document_intelligence':
-                    console.log(styles.info('📄 Document Intelligence demo coming in next update...'));
-                    await this.waitForUserInput();
+                    await this.demonstrateDocumentIntelligenceSimple();
                     break;
                 case 'azure_openai':
-                    await this.demonstrateAzureOpenAICapabilities();
+                    await this.demonstrateAzureOpenAISimple();
                     break;
                 case 'service_metrics':
                     this.displayServiceHealthAndMetrics();
-                    await this.waitForUserInput();
-                    break;
-                case 'web_interface':
-                    console.log(styles.info('🌐 Launching web interface... (run npm run web in another terminal)'));
                     await this.waitForUserInput();
                     break;
                 case 'exit_application':
@@ -653,11 +1030,53 @@ class EnterpriseAI900DemoApplication {
 }
 
 // =============================================================================
+// Port Cleanup Utility
+// =============================================================================
+async function cleanupPort3000() {
+    const { exec } = require('child_process');
+    const util = require('util');
+    const execPromise = util.promisify(exec);
+    
+    try {
+        console.log(styles.info('🔧 Checking for processes using port 3000...'));
+        
+        // Platform-specific commands
+        const isWindows = process.platform === 'win32';
+        const command = isWindows 
+            ? 'netstat -ano | findstr :3000' 
+            : 'lsof -ti:3000';
+        
+        const { stdout } = await execPromise(command);
+        
+        if (stdout.trim()) {
+            console.log(styles.warning('⚠️ Found process using port 3000, attempting to free it...'));
+            
+            const killCommand = isWindows
+                ? `taskkill /F /PID ${stdout.trim().split(/\s+/).pop()}`
+                : `kill -9 ${stdout.trim()}`;
+            
+            await execPromise(killCommand);
+            console.log(styles.success('✅ Port 3000 successfully freed!'));
+        } else {
+            console.log(styles.muted('✨ Port 3000 is already available'));
+        }
+    } catch (error) {
+        // Port is likely already free if command fails
+        console.log(styles.muted('✨ Port 3000 is available'));
+    }
+}
+
+// =============================================================================
 // Application Entry Point
 // =============================================================================
 if (require.main === module) {
-    const enterpriseAI900App = new EnterpriseAI900DemoApplication();
-    enterpriseAI900App.run().catch(error => {
+    (async () => {
+        // Clean up port 3000 on startup as requested
+        await cleanupPort3000();
+        
+        const enterpriseAI900App = new EnterpriseAI900DemoApplication();
+        await enterpriseAI900App.run();
+    })().catch(error => {
         console.error(styles.error('💥 Application Error:'), error);
         console.log(styles.examTip('💡 AI-900 Tip: Always implement comprehensive error handling'));
         process.exit(1);

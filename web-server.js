@@ -638,13 +638,15 @@ app.get('/health', (req, res) => {
     });
 });
 
-// 🚀 Start server
-app.listen(PORT, () => {
-    console.log(`
+// 🚀 Start server only if run directly (not in tests)
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`
 🌐 Contoso AI Portal is running!
 📍 URL: http://localhost:${PORT}
 🎯 Ready for AI-900 demonstrations
-    `);
-});
+        `);
+    });
+}
 
 module.exports = app;

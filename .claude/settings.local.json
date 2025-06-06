@@ -23,7 +23,12 @@
       "Bash(cp:*)",
       "Bash(git reset:*)",
       "Bash(git config:*)",
-      "Bash(git lfs:*)"
+      "Bash(git lfs:*)",
+      "Bash(npm install:*)",
+      "Bash(npm test:*)",
+      "Bash(node:*)",
+      "Bash(npm run test:unit:*)",
+      "Bash(npx jest:*)"
     ],
     "deny": []
   }

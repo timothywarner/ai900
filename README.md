@@ -109,8 +109,8 @@ Experience all Azure AI services through our **Contoso Corporation AI Portal** -
 
 2. **Configure Environment**
    ```bash
-   # Copy example environment file
-   cp .env.example .env
+   # Copy sample environment file
+   cp sample.env .env
 
    # Edit .env with your Azure AI service credentials
    # Get these from Azure Portal -> Your AI Services -> Keys and Endpoints
@@ -119,43 +119,52 @@ Experience all Azure AI services through our **Contoso Corporation AI Portal** -
 3. **Run the Console Demo**
    ```bash
    npm start
-   # or for development with auto-reload:
+   # or for development with auto-reload and colored logs:
    npm run dev
    ```
 
 4. **Launch Web Interface**
    ```bash
+   # In a separate terminal:
    npm run web
    # Open browser to: http://localhost:3000
+   
+   # Or run with auto-reload:
+   npm run dev:web
    ```
 
 ### 🎯 Demo Features
 
-- **🖼️ Computer Vision**: Analyze images, detect objects, extract text
-- **📝 Language Service**: Sentiment analysis, language detection, key phrases
-- **📄 Document Intelligence**: Extract data from receipts, invoices, forms
-- **🎤 Speech Services**: Speech-to-text, text-to-speech, translation
-- **🤖 Azure OpenAI**: GPT chat completions and generative AI
-- **🔍 Cognitive Search**: AI-powered search and knowledge mining
-- **🛡️ Content Safety**: Content moderation and safety checks
-- **🎨 Custom Vision**: Custom image classification models
+**Console Application (`npm start`):**
+- Interactive menu-driven interface with educational AI-900 tips
+- Enterprise-grade patterns: retry logic, input validation, error handling
+- Real-time service health monitoring and metrics
+- Uses actual Contoso Corporation branding and scenarios
+
+**Web Application (`npm run web`):**
+- **🖼️ Computer Vision**: Upload and analyze images, detect objects, extract text
+- **📝 Language Analytics**: Real-time sentiment analysis and key phrase extraction
+- **📄 Document Intelligence**: Process receipts and invoices with structured data extraction
+- **🤖 Azure OpenAI**: Interactive chat with GPT models
+- **📊 Service Metrics**: Monitor API usage and performance
+- Beautiful responsive UI with Contoso Corporation branding
 
 ### 🔧 Environment Variables Required
 
+See `sample.env` for complete configuration template. Key variables:
+
 ```bash
-# Multi-Service AI (Primary - works for most demos)
-AI_SERVICES_ENDPOINT=https://your-region.api.cognitive.microsoft.com/
-AI_SERVICES_KEY=your_ai_services_key
+# Multi-Service AI (Recommended - single endpoint for multiple services)
+AI_SERVICES_KEY=your_key_here
+AI_SERVICES_ENDPOINT=https://your-resource.cognitiveservices.azure.com
 
-# Azure OpenAI Service
-AZURE_OPENAI_ENDPOINT=https://your-openai-resource.openai.azure.com/
-AZURE_OPENAI_KEY=your_openai_key
+# Document Intelligence (for form/receipt processing)
+DOCUMENT_INTELLIGENCE_KEY=your_key_here
+DOCUMENT_INTELLIGENCE_ENDPOINT=https://your-resource.cognitiveservices.azure.com
 
-# Individual Services (optional - for specialized demos)
-COMPUTER_VISION_ENDPOINT=https://your-region.api.cognitive.microsoft.com/
-COMPUTER_VISION_KEY=your_computer_vision_key
-LANGUAGE_SERVICE_ENDPOINT=https://your-region.api.cognitive.microsoft.com/
-LANGUAGE_SERVICE_KEY=your_language_key
+# Azure OpenAI Service (requires approved access)
+AZURE_OPENAI_KEY=your_key_here
+AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com
 ```
 
 **💡 Pro Tip**: Use the **AI Services multi-service** resource for most demos - it provides access to multiple cognitive services with a single endpoint and key!
@@ -164,34 +173,51 @@ LANGUAGE_SERVICE_KEY=your_language_key
 
 **Console Interface:**
 - Interactive menu with emoji-rich UI
-- Demonstrates real AI-900 exam scenarios
-- Uses actual demo assets from `/assets/` folder
-- Contoso Corporation branding for realistic business context
+- Demonstrates real AI-900 exam scenarios with educational tips
+- Enterprise patterns: retry logic, rate limiting awareness, error handling
+- Real-time service health monitoring
 
 **Web Interface:**
 - Beautiful Bootstrap 5 UI with Contoso branding
-- File upload for image and document analysis
-- Real-time text analysis and AI chat
+- Upload images and documents for AI analysis
+- Real-time text sentiment analysis
+- Interactive chat with Azure OpenAI
 - Mobile-responsive design
 
-### 🔒 Port Management & Idempotency
+### 🧪 Testing & Quality Assurance
 
-The app includes **automatic port cleanup**:
 ```bash
-# Force close any processes on port 3000
-npm run force-close
+# Run all tests with coverage
+npm test
 
-# Then start fresh
-npm run web
+# Run tests in watch mode during development
+npm test:watch
+
+# Run only unit tests
+npm test:unit
+
+# Run tests for CI/CD
+npm test:ci
+```
+
+### 🔒 Security & Port Management
+
+The app includes **automatic port cleanup** on startup:
+- Automatically frees port 3000 if in use
+- Cross-platform support (Windows/Mac/Linux)
+- No manual intervention needed
+
+```bash
+# Manual port cleanup if needed
+npm run force-close
 ```
 
 ### 📁 Demo Assets Included
 
-- **People**: Celebrity images, business photos
-- **Products**: Contoso product images (carrots for agricultural AI)
-- **Documents**: Receipts, invoices, business cards
+- **Images**: Celebrity photos, products, landmarks in `/assets/`
+- **Documents**: Sample receipts and invoices for OCR
 - **Audio**: Speech samples for voice analysis
-- **Places**: Location images for scene analysis
+- **CSV**: Datasets for ML demonstrations
 
 ## 📋 Prerequisites
 
@@ -213,6 +239,50 @@ npm run web
 - **Email:** [tim@techtrainertim.com](mailto:tim@techtrainertim.com)
 - **Microsoft Learn:** [TimothyWarner](https://learn.microsoft.com/users/timothywarner/transcript)
 
+## 🚀 Troubleshooting
+
+**Common Issues:**
+
+1. **Port 3000 already in use**
+   - The app automatically handles this on startup
+   - Manual fix: `npm run force-close`
+
+2. **Azure service errors**
+   - Check your `.env` file has correct keys and endpoints
+   - Verify your Azure subscription is active
+   - Ensure services are deployed in accessible regions
+
+3. **Module not found errors**
+   - Run `npm install` to install all dependencies
+   - Delete `node_modules` and run `npm install` again
+
+## 🎓 For Instructors
+
+This demo app is designed for live teaching scenarios:
+- All demos work offline with placeholder data if Azure services unavailable
+- Educational messages explain AI-900 concepts throughout
+- Retry logic demonstrations show production best practices
+- Error messages include learning opportunities
+
+## 🏆 Certification Success Tips
+
+1. **Hands-on Practice**: Use this demo app to experiment with each service
+2. **Understand Concepts**: Pay attention to the educational tips in the console
+3. **Review Metrics**: The app demonstrates monitoring and observability
+4. **Security First**: Notice how the app handles credentials and validation
+
 ## 💬 License
 
 This course material is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+**Built with ❤️ for AI-900 Success**
+
+[![Tim Warner](https://img.shields.io/badge/Created%20by-Tim%20Warner-blue?style=for-the-badge)](https://techtrainertim.com)
+[![Microsoft MVP](https://img.shields.io/badge/Microsoft-MVP-blue?style=for-the-badge&logo=microsoft)](https://mvp.microsoft.com)
+[![Certified Trainer](https://img.shields.io/badge/MCT-Certified%20Trainer-orange?style=for-the-badge)](https://learn.microsoft.com/certifications)
+
+</div>
