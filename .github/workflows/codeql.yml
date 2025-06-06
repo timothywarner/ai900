@@ -1,0 +1,115 @@
+name: 🛡️ CodeQL Security Analysis
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main"]
+  schedule:
+    # Run CodeQL analysis every Monday at 9 AM UTC
+    - cron: "0 9 * * 1"
+
+jobs:
+  analyze:
+    name: 🛡️ CodeQL Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    permissions:
+      # Required for CodeQL to access the repository
+      actions: read
+      contents: read
+      security-events: write
+      # Required for GitHub to comment on PRs
+      pull-requests: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # Only scan JavaScript for this AI-900 Node.js project
+        language: ["javascript"]
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: 📦 Install Dependencies
+        run: |
+          npm ci --only=production
+          # Don't install dev dependencies for security scanning
+
+      - name: 🏗️ Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          # Custom queries for AI/ML and web application security
+          queries: security-extended,security-and-quality
+          # Focus on AI-900 relevant security issues
+          config-file: ./.github/codeql/codeql-config.yml
+
+      - name: 🔍 Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{matrix.language}}"
+          # Upload results even if there are findings
+          upload: always
+
+      - name: 📊 Upload SARIF Results
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: ${{ runner.workspace }}/results
+          category: codeql-javascript
+
+  # Additional job for AI-specific security checks
+  ai-security-check:
+    name: 🤖 AI Security Assessment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🔍 Check for Hardcoded AI Keys
+        run: |
+          echo "🔍 Scanning for hardcoded API keys and secrets..."
+
+          # Check for common AI service key patterns
+          if grep -r "sk-" --include="*.js" --include="*.json" --exclude-dir=node_modules .; then
+            echo "❌ Potential OpenAI API key found!"
+            exit 1
+          fi
+
+          if grep -r "AKIA" --include="*.js" --include="*.json" --exclude-dir=node_modules .; then
+            echo "❌ Potential AWS key found!"
+            exit 1
+          fi
+
+          if grep -r "AIza" --include="*.js" --include="*.json" --exclude-dir=node_modules .; then
+            echo "❌ Potential Google API key found!"
+            exit 1
+          fi
+
+          echo "✅ No hardcoded API keys detected"
+
+      - name: 🛡️ Check AI Model Security
+        run: |
+          echo "🤖 Checking for AI security best practices..."
+
+          # Check for input validation in AI endpoints
+          if ! grep -r "validation\|sanitize\|escape" --include="*.js" .; then
+            echo "⚠️ Consider adding input validation for AI endpoints"
+          fi
+
+          # Check for rate limiting
+          if ! grep -r "rate.*limit\|throttle" --include="*.js" .; then
+            echo "⚠️ Consider adding rate limiting for AI API calls"
+          fi
+
+          echo "✅ AI security checks completed"
