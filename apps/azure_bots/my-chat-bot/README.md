@@ -13,6 +13,26 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
     node --version
     ```
 
+## Quickstart (Local)
+
+1) Copy env and set values
+
+```bash
+cp .env.example .env
+# For local Emulator, leave MicrosoftAppId/MicrosoftAppPassword empty
+```
+
+2) Install and run
+
+```bash
+npm install
+npm start
+```
+
+Open Bot Framework Emulator and connect to `http://localhost:3978/api/messages`.
+
+If you skip installs and run directly, the app prints a friendly message: `Missing dependencies. Run "npm install" in apps/azure_bots/my-chat-bot`.
+
 ## To run the bot
 
 - Install modules

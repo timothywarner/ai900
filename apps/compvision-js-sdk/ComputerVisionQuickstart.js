@@ -34,16 +34,13 @@
 
 // <snippet_imports_and_vars>
 // <snippet_imports>
-'use strict';
 
-const async = require('async');
+'use strict';
 const fs = require('fs');
 const https = require('https');
 const path = require("path");
 const createReadStream = require('fs').createReadStream
 const sleep = require('util').promisify(setTimeout);
-const ComputerVisionClient = require('@azure/cognitiveservices-computervision').ComputerVisionClient;
-const ApiKeyCredentials = require('@azure/ms-rest-js').ApiKeyCredentials;
 // </snippet_imports>
 
 // <snippet_vars>
@@ -51,8 +48,20 @@ const ApiKeyCredentials = require('@azure/ms-rest-js').ApiKeyCredentials;
  * AUTHENTICATE
  * This single client is used for all examples.
  */
-const key = '';
-const endpoint = '';
+// Load environment variables from .env if available
+try { require('dotenv').config(); } catch (e) {}
+
+const key = process.env.COMPUTER_VISION_SUBSCRIPTION_KEY || process.env.COGNITIVE_KEY;
+const endpoint = process.env.COMPUTER_VISION_ENDPOINT || process.env.COGNITIVE_ENDPOINT;
+
+if (!key || !endpoint) {
+  console.error('Set COMPUTER_VISION_ENDPOINT and COMPUTER_VISION_SUBSCRIPTION_KEY (or COGNITIVE_*).');
+  process.exit(1);
+}
+// Require Azure SDKs lazily so the script can show config errors without installed deps
+const async = require('async');
+const { ComputerVisionClient } = require('@azure/cognitiveservices-computervision');
+const { ApiKeyCredentials } = require('@azure/ms-rest-js');
 // </snippet_vars>
 // </snippet_imports_and_vars>
 

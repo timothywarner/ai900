@@ -198,6 +198,9 @@ PublishScripts/
 
 # Microsoft Azure Build Output
 csx/
+
+# Environment files (security)
+**/.env
 *.build.csdef
 
 # Microsoft Azure Emulator

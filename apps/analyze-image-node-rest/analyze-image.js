@@ -1,14 +1,29 @@
+
 'use strict';
 
-const request = require('request');
+let request;
+try {
+  request = require('request');
+} catch (e) {
+  console.error('Missing dependency: request. Run "npm install request dotenv" in this folder.');
+  process.exit(1);
+}
 
-let subscriptionKey = '530e8cbabf714946806f9f1fa0620599';
-let endpoint = 'https://twai900cog.cognitiveservices.azure.com/';
+// Load environment variables from .env if available
+try { require('dotenv').config(); } catch (e) {}
+
+// Prefer generic COGNITIVE_*; fall back to COMPUTER_VISION_* for compatibility
+let subscriptionKey = process.env.COGNITIVE_KEY || process.env.COMPUTER_VISION_SUBSCRIPTION_KEY;
+let endpoint = process.env.COGNITIVE_ENDPOINT || process.env.COMPUTER_VISION_ENDPOINT;
+
+if (!subscriptionKey || !endpoint) {
+  console.error('Missing env vars. Set COGNITIVE_ENDPOINT and COGNITIVE_KEY (or COMPUTER_VISION_*).');
+  process.exit(1);
+}
 
 var uriBase = endpoint + 'vision/v3.1/analyze';
 
-const imageUrl =
-    'https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg';
+const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg';
 
 // Request parameters.
 const params = {

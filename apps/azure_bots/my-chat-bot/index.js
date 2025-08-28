@@ -3,16 +3,22 @@
 
 const path = require('path');
 
-const dotenv = require('dotenv');
-// Import required bot configuration.
-const ENV_FILE = path.join(__dirname, '.env');
-dotenv.config({ path: ENV_FILE });
+// Load env variables if dotenv is available (optional for local dev)
+try {
+    require('dotenv').config({ path: path.join(__dirname, '.env') });
+} catch (e) {
+    // dotenv not installed yet; continue
+}
 
-const restify = require('restify');
-
-// Import required bot services.
-// See https://aka.ms/bot-services to learn more about the different parts of a bot.
-const { BotFrameworkAdapter } = require('botbuilder');
+let restify;
+let BotFrameworkAdapter;
+try {
+    restify = require('restify');
+    ({ BotFrameworkAdapter } = require('botbuilder'));
+} catch (e) {
+    console.error('Missing dependencies. Run "npm install" in apps/azure_bots/my-chat-bot');
+    process.exit(1);
+}
 
 // This bot's main dialog.
 const { EchoBot } = require('./bot');

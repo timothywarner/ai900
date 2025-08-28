@@ -29,7 +29,9 @@ This course provides hands-on experience and in-depth knowledge of Microsoft Azu
 | Describe features of Natural Language Processing workloads    | 15-20%     |
 | Describe features of generative AI workloads on Azure         | 15-20%     |
 
-For the complete, detailed exam objectives, see [AI-900-exam-objectives.md](./AI-900-exam-objectives.md)
+For the complete, detailed exam objectives, see [AI-900-exam-objectives.md](./docs/AI-900-exam-objectives.md)
+
+Quick navigation: see the curated [Docs Index](./docs/INDEX.md) for a guided tour of demos, apps, and course materials.
 
 ## 🎯 Learning Objectives
 
