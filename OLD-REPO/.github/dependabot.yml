@@ -1,0 +1,64 @@
+version: 2
+updates:
+  # Node.js dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    assignees:
+      - "timothywarner"
+    reviewers:
+      - "timothywarner"
+    labels:
+      - "dependencies"
+      - "security"
+      - "ai-900"
+    commit-message:
+      prefix: "🔧"
+      include: "scope"
+    groups:
+      # Group Azure AI SDK updates
+      azure-ai:
+        patterns:
+          - "@azure/*"
+        update-types:
+          - "minor"
+          - "patch"
+      # Group development dependencies
+      dev-dependencies:
+        patterns:
+          - "nodemon"
+          - "morgan"
+          - "winston"
+          - "debug"
+        update-types:
+          - "minor"
+          - "patch"
+      # Group UI dependencies
+      ui-dependencies:
+        patterns:
+          - "chalk"
+          - "figlet"
+          - "inquirer"
+        update-types:
+          - "minor"
+          - "patch"
+    # Enable version updates and security updates
+    open-pull-requests-limit: 10
+    target-branch: "main"
+
+  # GitHub Actions dependencies
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "github-actions"
+      - "security"
+    commit-message:
+      prefix: "🔧 CI:"
+
+# Configuration to minimize noise from sample code
+# Setting open-pull-requests-limit: 0 effectively disables updates for those paths

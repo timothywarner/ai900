@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(rm:*)",
+      "Bash(mv:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(true)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(chmod:*)",
+      "Bash(gh auth:*)",
+      "Bash(pip install:*)",
+      "Bash(python3 -m pip install:*)",
+      "Bash(python3:*)",
+      "Bash(apt-get:*)",
+      "Bash(apt-get install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(sudo apt-get:*)",
+      "Bash(sudo apt-get install:*)",
+      "Bash(cp:*)",
+      "Bash(git reset:*)",
+      "Bash(git config:*)",
+      "Bash(git lfs:*)",
+      "Bash(npm install:*)",
+      "Bash(npm test:*)",
+      "Bash(node:*)",
+      "Bash(npm run test:unit:*)",
+      "Bash(npx jest:*)"
+    ],
+    "deny": []
+  }
+}

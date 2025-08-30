@@ -1,0 +1,38 @@
+# Ignore patterns for GitHub Copilot
+
+# Ignore sensitive data
+.env
+*.pem
+*.key
+*.cer
+*.pfx
+*.p12
+
+# Ignore large binary files
+*.zip
+*.tar.gz
+*.iso
+*.mp4
+*.mov
+*.avi
+
+# Ignore data files
+*.csv
+*.json
+*.xml
+*.xlsx
+*.xls
+*.db
+*.sqlite
+
+# Ignore specific directories
+node_modules/
+venv/
+__pycache__/
+.vscode/
+.idea/
+
+# Ignore specific files
+credentials.json
+config.json
+secrets.json 

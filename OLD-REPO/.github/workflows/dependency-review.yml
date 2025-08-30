@@ -1,0 +1,40 @@
+name: 🔍 Dependency Review
+
+on:
+  pull_request:
+    paths:
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    name: 🔍 Review Dependencies
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🔍 Dependency Review
+        uses: actions/dependency-review-action@v4
+        with:
+          # Fail on high or critical vulnerabilities
+          fail-on-severity: high
+          # Allow licenses that are commonly used in AI/ML projects
+          allow-licenses: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC
+          # Create comments on PR with findings
+          comment-summary-in-pr: always
+          # Use custom configuration
+          config-file: "./.github/dependency-review-config.yml"
+
+      - name: 📊 Upload Results
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: dependency-review-results.sarif
+          category: dependency-review
