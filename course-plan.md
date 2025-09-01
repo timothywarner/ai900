@@ -23,6 +23,50 @@
 - Generative AI now 20-25% (highest weight!)
 ```
 
+## 📌 5-HOUR SEGMENT FOCUS PUNCHLIST
+
+### ⏰ HOUR 1: AI Fundamentals & Responsible AI (15-20%)
+**MUST COVER:**
+- [ ] AI vs ML vs Deep Learning definitions
+- [ ] 6 AI workload types (vision, NLP, document, speech, generative, decision)
+- [ ] 6 Responsible AI principles (FAIR-PT)
+- [ ] Azure AI Services overview & multi-service account
+- [ ] **DEMOS:** Face detection with fairness analysis, Content moderation
+
+### ⏰ HOUR 2: Machine Learning Fundamentals (15-20%)
+**MUST COVER:**
+- [ ] Supervised (regression/classification) vs Unsupervised (clustering)
+- [ ] Training vs Validation vs Test datasets
+- [ ] Overfitting/Underfitting concepts
+- [ ] Azure ML: AutoML, Designer, Notebooks
+- [ ] **DEMOS:** AutoML classification (Titanic), Designer pipeline, Model deployment
+
+### ⏰ HOUR 3: Computer Vision Workloads (15-20%)
+**MUST COVER:**
+- [ ] Image classification vs Object detection
+- [ ] OCR vs Document Intelligence
+- [ ] Face detection vs Face recognition
+- [ ] Custom Vision for domain-specific models
+- [ ] **DEMOS:** Computer Vision API, Custom Vision training, Document Intelligence
+
+### ⏰ HOUR 4: Natural Language Processing (15-20%)
+**MUST COVER:**
+- [ ] Text Analytics (sentiment, entities, key phrases)
+- [ ] Language Understanding (CLU) - intents & entities
+- [ ] Custom Question Answering (formerly QnA Maker)
+- [ ] Translation & Speech services
+- [ ] **DEMOS:** Language Studio, CLU app, Custom QA knowledge base
+
+### ⏰ HOUR 5: Generative AI & Azure OpenAI (20-25% - HIGHEST!)
+**MUST COVER:**
+- [ ] Transformer architecture basics
+- [ ] Foundation models vs Fine-tuning
+- [ ] Prompt engineering techniques
+- [ ] Azure OpenAI models (GPT, DALL-E, Embeddings)
+- [ ] Responsible AI for GenAI (content filters, grounding)
+- [ ] Azure AI Foundry platform
+- [ ] **DEMOS:** Playground, Prompt engineering, RAG pattern, Content safety
+
 ## Course Philosophy: 80% Demos, 20% Theory, 100% Engagement! 
 
 **Target Duration:** 5 Hours (with breaks)  

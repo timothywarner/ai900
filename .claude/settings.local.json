@@ -9,7 +9,16 @@
       "Read(/C:\\c\\github/**)",
       "Bash(mkdir:*)",
       "Bash(rm:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "WebSearch",
+      "WebFetch(domain:www.microsoft.com)",
+      "WebFetch(domain:azure.microsoft.com)",
+      "WebFetch(domain:www.measureup.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.whizlabs.com)",
+      "WebFetch(domain:www.udemy.com)",
+      "WebFetch(domain:www.oreilly.com)"
     ],
     "deny": [],
     "ask": [],

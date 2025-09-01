@@ -50,9 +50,17 @@ data = {
 
 body = str.encode(json.dumps(data))
 
-url = 'http://20.81.96.169:80/api/v1/service/autoprice/score'
-# Replace this with the API key for the web service
-api_key = 'Z27HKPVffZ1cWBVSlfm2jYadthUYcLaB'
+# Load configuration from environment variables
+url = os.getenv('AZURE_ML_ENDPOINT_URL', 'http://your-ml-endpoint:80/api/v1/service/autoprice/score')
+api_key = os.getenv('AZURE_ML_API_KEY')
+
+if not api_key:
+    print("❌ Error: Missing required environment variable!")
+    print("Please set AZURE_ML_API_KEY environment variable.")
+    print("Optionally, set AZURE_ML_ENDPOINT_URL if different from default.")
+    print("\nRefer to tim-env.txt for setup instructions.")
+    exit(1)
+
 headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
 req = urllib.request.Request(url, body, headers)

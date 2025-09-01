@@ -200,7 +200,7 @@ PublishScripts/
 csx/
 
 # Environment files (security)
-**/.env
+ **/.env
 *.build.csdef
 
 # Microsoft Azure Emulator
@@ -351,3 +351,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+tim-env.txt
+.claude/settings.local.json

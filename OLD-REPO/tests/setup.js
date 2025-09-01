@@ -14,12 +14,12 @@ const originalConsole = {
 
 // Mock environment variables for testing
 process.env.NODE_ENV = 'test';
-process.env.AI_SERVICES_KEY = 'test-key-12345';
-process.env.AI_SERVICES_ENDPOINT = 'https://test.cognitiveservices.azure.com';
-process.env.DOCUMENT_INTELLIGENCE_KEY = 'test-doc-key-12345';
-process.env.DOCUMENT_INTELLIGENCE_ENDPOINT = 'https://test-doc.cognitiveservices.azure.com';
-process.env.AZURE_OPENAI_KEY = 'test-openai-key-12345';
-process.env.AZURE_OPENAI_ENDPOINT = 'https://test-openai.openai.azure.com';
+process.env.AI_SERVICES_KEY = process.env.TWAI900_COGMULTISERVICE1_KEY;
+process.env.AI_SERVICES_ENDPOINT = process.env.TWAI900_COGMULTISERVICE1_ENDPOINT;
+process.env.DOCUMENT_INTELLIGENCE_KEY = process.env.TWAI900DOCINTEL1_KEY;
+process.env.DOCUMENT_INTELLIGENCE_ENDPOINT = process.env.TWAI900DOCINTEL1_ENDPOINT;
+process.env.AZURE_OPENAI_KEY = process.env.TWAZUREOPENAI1_KEY;
+process.env.AZURE_OPENAI_ENDPOINT = process.env.TWAZUREOPENAI1_ENDPOINT;
 
 // Global test utilities
 global.testUtils = {
@@ -30,7 +30,7 @@ global.testUtils = {
         console.warn = originalConsole.warn;
         console.info = originalConsole.info;
     },
-    
+
     // Disable console for clean test output
     disableConsole: () => {
         console.log = jest.fn();
@@ -38,10 +38,10 @@ global.testUtils = {
         console.warn = jest.fn();
         console.info = jest.fn();
     },
-    
+
     // Simulate Azure API response delay
     simulateApiDelay: (ms = 100) => new Promise(resolve => setTimeout(resolve, ms)),
-    
+
     // Generate mock Azure response
     generateMockAzureResponse: (success = true, data = {}) => ({
         status: success ? 200 : 400,

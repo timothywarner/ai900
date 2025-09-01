@@ -28,22 +28,29 @@ AI-102 Preview:
 
 import os
 import json
+import sys
 import numpy as np
 from openai import AzureOpenAI
 from typing import List, Dict, Tuple
 
-# Configuration
-ENDPOINT = "YOUR_ENDPOINT"
-KEY = "YOUR_KEY"
-DEPLOYMENT = "YOUR_DEPLOYMENT_NAME"
-EMBEDDING_DEPLOYMENT = "text-embedding-ada-002"  # Or your embedding model
-API_VERSION = "2024-02-01"
+# Load configuration from environment variables
+ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
+KEY = os.getenv("AZURE_OPENAI_KEY")
+DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4o-mini")
+EMBEDDING_DEPLOYMENT = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-ada-002")
+API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-01")
 
-# Load from environment if available
-if os.getenv("AZURE_OPENAI_ENDPOINT"):
-    ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
-    KEY = os.getenv("AZURE_OPENAI_KEY")
-    DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT", DEPLOYMENT)
+# Validate environment variables
+if not ENDPOINT or not KEY:
+    print("❌ Error: Missing required environment variables!")
+    print("Please set the following environment variables:")
+    print("  - AZURE_OPENAI_ENDPOINT")
+    print("  - AZURE_OPENAI_KEY")
+    print("  - AZURE_OPENAI_DEPLOYMENT_NAME (optional, defaults to gpt-4o-mini)")
+    print("  - AZURE_OPENAI_EMBEDDING_DEPLOYMENT (optional, defaults to text-embedding-ada-002)")
+    print("  - AZURE_OPENAI_API_VERSION (optional, defaults to 2024-02-01)")
+    print("\nRefer to tim-env.txt for setup instructions.")
+    sys.exit(1)
 
 # Initialize client
 client = AzureOpenAI(

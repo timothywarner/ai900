@@ -3,11 +3,13 @@
 
 const path = require('path');
 
-// Load env variables if dotenv is available (optional for local dev)
-try {
-    require('dotenv').config({ path: path.join(__dirname, '.env') });
-} catch (e) {
-    // dotenv not installed yet; continue
+// Load from environment variables - no .env file needed
+// Check for required environment variables
+if (!process.env.MICROSOFT_APP_ID || !process.env.MICROSOFT_APP_PASSWORD) {
+    console.log('Note: Bot Service credentials not configured.');
+    console.log('Set MICROSOFT_APP_ID and MICROSOFT_APP_PASSWORD environment variables to enable production deployment.');
+    console.log('For local testing with Bot Framework Emulator, you can run without credentials.');
+    console.log('\nRefer to tim-env.txt for setup instructions.');
 }
 
 let restify;
@@ -34,8 +36,8 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 // Create adapter.
 // See https://aka.ms/about-bot-adapter to learn more about how bots work.
 const adapter = new BotFrameworkAdapter({
-    appId: process.env.MicrosoftAppId,
-    appPassword: process.env.MicrosoftAppPassword
+    appId: process.env.MICROSOFT_APP_ID,
+    appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
 // Catch-all for errors.

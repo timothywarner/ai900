@@ -51,8 +51,8 @@ const ApiKeyCredentials = require('@azure/ms-rest-js').ApiKeyCredentials;
  * AUTHENTICATE
  * This single client is used for all examples.
  */
-const key = '';
-const endpoint = '';
+const key = process.env.TWAI900COMPUTERVISION1_KEY;
+const endpoint = process.env.TWAI900COMPUTERVISION1_ENDPOINT;
 // </snippet_vars>
 // </snippet_imports_and_vars>
 

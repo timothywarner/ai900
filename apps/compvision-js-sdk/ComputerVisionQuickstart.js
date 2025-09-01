@@ -48,14 +48,16 @@ const sleep = require('util').promisify(setTimeout);
  * AUTHENTICATE
  * This single client is used for all examples.
  */
-// Load environment variables from .env if available
-try { require('dotenv').config(); } catch (e) {}
-
-const key = process.env.COMPUTER_VISION_SUBSCRIPTION_KEY || process.env.COGNITIVE_KEY;
-const endpoint = process.env.COMPUTER_VISION_ENDPOINT || process.env.COGNITIVE_ENDPOINT;
+// Load from environment variables - no .env file needed
+const key = process.env.AZURE_COMPUTER_VISION_KEY || process.env.AZURE_AI_SERVICES_KEY;
+const endpoint = process.env.AZURE_COMPUTER_VISION_ENDPOINT || process.env.AZURE_AI_SERVICES_ENDPOINT;
 
 if (!key || !endpoint) {
-  console.error('Set COMPUTER_VISION_ENDPOINT and COMPUTER_VISION_SUBSCRIPTION_KEY (or COGNITIVE_*).');
+  console.error('❌ Error: Missing required environment variables!');
+  console.error('Please set the following environment variables:');
+  console.error('  - AZURE_COMPUTER_VISION_KEY (or AZURE_AI_SERVICES_KEY)');
+  console.error('  - AZURE_COMPUTER_VISION_ENDPOINT (or AZURE_AI_SERVICES_ENDPOINT)');
+  console.error('\nRefer to tim-env.txt for setup instructions.');
   process.exit(1);
 }
 // Require Azure SDKs lazily so the script can show config errors without installed deps

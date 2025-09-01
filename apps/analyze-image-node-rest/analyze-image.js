@@ -9,15 +9,16 @@ try {
   process.exit(1);
 }
 
-// Load environment variables from .env if available
-try { require('dotenv').config(); } catch (e) {}
-
-// Prefer generic COGNITIVE_*; fall back to COMPUTER_VISION_* for compatibility
-let subscriptionKey = process.env.COGNITIVE_KEY || process.env.COMPUTER_VISION_SUBSCRIPTION_KEY;
-let endpoint = process.env.COGNITIVE_ENDPOINT || process.env.COMPUTER_VISION_ENDPOINT;
+// Load from environment variables - no .env file needed
+let subscriptionKey = process.env.AZURE_COMPUTER_VISION_KEY || process.env.AZURE_AI_SERVICES_KEY;
+let endpoint = process.env.AZURE_COMPUTER_VISION_ENDPOINT || process.env.AZURE_AI_SERVICES_ENDPOINT;
 
 if (!subscriptionKey || !endpoint) {
-  console.error('Missing env vars. Set COGNITIVE_ENDPOINT and COGNITIVE_KEY (or COMPUTER_VISION_*).');
+  console.error('❌ Error: Missing required environment variables!');
+  console.error('Please set the following environment variables:');
+  console.error('  - AZURE_COMPUTER_VISION_KEY (or AZURE_AI_SERVICES_KEY)');
+  console.error('  - AZURE_COMPUTER_VISION_ENDPOINT (or AZURE_AI_SERVICES_ENDPOINT)');
+  console.error('\nRefer to tim-env.txt for setup instructions.');
   process.exit(1);
 }
 

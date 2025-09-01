@@ -30,14 +30,18 @@ import os
 from azure.ai.formrecognizer import DocumentAnalysisClient
 from azure.core.credentials import AzureKeyCredential
 
-# Configuration - Replace with your values
-ENDPOINT = "YOUR_ENDPOINT"  # e.g., https://myresource.cognitiveservices.azure.com/
-KEY = "YOUR_KEY"
+# Load configuration from environment variables
+ENDPOINT = os.getenv("AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT")
+KEY = os.getenv("AZURE_DOCUMENT_INTELLIGENCE_KEY")
 
-# Or load from environment
-if os.getenv("DOCUMENT_INTELLIGENCE_ENDPOINT"):
-    ENDPOINT = os.getenv("DOCUMENT_INTELLIGENCE_ENDPOINT")
-    KEY = os.getenv("DOCUMENT_INTELLIGENCE_KEY")
+# Validate environment variables
+if not ENDPOINT or not KEY:
+    print("❌ Error: Missing required environment variables!")
+    print("Please set the following environment variables:")
+    print("  - AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT")
+    print("  - AZURE_DOCUMENT_INTELLIGENCE_KEY")
+    print("\nRefer to tim-env.txt for setup instructions.")
+    exit(1)
 
 
 def analyze_invoice(invoice_path):
