@@ -60,9 +60,7 @@
 
 ### Free Resources
 - [Microsoft Learn Practice Assessments](https://learn.microsoft.com/en-us/credentials/certifications/practice-assessments-for-microsoft-certifications)
-- [ExamTopics AI-900](https://www.examtopics.com/exams/microsoft/ai-900/)
 - [Whizlabs 30 Free AI-900 Questions](https://www.whizlabs.com/blog/microsoft-azure-ai-fundamentals-questions/)
-- [ITExams AI-900 Free Questions](https://www.itexams.com/info/AI-900)
 
 ### Paid Practice Exams
 - [MeasureUp AI-900 Practice Test (Direct)](https://www.measureup.com/microsoft-practice-test-ai-900-microsoft-azure-ai-fundamentals.html)
