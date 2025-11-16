@@ -35,37 +35,55 @@
 
 ### ⏰ HOUR 2: Machine Learning Fundamentals (15-20%)
 **MUST COVER:**
-- [ ] Supervised (regression/classification) vs Unsupervised (clustering)
-- [ ] Training vs Validation vs Test datasets
+- [ ] Supervised (regression/classification) vs Unsupervised (clustering) vs Reinforcement
+- [ ] Deep learning techniques (CNNs for images, RNNs for sequences)
+- [ ] **Transformer architecture** (attention mechanism, foundation of GPT/BERT) **NEW!**
+- [ ] Features and labels in datasets
+- [ ] Training vs Validation vs Test datasets (data splitting strategy)
 - [ ] Overfitting/Underfitting concepts
-- [ ] Azure ML: AutoML, Designer, Notebooks
-- [ ] **DEMOS:** AutoML classification (Titanic), Designer pipeline, Model deployment
+- [ ] Azure ML capabilities: AutoML, Designer, Notebooks
+- [ ] Model management and deployment in Azure ML
+- [ ] **DEMOS:** AutoML classification (Titanic), Designer pipeline, Model deployment as endpoint
 
 ### ⏰ HOUR 3: Computer Vision Workloads (15-20%)
 **MUST COVER:**
-- [ ] Image classification vs Object detection
-- [ ] OCR vs Document Intelligence
-- [ ] Face detection vs Face recognition
-- [ ] Custom Vision for domain-specific models
-- [ ] **DEMOS:** Computer Vision API, Custom Vision training, Document Intelligence
+- [ ] Image classification solutions (categorization)
+- [ ] Object detection solutions (bounding boxes, instance detection)
+- [ ] Optical character recognition (OCR) - printed & handwritten text
+- [ ] Facial detection and facial analysis (age, emotion, attributes)
+- [ ] Face verification vs Face identification
+- [ ] Azure AI Vision service capabilities
+- [ ] Azure AI Face detection service capabilities
+- [ ] Custom Vision for training domain-specific models
+- [ ] **DEMOS:** Computer Vision API analysis, Custom Vision training (cats vs dogs), Face detection with attributes
 
 ### ⏰ HOUR 4: Natural Language Processing (15-20%)
 **MUST COVER:**
-- [ ] Text Analytics (sentiment, entities, key phrases)
-- [ ] Language Understanding (CLU) - intents & entities
+- [ ] Key phrase extraction (topic identification)
+- [ ] Entity recognition (named entities, PII detection)
+- [ ] Sentiment analysis (positive/negative/neutral/mixed)
+- [ ] Language modeling and understanding
+- [ ] Speech recognition and synthesis (speech-to-text, text-to-speech)
+- [ ] Translation (90+ languages)
+- [ ] Azure AI Language service capabilities
+- [ ] Azure AI Speech service capabilities
+- [ ] Conversational Language Understanding (CLU) - intents & entities
 - [ ] Custom Question Answering (formerly QnA Maker)
-- [ ] Translation & Speech services
-- [ ] **DEMOS:** Language Studio, CLU app, Custom QA knowledge base
+- [ ] **DEMOS:** Sentiment analysis, CLU pizza bot, Custom QA knowledge base, Speech synthesis
 
 ### ⏰ HOUR 5: Generative AI & Azure OpenAI (20-25% - HIGHEST!)
 **MUST COVER:**
-- [ ] Transformer architecture basics
-- [ ] Foundation models vs Fine-tuning
-- [ ] Prompt engineering techniques
-- [ ] Azure OpenAI models (GPT, DALL-E, Embeddings)
-- [ ] Responsible AI for GenAI (content filters, grounding)
-- [ ] Azure AI Foundry platform
-- [ ] **DEMOS:** Playground, Prompt engineering, RAG pattern, Content safety
+- [ ] Features of generative AI models (text, image, code generation)
+- [ ] Common scenarios for generative AI (content creation, summarization, Q&A)
+- [ ] Responsible AI considerations for generative AI (hallucinations, bias, content filtering)
+- [ ] **Azure AI Foundry features and capabilities** (unified platform) **NEW!**
+- [ ] **Azure AI Foundry model catalog** (1,600+ models from Microsoft, OpenAI, Meta, Hugging Face) **NEW!**
+- [ ] Azure OpenAI Service features (GPT-4, GPT-3.5-Turbo, DALL-E 3, Embeddings, Whisper)
+- [ ] Prompt engineering techniques (zero-shot, few-shot, system messages, temperature)
+- [ ] Tokens and context windows
+- [ ] Content filtering and safety features
+- [ ] Grounding and RAG (Retrieval-Augmented Generation)
+- [ ] **DEMOS:** AI Foundry portal tour, Model catalog, GPT-4 playground, DALL-E 3 image generation, Content filters, RAG pattern
 
 ## Course Philosophy: 80% Demos, 20% Theory, 100% Engagement! 
 
@@ -111,7 +129,7 @@
 
 ---
 
-## 🤖 Hour 2: Machine Learning on Azure (20-25% of exam)
+## 🤖 Hour 2: Machine Learning on Azure (15-20% of exam)
 
 ### Opening (5 min)
 - **Hook:** "From zero to deployed ML model in 45 minutes!"
@@ -206,7 +224,7 @@
 
 ---
 
-## 🎨 Hour 5: Generative AI & Course Wrap-up (15-20% of exam)
+## 🎨 Hour 5: Generative AI & Course Wrap-up (20-25% of exam - HIGHEST!)
 
 ### Opening (5 min)
 - **Hook:** "Welcome to the future - let's create with AI!"

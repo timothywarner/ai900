@@ -262,7 +262,7 @@ for question in questions:
 - Always mention language support capabilities
 
 ## 🔗 Resources
-- [Azure AI Language Documentation](https://docs.microsoft.com/azure/cognitive-services/language-service/)
-- [CLU Migration Guide](https://docs.microsoft.com/azure/cognitive-services/luis/migrate-to-clu)
-- [Custom Question Answering](https://docs.microsoft.com/azure/cognitive-services/language-service/question-answering/)
-- [Azure AI Speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/) 
+- [Azure AI Language Documentation](https://learn.microsoft.com/en-us/azure/ai-services/language-service/)
+- [CLU Migration Guide](https://learn.microsoft.com/en-us/azure/ai-services/luis/migrate-to-clu)
+- [Custom Question Answering](https://learn.microsoft.com/en-us/azure/ai-services/language-service/question-answering/)
+- [Azure AI Speech](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/) 
