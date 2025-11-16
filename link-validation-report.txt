@@ -1,0 +1,256 @@
+AI-900 Link Validation Report
+================================================================================
+
+Total markdown files: 108
+Total unique URLs: 345
+
+Status Summary:
+  ✅ OK (2xx): 234
+  ❌ Client Error (4xx): 74
+  ❌ ERROR: 15
+  ❌ Server Error (5xx): 16
+  ❌ TIMEOUT: 6
+
+================================================================================
+Broken Links by File:
+
+
+/home/user/ai900/AGENTS.md
+  [ERROR: Failed to parse: http://localhost:3978`] http://localhost:3978`
+
+/home/user/ai900/AI-900-CORE-RESOURCES.md
+  [TIMEOUT] https://azure.microsoft.com/free/
+  [TIMEOUT] https://azure.microsoft.com/global-infrastructure/services/
+  [TIMEOUT] https://azure.microsoft.com/pricing/details/cognitive-services/
+  [404] https://developer.microsoft.com/en-us/reactor/series/
+    → https://developer.microsoft.com/en-us/reactor/error?statusCode=404
+  [503] https://examregistration.microsoft.com/
+  [ERROR: HTTPSConnectionPool(host='govstore.pearsonvue.com', port=443): Max retries exceeded with url: /ai-900-microsoft-azure-ai-fundamentals-microsoft-official-practice-test/p/MU180-AI-900 (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://govstore.pearsonvue.com/ai-900-microsoft-azure-ai-fundamentals-microsoft-official-practice-test/p/MU180-AI-900
+  [503] https://home.pearsonvue.com/microsoft
+  [404] https://learn.microsoft.com/en-us/azure/ai-services/quickstarts/
+  [400] https://techcommunity.microsoft.com/t5/azure-ai-services/ct-p/CognitiveServices
+    → https://techcommunity.microsoft.com/category/CognitiveServices
+  [503] https://www.measureup.com/assessment-ai-900-microsoft-azure-ai-fundamentals.html
+  [503] https://www.udemy.com/course/azure-ai-fundamentals-ai-900-practice-tests/
+
+/home/user/ai900/AZURE-AI-SETUP-PUNCHLIST.md
+  [503] https://ai900-customvision-prediction.cognitiveservices.azure.com/
+  [503] https://ai900-customvision-training.cognitiveservices.azure.com/
+  [TIMEOUT] https://azure.microsoft.com/products/ai-services/ai-demos/
+  [ERROR: HTTPSConnectionPool(host='portal.vision.cognitive.azure.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://portal.vision.cognitive.azure.com
+
+/home/user/ai900/DISCUSSION-TEMPLATE.md
+  [TIMEOUT] https://azure.microsoft.com/free/
+
+/home/user/ai900/OLD-REPO/apps/azure_bots/my-chat-bot/README.md
+  [ERROR: HTTPConnectionPool(host='localhost', port=3978): Max retries exceeded with url: /api/messages%60 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7eef256a4450>: Failed to establish a new connection: [Errno 111] Connection refused'))] http://localhost:3978/api/messages`
+  [503] https://www.npmjs.com/package/dotenv
+
+/home/user/ai900/OLD-REPO/docs/CONTRIBUTING.md
+  [404] https://github.com/timothywarner/ai900/discussions
+
+/home/user/ai900/OLD-REPO/docs/exam-resources/AI-900-cert-study-blueprint.md
+  [ERROR: HTTPSConnectionPool(host='www.pluralsight.com', port=443): Max retries exceeded with url: /cloud-guru/courses/azure-ai-100-exam-preparation (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://acloudguru.com/course/azure-ai-100-exam-preparation
+  [503] https://aidemos.microsoft.com/
+  [TIMEOUT] https://azure.microsoft.com/en-us/overview/ai-platform/
+  [TIMEOUT] https://azure.microsoft.com/en-us/services/cognitive-services/
+  [503] https://contentmoderator.cognitive.microsoft.com/dashboard
+  [503] https://eastus.dev.cognitive.microsoft.com/docs/services
+  [404] https://github.com/Azure/LearnAI-Airlift
+  [400] https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog
+    → https://techcommunity.microsoft.com/category/communities/blog/microsoftlearnblog
+  [502] https://www.qnamaker.ai/
+  [403] https://www.youtube.com/watch?v=FOFWbSYbbVI
+  [403] https://www.youtube.com/watch?v=_aH4DbpcJWA&t=2s
+  [403] https://www.youtube.com/watch?v=myf6r5nulj0&t=154s
+
+/home/user/ai900/README.md
+  [TIMEOUT] https://azure.microsoft.com/en-us/overview/ai-platform/
+  [TIMEOUT] https://azure.microsoft.com/en-us/services/cognitive-services/
+  [404] https://learn.microsoft.com/credentials/certifications/resources/practice-assessments
+    → https://learn.microsoft.com/en-us/credentials/certifications/resources/practice-assessments
+  [404] https://learn.microsoft.com/en-us/training/paths/explore-azure-openai/
+  [403] https://twitter.com/TechTrainerTim
+  [503] https://www.linkedin.com/in/timothywarner
+  [403] https://youtube.com/c/TimothyWarner
+
+/home/user/ai900/apps/azure_bots/my-chat-bot/README.md
+  [ERROR: HTTPConnectionPool(host='localhost', port=3978): Max retries exceeded with url: /api/messages%60 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7eef256a4450>: Failed to establish a new connection: [Errno 111] Connection refused'))] http://localhost:3978/api/messages`
+  [503] https://www.npmjs.com/package/dotenv
+
+/home/user/ai900/demos/hour-1-ai-fundamentals/README.md
+  [ERROR: HTTPSConnectionPool(host='aka.ms', port=443): Max retries exceeded with url: /ai900-images/people.jpg (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://aka.ms/ai900-images/people.jpg
+
+/home/user/ai900/demos/hour-3-computer-vision/README.md
+  [ERROR: HTTPSConnectionPool(host='www.bing.com', port=443): Max retries exceeded with url: /?ref=aka&shorturl=azureimages/handwritten.jpg (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://aka.ms/azureimages/handwritten.jpg
+  [404] https://example.com/mystery-food.jpg
+
+/home/user/ai900/demos/hour-3-computer-vision/image-analysis-demo.md
+  [404] https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/landmark.jpg`
+    → https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/landmark.jpg%60
+  [404] https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/objects.jpg`
+    → https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/objects.jpg%60
+  [404] https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/people.jpg`
+    → https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/people.jpg%60
+
+/home/user/ai900/demos/hour-4-nlp/README.md
+  [404] https://docs.microsoft.com/azure/cognitive-services/language-service/question-answering/
+    → https://learn.microsoft.com/en-us/azure/cognitive-services/language-service/question-answering/
+  [404] https://docs.microsoft.com/azure/cognitive-services/luis/migrate-to-clu
+    → https://learn.microsoft.com/en-us/azure/cognitive-services/luis/migrate-to-clu
+  [404] https://docs.microsoft.com/faq
+    → https://learn.microsoft.com/en-us/faq
+
+/home/user/ai900/docs/AI-900-cert-study-blueprint.md
+  [ERROR: HTTPSConnectionPool(host='www.pluralsight.com', port=443): Max retries exceeded with url: /cloud-guru/courses/azure-ai-100-exam-preparation (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://acloudguru.com/course/azure-ai-100-exam-preparation
+  [503] https://aidemos.microsoft.com/
+  [TIMEOUT] https://azure.microsoft.com/en-us/overview/ai-platform/
+  [TIMEOUT] https://azure.microsoft.com/en-us/services/cognitive-services/
+  [503] https://contentmoderator.cognitive.microsoft.com/dashboard
+  [503] https://eastus.dev.cognitive.microsoft.com/docs/services
+  [404] https://github.com/Azure/LearnAI-Airlift
+  [400] https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog
+    → https://techcommunity.microsoft.com/category/communities/blog/microsoftlearnblog
+  [502] https://www.qnamaker.ai/
+  [403] https://www.youtube.com/watch?v=FOFWbSYbbVI
+  [403] https://www.youtube.com/watch?v=_aH4DbpcJWA&t=2s
+  [403] https://www.youtube.com/watch?v=myf6r5nulj0&t=154s
+
+/home/user/ai900/docs/CONTRIBUTING.md
+  [404] https://github.com/timothywarner/ai900/discussions
+
+/home/user/ai900/model-repo/README.md
+  [404] https://docs.github.com/en/copilot/github-copilot-chat
+  [404] https://learn.microsoft.com/en-us/training/paths/copilot-accelerate-dev/
+  [404] https://learn.microsoft.com/en-us/training/paths/copilot-fundamentals/
+  [ERROR: HTTPSConnectionPool(host='marketplace.visualstudio.com', port=443): Max retries exceeded with url: /items?itemName=GitHub.copilot (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+
+/home/user/ai900/model-repo/azd-scaffold-examples.md
+  [ERROR: HTTPSConnectionPool(host='azuresdkartifacts.z5.web.core.windows.net', port=443): Max retries exceeded with url: /azd/standalone/installer/install-azd.sh (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://aka.ms/install-azd.sh
+  [404] https://github.com/your-username/your-repo
+  [403] https://twitter.com/your-twitter
+
+/home/user/ai900/model-repo/demos/02/README.md
+  [ERROR: HTTPSConnectionPool(host='marketplace.visualstudio.com', port=443): Max retries exceeded with url: /items?itemName=GitHub.copilot (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+
+/home/user/ai900/model-repo/demos/02/lesson-plan.md
+  [ERROR: HTTPSConnectionPool(host='marketplace.visualstudio.com', port=443): Max retries exceeded with url: /items?itemName=GitHub.copilot (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+
+/home/user/ai900/model-repo/demos/03/audit-logs-guide.md
+  [401] https://api.github.com/orgs/YOUR_ORG/audit-log?phrase=action:copilot
+
+/home/user/ai900/model-repo/demos/03/rest-api-guide.md
+  [401] https://api.github.com/orgs/YOUR_ORG/copilot/billing/seats
+  [404] https://api.github.com/orgs/YOUR_ORG/copilot/billing/selected_users
+  [403] https://api.github.com/orgs/YOUR_ORG/copilot/policies
+  [403] https://api.github.com/orgs/YOUR_ORG/copilot/policies/pol_12345abcde
+  [404] https://api.github.com/orgs/YOUR_ORG/copilot/policies/pol_12345abcde/assignments/repositories
+  [404] https://api.github.com/orgs/YOUR_ORG/copilot/policies/pol_12345abcde/assignments/teams
+  [403] https://api.github.com/orgs/YOUR_ORG/copilot/usage
+  [401] https://api.github.com/orgs/{ORG_NAME}/copilot/billing/seats
+    → https://api.github.com/orgs/%7BORG_NAME%7D/copilot/billing/seats
+  [404] https://api.github.com/orgs/{ORG_NAME}/copilot/billing/selected_users
+    → https://api.github.com/orgs/%7BORG_NAME%7D/copilot/billing/selected_users
+  [404] https://api.github.com/orgs/{ORG_NAME}/copilot/policies/{SECURITY_POLICY_ID}
+    → https://api.github.com/orgs/%7BORG_NAME%7D/copilot/policies/%7BSECURITY_POLICY_ID%7D
+  [404] https://api.github.com/orgs/{ORG_NAME}/copilot/policies/{SECURITY_POLICY_ID}/assignments/repositories
+    → https://api.github.com/orgs/%7BORG_NAME%7D/copilot/policies/%7BSECURITY_POLICY_ID%7D/assignments/repositories
+  [403] https://api.github.com/orgs/{ORG_NAME}/teams/{TEAM_SLUG}/members
+    → https://api.github.com/orgs/%7BORG_NAME%7D/teams/%7BTEAM_SLUG%7D/members
+
+/home/user/ai900/model-repo/demos/04/README.md
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/github-copilot-enterprise/copilot-custom-models/about-github-copilot-custom-models
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/github-copilot-enterprise/copilot-knowledge-bases/about-github-copilot-knowledge-bases
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/overview-of-github-copilot/about-github-copilot-enterprise
+  [404] https://resources.github.com/copilot-roi-calculator/
+
+/home/user/ai900/model-repo/demos/04/lesson-plan.md
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/github-copilot-enterprise/copilot-custom-models/about-github-copilot-custom-models
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/github-copilot-enterprise/copilot-knowledge-bases/about-github-copilot-knowledge-bases
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/overview-of-github-copilot/about-github-copilot-enterprise
+  [404] https://resources.github.com/copilot-roi-calculator/
+
+/home/user/ai900/model-repo/demos/05/copilot-chat-demo/README.md
+  [404] https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat-in-githubcom
+
+/home/user/ai900/model-repo/demos/05/copilot-enterprise-demo/README.md
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/github-copilot-enterprise/copilot-custom-models/about-github-copilot-custom-models
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/github-copilot-enterprise/copilot-knowledge-bases/about-github-copilot-knowledge-bases
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/overview-of-github-copilot/about-github-copilot-enterprise
+  [404] https://resources.github.com/copilot-roi-calculator/
+
+/home/user/ai900/model-repo/demos/05/lesson-plan.md
+  [404] https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat-in-githubcom
+
+/home/user/ai900/model-repo/demos/11/README.md
+  [ERROR: Failed to parse: http://localhost:5000`] http://localhost:5000`
+
+/home/user/ai900/model-repo/demos/12/node-express-azure/README.md
+  [403] https://user-images.githubusercontent.com/5126491/51065379-c1743280-15c1-11e9-80fd-6a3d7ab4ac1b.jpg "Unit Test"
+    → https://user-images.githubusercontent.com/5126491/51065379-c1743280-15c1-11e9-80fd-6a3d7ab4ac1b.jpg%20%22Unit%20Test%22
+
+/home/user/ai900/model-repo/demos/14/README.md
+  [ERROR: Failed to parse: http://localhost:3000`] http://localhost:3000`
+
+/home/user/ai900/model-repo/docs/azd-scaffold-examples.md
+  [ERROR: HTTPSConnectionPool(host='azuresdkartifacts.z5.web.core.windows.net', port=443): Max retries exceeded with url: /azd/standalone/installer/install-azd.sh (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://aka.ms/install-azd.sh
+  [404] https://github.com/your-username/your-repo
+  [403] https://twitter.com/your-twitter
+
+/home/user/ai900/model-repo/exam-metadata/exam-notes-and-links.md
+  [404] https://cli.github.com/manual/gh_copilot
+  [404] https://docs.github.com/en/copilot/managing-copilot/about-github-copilot-security-features
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/managing-copilot/managing-access-for-copilot-in-your-organization
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/managing-copilot/managing-security-settings-for-github-copilot
+  [404] https://docs.github.com/en/enterprise-cloud@latest/copilot/overview-of-github-copilot/about-github-copilot-enterprise
+  [404] https://github.blog/2023-07-28-how-to-keep-your-github-copilot-suggestions-secure-and-private/
+    → https://github.blog/engineering/how-to-keep-your-github-copilot-suggestions-secure-and-private/
+  [404] https://github.blog/2023-08-03-introducing-file-level-intelligence-for-github-copilot/
+    → https://github.blog/engineering/introducing-file-level-intelligence-for-github-copilot/
+  [404] https://github.blog/2023-10-09-introducing-github-copilot-chat-for-c-sharp/
+    → https://github.blog/engineering/introducing-github-copilot-chat-for-c-sharp/
+  [404] https://github.blog/2023-10-09-introducing-github-copilot-chat-for-java/
+    → https://github.blog/engineering/introducing-github-copilot-chat-for-java/
+  [404] https://github.blog/2023-10-09-introducing-github-copilot-chat-for-javascript-and-typescript/
+    → https://github.blog/engineering/introducing-github-copilot-chat-for-javascript-and-typescript/
+  [404] https://github.blog/2023-11-08-how-github-uses-ai-responsibly/
+    → https://github.blog/engineering/how-github-uses-ai-responsibly/
+  [404] https://github.blog/2023-12-27-a-beginners-guide-to-prompt-engineering-with-github-copilot/
+    → https://github.blog/engineering/a-beginners-guide-to-prompt-engineering-with-github-copilot/
+  [404] https://github.blog/category/products/copilot/
+    → https://github.blog/products/copilot/
+  [404] https://github.com/about/social
+  [404] https://github.com/features/copilot/faq
+  [404] https://github.com/github/copilot-demo
+  [404] https://github.com/github/copilot-workshops
+  [404] https://github.com/microsoft/cloud-advocate-workshops/tree/main/github-copilot
+  [404] https://githubnext.com/projects/copilot-research
+  [404] https://helpdesk.psionline.com/hc/en-gb/articles/4409608651412-PSI-Bridge-Platform-Candidate-Journey-Guide
+  [404] https://learn.microsoft.com/en-us/training/paths/copilot-accelerate-dev/
+  [404] https://learn.microsoft.com/en-us/training/paths/copilot-fundamentals/
+  [ERROR: HTTPSConnectionPool(host='marketplace.visualstudio.com', port=443): Max retries exceeded with url: /items?itemName=GitHub.copilot (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+  [404] https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-labs
+  [ERROR: HTTPSConnectionPool(host='psi-cdexp.zendesk.com', port=443): Max retries exceeded with url: /hc/en-us (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://psi-cdexp.zendesk.com/hc/en-us
+  [404] https://resources.github.com/copilot-for-business/faq/
+  [ERROR: HTTPSConnectionPool(host='syscheck.bridge.psiexams.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://syscheck.bridge.psiexams.com/
+  [503] https://www.psionline.com/test-takers/what-to-expect
+    → https://www.psiexams.com
+  [403] https://www.youtube.com/@GitHub
+  [403] https://www.youtube.com/@GitHub/playlists
+  [403] https://www.youtube.com/playlist?list=PL0lo9MOBetEEzTzyEKFSWU6aQGheOVe_k
+  [403] https://www.youtube.com/playlist?list=PL0lo9MOBetEHkjUOn6QPB8vcG5yKqXAT9
+  [403] https://www.youtube.com/playlist?list=PLlrxD0HtieHgJsKkAk3MY0TM_LPzHqnN_
+  [403] https://www.youtube.com/watch?v=0yXB8-t-Bz4
+
+/home/user/ai900/model-repo/vr-ar-vendors.md
+  [403] https://www.caterpillar.com
+    → https://www.caterpillar.com/
+  [503] https://www.ford.com
+    → https://www.ford.com/
+  [503] https://www.hp.com/us-en/vr/reverb-g2-vr-headset.html
+  [ERROR: HTTPSConnectionPool(host='www.lockheedmartin.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://www.lockheedmartin.com
+  [429] https://www.meta.com/quest/
+  [403] https://www.ptc.com/en/products/vuforia
+  [503] https://www.unrealengine.com
+    → https://www.unrealengine.com/
+  [ERROR: HTTPSConnectionPool(host='www.vive.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)')))] https://www.vive.com

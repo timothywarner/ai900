@@ -53,13 +53,16 @@
 
 ### Hands-On Labs and Samples
 - [Azure AI Services REST API Samples](https://learn.microsoft.com/en-us/samples/azure-samples/cognitive-services-rest-api-samples/cognitive-services-rest-api-samples/)
-- [Azure AI Services Quickstarts](https://learn.microsoft.com/en-us/azure/ai-services/quickstarts/)
+- [Azure AI Services Quickstarts](https://learn.microsoft.com/en-us/azure/ai-services/)
 - [AI Learning Hub](https://learn.microsoft.com/en-us/ai/)
 
 ## Practice Exams
 
 ### Free Resources
 - [Microsoft Learn Practice Assessments](https://learn.microsoft.com/en-us/credentials/certifications/practice-assessments-for-microsoft-certifications)
+- [ExamTopics AI-900 Free Questions](https://www.examtopics.com/exams/microsoft/ai-900/) - Community-driven practice questions
+- [ITExams AI-900 Actual Questions](https://www.itexams.com/info/AI-900) - Last updated November 2025
+- [GitHub AI-900 Practice Questions](https://github.com/IsabellaS2/AI-900) - Community repository with practice questions
 - [Whizlabs 30 Free AI-900 Questions](https://www.whizlabs.com/blog/microsoft-azure-ai-fundamentals-questions/)
 
 ### Paid Practice Exams
@@ -68,13 +71,17 @@
 - [MeasureUp AI-900 Assessment](https://www.measureup.com/assessment-ai-900-microsoft-azure-ai-fundamentals.html)
 - [Whizlabs AI-900 Complete Course](https://www.whizlabs.com/microsoft-azure-certification-ai-900/)
 
-### Udemy Practice Tests (Highly Rated)
+### Udemy Practice Tests (Highly Rated - Updated for 2025)
+- [AI-900: Microsoft Azure AI Fundamentals AI-900 Practice Test](https://www.udemy.com/course/ai-900-azure-ai-fundamentals-practice-tests-course/) - 4.5/5 (2,259 ratings, 13,453 students) - Top Pick! Created by Video School, TechLab Guru, Updated 8/2025
 - [Azure AI Fundamentals AI-900 - Practice Tests (2025)](https://www.udemy.com/course/azure-ai-fundamentals-ai-900-practice-tests/)
 - [Microsoft AI-900: Azure AI Fundamentals Practice Exams 2025](https://www.udemy.com/course/microsoft-ai-900-azure-ai-fundamentals-practice-exams-2025/)
-- [AI-900 Practice Test](https://www.udemy.com/course/ai-900-practice-test-x/)
+- [2025 Azure AI Fundamentals (AI-900) Exam Practice Tests](https://www.udemy.com/course/ai-900-azure-ai-fundamentals-exam-practice-test-new/) - 6 full-length tests, 50-55 questions each
+- [AI-900 Practice Tests 2025 Microsoft Azure AI Fundamentals](https://www.udemy.com/course/ai-900-microsoft-azure-ai-fundamentals-practice-tests-2025-r/) - Scenario-driven, service-specific questions
 - [AI-900: Microsoft Azure AI Fundamentals Practice Tests 2025](https://www.udemy.com/course/ai-900-microsoft-azure-ai-fundamentals-practice-tests-2024/)
 - [AI-900: Microsoft Azure AI Fundamentals – Full Practice Test](https://www.udemy.com/course/ai-900-microsoft-azure-ai-fundamentals-full-practice-test/)
 - [Practice Exams | Microsoft Azure AI-900](https://www.udemy.com/course/practice-exams-microsoft-azure-ai-900/)
+- [Microsoft Azure AI Fundamentals - AI-900 Practice Tests 2025](https://www.udemy.com/course/ai-900-microsoft-azure-ai-fundamentals-practice-tests-w/)
+- [AI-900 Azure AI Fundamentals Complete Practice Tests](https://www.udemy.com/course/ai-900-azure-ai-fundamentals-complete-practice-tests/)
 
 ## Pearson/O'Reilly Resources
 
@@ -99,12 +106,12 @@
 
 ### Community and Support
 - [Microsoft Learn Q&A for AI-900](https://learn.microsoft.com/en-us/answers/topics/azure-training-certification.html)
-- [Azure AI Community](https://techcommunity.microsoft.com/t5/azure-ai-services/ct-p/CognitiveServices)
+- [Azure AI Community](https://techcommunity.microsoft.com/category/CognitiveServices)
 - [Microsoft Learn for Educators](https://learn.microsoft.com/en-us/training/educator-center/)
 
 ### Video Training
 - [On-Demand Instructor-Led Training Series](https://learn.microsoft.com/en-us/shows/on-demand-instructor-led-training-series/)
-- [Azure AI Reactor Series](https://developer.microsoft.com/en-us/reactor/series/)
+- [Azure AI Developer Resources](https://developer.microsoft.com/en-us/reactor/)
 
 ### Documentation Quick Links
 - [Azure AI Services Pricing](https://azure.microsoft.com/pricing/details/cognitive-services/)
@@ -164,5 +171,6 @@ While your AI-900 certification never expires, consider:
 
 ---
 
-*Last Updated: August 2025*  
+*Last Updated: November 2025*
+*Aligned with May 2, 2025 Exam Objectives*
 *Prepared for O'Reilly Live Training - AI-900 Certification Crash Course*

@@ -111,7 +111,7 @@
 
 ---
 
-## 🤖 Hour 2: Machine Learning on Azure (20-25% of exam)
+## 🤖 Hour 2: Machine Learning on Azure (15-20% of exam)
 
 ### Opening (5 min)
 - **Hook:** "From zero to deployed ML model in 45 minutes!"
@@ -206,7 +206,7 @@
 
 ---
 
-## 🎨 Hour 5: Generative AI & Course Wrap-up (15-20% of exam)
+## 🎨 Hour 5: Generative AI & Course Wrap-up (20-25% of exam - HIGHEST!)
 
 ### Opening (5 min)
 - **Hook:** "Welcome to the future - let's create with AI!"

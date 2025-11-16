@@ -1,7 +1,7 @@
 # 🤖 Hour 2: Machine Learning on Azure
 
-**Duration:** 1 hour  
-**Exam Weight:** 20-25% (HIGHEST!)  
+**Duration:** 1 hour
+**Exam Weight:** 15-20%
 **Philosophy:** Zero to hero - deploy a real ML model in 45 minutes!
 
 ## 🎓 Exam Focus Areas

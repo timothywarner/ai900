@@ -24,10 +24,10 @@ This course provides hands-on experience and in-depth knowledge of Microsoft Azu
 | Domain                                                    | Weight     |
 |------------------------------------------------------------|------------|
 | Describe Artificial Intelligence workloads and considerations | 15-20%     |
-| Describe fundamental principles of machine learning on Azure  | 20-25%     |
+| Describe fundamental principles of machine learning on Azure  | 15-20%     |
 | Describe features of computer vision workloads on Azure       | 15-20%     |
 | Describe features of Natural Language Processing workloads    | 15-20%     |
-| Describe features of generative AI workloads on Azure         | 15-20%     |
+| Describe features of generative AI workloads on Azure         | 20-25% (HIGHEST!) |
 
 For the complete, detailed exam objectives, see [AI-900-exam-objectives.md](./docs/AI-900-exam-objectives.md)
 
@@ -50,7 +50,7 @@ By completing this course, you will:
 - [Create no-code predictive models with Azure Machine Learning](https://docs.microsoft.com/en-us/learn/paths/create-no-code-predictive-models-azure-machine-learning/)
 - [Explore computer vision in Microsoft Azure](https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/)
 - [Explore natural language processing](https://docs.microsoft.com/en-us/learn/paths/explore-natural-language-processing/)
-- [Explore Azure OpenAI Service](https://learn.microsoft.com/en-us/training/paths/explore-azure-openai/)
+- [Explore Generative AI with Azure](https://learn.microsoft.com/en-us/training/paths/introduction-generative-ai/)
 
 ### Azure Documentation
 - [Azure AI Platform](https://azure.microsoft.com/en-us/overview/ai-platform/)
@@ -60,7 +60,7 @@ By completing this course, you will:
 - [Microsoft Responsible AI](https://www.microsoft.com/en-us/ai/responsible-ai)
 
 ### Practice Resources
-- [Official Microsoft AI-900 Sample Questions](https://learn.microsoft.com/credentials/certifications/resources/practice-assessments)
+- [Official Microsoft AI-900 Sample Questions](https://learn.microsoft.com/en-us/credentials/certifications/practice-assessments-for-microsoft-certifications)
 - [Microsoft Learn AI-900 Practice Assessment](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/practice/assessment?assessment-type=practice&assessmentId=26)
 - [Whizlabs AI-900](https://www.whizlabs.com/microsoft-azure-certification-ai-900/)
 - [MeasureUp AI-900](https://www.measureup.com/ai-900-microsoft-azure-ai-fundamentals.html)
