@@ -59,11 +59,35 @@ By completing this course, you will:
 - [Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/)
 - [Microsoft Responsible AI](https://www.microsoft.com/en-us/ai/responsible-ai)
 
-### Practice Resources
-- [Official Microsoft AI-900 Sample Questions](https://learn.microsoft.com/en-us/credentials/certifications/practice-assessments-for-microsoft-certifications)
-- [Microsoft Learn AI-900 Practice Assessment](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/practice/assessment?assessment-type=practice&assessmentId=26)
-- [Whizlabs AI-900](https://www.whizlabs.com/microsoft-azure-certification-ai-900/)
-- [MeasureUp AI-900](https://www.measureup.com/ai-900-microsoft-azure-ai-fundamentals.html)
+### 📝 Comprehensive Study Resources
+
+#### 🎯 Essential Study Guides (IN THIS REPO!)
+- **[📚 Complete Practice Questions Guide](./docs/PRACTICE-QUESTIONS-GUIDE.md)** - 15 practice exam resources, study strategies, sample questions
+- **[🤖 MCP Microsoft Docs Server Guide](./docs/MCP-DOCS-SERVER-GUIDE.md)** - Use Claude AI + MS Docs for interactive cert prep
+- **[📖 AI-900 Core Resources](./AI-900-CORE-RESOURCES.md)** - Comprehensive list of study materials, practice exams, MS Learn paths
+
+#### 🆓 Free Practice Resources
+- **[Microsoft Learn Practice Assessment](https://learn.microsoft.com/en-us/credentials/certifications/practice-assessments-for-microsoft-certifications)** - Official FREE practice questions
+- **[Exam Sandbox](https://go.microsoft.com/fwlink/?linkid=2226877)** - Experience the exam interface
+- **[ExamTopics AI-900](https://www.examtopics.com/exams/microsoft/ai-900/)** - Community practice questions
+- **[ITExams AI-900](https://www.itexams.com/info/AI-900)** - Free practice exams (updated Nov 2025)
+- **[Whizlabs Free Questions](https://www.whizlabs.com/blog/microsoft-azure-ai-fundamentals-questions/)** - 30 free sample questions
+
+#### 💰 Premium Practice Exams
+- **[MeasureUp AI-900 Official](https://www.measureup.com/microsoft-practice-test-ai-900-microsoft-azure-ai-fundamentals.html)** - $99 - Official Microsoft practice test
+- **[MeasureUp via Pearson VUE](https://govstore.pearsonvue.com/ai-900-microsoft-azure-ai-fundamentals-microsoft-official-practice-test/p/MU180-AI-900)** - Bundle with exam voucher
+- **[Whizlabs Complete Course](https://www.whizlabs.com/microsoft-azure-certification-ai-900/)** - ~$25 - 250+ questions + labs
+- **[Udemy Practice Tests](https://www.udemy.com/course/ai-900-azure-ai-fundamentals-practice-tests-course/)** - $10-20 on sale - Highest rated (4.5/5, 13K students)
+
+#### 📖 Official Microsoft Learning
+- **[AI-900 Exam Page](https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-900/)**
+- **[Official Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900)**
+- **[Microsoft Learn AI-900 Path](https://learn.microsoft.com/en-us/training/courses/ai-900t00)**
+- **[AI-900 Learning Paths](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/)**
+
+#### 📅 Register for Exam
+- **[Pearson VUE Exam Registration](https://home.pearsonvue.com/microsoft)** - Schedule your exam
+- **[Microsoft Certification Deals](https://learn.microsoft.com/en-us/credentials/certifications/deals)** - Discounts and vouchers
 
 ## 🛠️ Hands-on Labs & Demos
 
