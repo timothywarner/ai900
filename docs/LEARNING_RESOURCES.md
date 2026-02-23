@@ -80,9 +80,9 @@
 | Azure AI Search | [Documentation](https://learn.microsoft.com/en-us/azure/search/) | [Quickstart](https://learn.microsoft.com/en-us/azure/search/search-get-started-portal) |
 | Azure AI Video Indexer | [Documentation](https://learn.microsoft.com/en-us/azure/azure-video-indexer/) | [Quickstart](https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-get-started) |
 
-### Azure AI Foundry (formerly AI Studio)
+### Microsoft Foundry (formerly AI Studio)
 
-- [Azure AI Foundry Documentation](https://learn.microsoft.com/en-us/azure/ai-studio/)
+- [Microsoft Foundry Documentation](https://learn.microsoft.com/en-us/azure/ai-studio/)
 - [Model Catalog](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-catalog)
 - [Prompt Flow](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/prompt-flow)
 

@@ -828,7 +828,7 @@ d. CLU is for speech, Custom QA is for text
 
 ### Question 31
 
-What is Azure AI Foundry?
+What is Microsoft Foundry?
 
 a. A replacement for Azure Machine Learning
 b. A unified platform for building AI applications with access to a model catalog of 1,600+ models
@@ -839,17 +839,17 @@ d. A tool for hardware acceleration of AI training
 
 **Explanation:**
 
-- **b. A unified platform for building AI applications with access to a model catalog of 1,600+ models (CORRECT)** - Azure AI Foundry (formerly Azure AI Studio) provides a unified development experience with access to models from Microsoft, OpenAI, Meta, Hugging Face, and other providers.
-  - Reference: [What is Azure AI Foundry?](https://learn.microsoft.com/en-us/azure/ai-studio/what-is-ai-studio)
+- **b. A unified platform for building AI applications with access to a model catalog of 1,600+ models (CORRECT)** - Microsoft Foundry (formerly Azure AI Studio) provides a unified development experience with access to models from Microsoft, OpenAI, Meta, Hugging Face, and other providers.
+  - Reference: [What is Microsoft Foundry?](https://learn.microsoft.com/en-us/azure/ai-studio/what-is-ai-studio)
 
-- **a. A replacement for Azure Machine Learning (INCORRECT)** - Azure AI Foundry complements and integrates with Azure ML rather than replacing it.
-  - Reference: [Azure AI Foundry overview](https://learn.microsoft.com/en-us/azure/ai-studio/what-is-ai-studio)
+- **a. A replacement for Azure Machine Learning (INCORRECT)** - Microsoft Foundry complements and integrates with Azure ML rather than replacing it.
+  - Reference: [Microsoft Foundry overview](https://learn.microsoft.com/en-us/azure/ai-studio/what-is-ai-studio)
 
 - **c. A service exclusively for Azure OpenAI models (INCORRECT)** - It includes Azure OpenAI but also provides access to many other model families and providers.
-  - Reference: [Model catalog in Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-catalog)
+  - Reference: [Model catalog in Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-catalog)
 
 - **d. A tool for hardware acceleration of AI training (INCORRECT)** - It's a development platform, not hardware acceleration.
-  - Reference: [Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/)
+  - Reference: [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/)
 
 ---
 

@@ -315,15 +315,15 @@
 
 **Must Know:**
 
-- **Azure AI Foundry** (NEW!) - unified platform
-- **Azure AI Foundry model catalog** (NEW!) - 1,600+ models
+- **Microsoft Foundry** (NEW!) - unified platform
+- **Microsoft Foundry model catalog** (NEW!) - 1,600+ models
 - Azure OpenAI models (GPT-4, DALL-E, Embeddings)
 - Prompt engineering (zero-shot, few-shot, temperature)
 - Responsible AI for GenAI (content filters, hallucinations)
 
 **Practice Focus:**
 
-- Azure AI Foundry features and capabilities
+- Microsoft Foundry features and capabilities
 - Prompt engineering best practices
 - Content filtering and safety questions
 - RAG (Retrieval-Augmented Generation) concepts
@@ -346,7 +346,7 @@ When evaluating practice questions:
 - No explanations
 - Obvious errors or typos
 - Don't match exam format
-- Missing new topics (Transformers, Azure AI Foundry)
+- Missing new topics (Transformers, Microsoft Foundry)
 
 ## Sample Questions by Domain
 
@@ -419,14 +419,14 @@ When evaluating practice questions:
 
 ### Domain 5: Generative AI (20-25%)
 
-**Q7 (NEW!):** What is Azure AI Foundry?
+**Q7 (NEW!):** What is Microsoft Foundry?
 
 - A) A replacement for Azure Machine Learning
 - B) A unified platform for developing AI applications with access to 1,600+ models (CORRECT)
 - C) A service only for Azure OpenAI models
 - D) A tool for creating custom AI models from scratch
 
-**Explanation:** Azure AI Foundry is Microsoft's unified AI development platform that provides access to a vast model catalog including models from Microsoft, OpenAI, Meta, and Hugging Face. It integrates with but doesn't replace Azure ML.
+**Explanation:** Microsoft Foundry is Microsoft's unified AI development platform that provides access to a vast model catalog including models from Microsoft, OpenAI, Meta, and Hugging Face. It integrates with but doesn't replace Azure ML.
 
 ---
 
@@ -457,7 +457,7 @@ When evaluating practice questions:
 
 ### 1 Day Before
 
-- [ ] Review Azure AI Foundry and Transformer topics (NEW!)
+- [ ] Review Microsoft Foundry and Transformer topics (NEW!)
 - [ ] Light practice (10 questions max)
 - [ ] Prepare exam environment (quiet space, ID, water)
 - [ ] Get 8 hours sleep!

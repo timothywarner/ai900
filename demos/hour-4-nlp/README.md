@@ -50,7 +50,7 @@ client = TextAnalyticsClient(endpoint, AzureKeyCredential(key))
 documents = [
     "I absolutely love the new Azure AI services! The documentation is fantastic.",
     "The hotel was terrible. Room was dirty and staff was rude.",
-    "Microsoft announced Azure AI Foundry in Seattle on May 21, 2024."
+    "Microsoft announced Microsoft Foundry in Seattle on May 21, 2024."
 ]
 
 print("🎭 DEMO 1: Sentiment Analysis")

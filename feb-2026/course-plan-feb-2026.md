@@ -9,7 +9,7 @@
 | Portal | URL | Status |
 | -------- | ----- | -------- |
 | Azure Portal | portal.azure.com | |
-| Azure AI Foundry | ai.azure.com | Primary -- Language features live here now |
+| Microsoft Foundry | ai.azure.com | Primary -- Language features live here now |
 | Azure ML Studio | ml.azure.com | |
 | Vision Studio | portal.vision.cognitive.azure.com | Still active |
 | Speech Studio | speech.microsoft.com | Still active, migrating to Foundry |
@@ -113,7 +113,7 @@
 
 ### Demos (40 min)
 
-> **Portal note:** Language Studio (language.cognitive.azure.com) was deprecated Dec 2025. Demo all Language features in **Azure AI Foundry** (ai.azure.com) instead. Connect your Foundry multi-service resource to a Foundry project first (Management Center > Connected resources > + New connection).
+> **Portal note:** Language Studio (language.cognitive.azure.com) was deprecated Dec 2025. Demo all Language features in **Microsoft Foundry** (ai.azure.com) instead. Connect your Foundry multi-service resource to a Foundry project first (Management Center > Connected resources > + New connection).
 
 - [ ] **Foundry portal -- Sentiment Analysis** -- paste product reviews, show positive/negative/neutral/mixed scores
 - [ ] **Foundry portal -- Key Phrase Extraction** -- extract topics from a paragraph
@@ -124,7 +124,7 @@
 
 ### Azure Products to Show
 
-`Azure AI Language (via Foundry portal)` | `Azure AI Speech` | `Azure AI Foundry` | `Speech Studio` | `CLU` | `Custom Question Answering`
+`Azure AI Language (via Foundry portal)` | `Azure AI Speech` | `Microsoft Foundry` | `Speech Studio` | `CLU` | `Custom Question Answering`
 
 ### Exam Callout
 
@@ -145,8 +145,8 @@
 
 ### Demos (35 min)
 
-- [ ] **Azure AI Foundry** -- portal tour: projects, model catalog, deployments, playgrounds
-- [ ] **Azure AI Foundry Model Catalog** -- browse 1,600+ models (OpenAI, Meta Llama, Mistral, Hugging Face)
+- [ ] **Microsoft Foundry** -- portal tour: projects, model catalog, deployments, playgrounds
+- [ ] **Microsoft Foundry Model Catalog** -- browse 1,600+ models (OpenAI, Meta Llama, Mistral, Hugging Face)
 - [ ] **Azure OpenAI Playground (Chat)** -- GPT-4o: system message, zero-shot vs few-shot prompting, temperature slider
 - [ ] **Azure OpenAI Playground (Images)** -- DALL-E 3: generate images from text prompts
 - [ ] **Prompt Engineering** -- live demo: vague prompt -> refined prompt -> system message -> few-shot examples (show quality improvement at each step)
@@ -155,7 +155,7 @@
 
 ### Azure Products to Show
 
-`Azure AI Foundry` | `Azure AI Foundry Model Catalog` | `Azure OpenAI Service` | `GPT-4o` | `DALL-E 3` | `Content Filters` | `RAG / On Your Data`
+`Microsoft Foundry` | `Microsoft Foundry Model Catalog` | `Azure OpenAI Service` | `GPT-4o` | `DALL-E 3` | `Content Filters` | `RAG / On Your Data`
 
 ### Exam Prep Wrap-up (10 min)
 
@@ -167,7 +167,7 @@
 
 ### Exam Callout
 
-> Generative AI is 20-25% of the exam -- the single biggest domain. Know Azure AI Foundry (the portal), the model catalog, prompt engineering techniques, and content filtering. If you only study one domain extra hard, make it this one.
+> Generative AI is 20-25% of the exam -- the single biggest domain. Know Microsoft Foundry (the portal), the model catalog, prompt engineering techniques, and content filtering. If you only study one domain extra hard, make it this one.
 
 ---
 

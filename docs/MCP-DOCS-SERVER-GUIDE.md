@@ -258,7 +258,7 @@ npm install -g @modelcontextprotocol/server-microsoft-docs
 **Day 21-25: Generative AI (HIGHEST WEIGHT!)**
 
 - Emphasis: Azure OpenAI, prompt engineering, responsible AI
-- Use MCP to find latest Azure AI Foundry documentation
+- Use MCP to find latest Microsoft Foundry documentation
 
 **Day 26-30: Review & Practice**
 

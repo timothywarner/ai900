@@ -35,4 +35,4 @@ __pycache__/
 # Ignore specific files
 credentials.json
 config.json
-secrets.json 
+secrets.json

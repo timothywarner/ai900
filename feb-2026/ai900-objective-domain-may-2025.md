@@ -91,9 +91,9 @@ Source: [Microsoft Learn Study Guide](https://learn.microsoft.com/credentials/ce
 
 ### Identify generative AI services and capabilities in Microsoft Azure
 
-- Describe features and capabilities of Azure AI Foundry
+- Describe features and capabilities of Microsoft Foundry
 - Describe features and capabilities of Azure OpenAI service
-- Describe features and capabilities of Azure AI Foundry model catalog
+- Describe features and capabilities of Microsoft Foundry model catalog
 
 ---
 
@@ -103,4 +103,4 @@ Source: [Microsoft Learn Study Guide](https://learn.microsoft.com/credentials/ce
 | ------ | -------- |
 | AI workloads and considerations | **Major** - Common AI workloads restructured |
 | Machine learning on Azure | % of exam **decreased** |
-| Generative AI workloads | % of exam **increased** + Major restructure (Azure AI Foundry + model catalog added) |
+| Generative AI workloads | % of exam **increased** + Major restructure (Microsoft Foundry + model catalog added) |

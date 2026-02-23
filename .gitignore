@@ -1,3 +1,6 @@
+# Tim's dev stuff
+temp/
+
 # Environment files with secrets
 .env
 !.env.example

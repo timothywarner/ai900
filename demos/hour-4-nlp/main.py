@@ -85,7 +85,7 @@ PII_SAMPLE_TEXT = (
 )
 
 NER_SAMPLE_TEXT = (
-    "Microsoft announced Azure AI Foundry at the Build conference in Seattle "
+    "Microsoft announced Microsoft Foundry at the Build conference in Seattle "
     "on May 21, 2024. CEO Satya Nadella presented the new platform, which "
     "integrates OpenAI's GPT-4 model. The stock rose 3.5% to $420.50 on NASDAQ."
 )

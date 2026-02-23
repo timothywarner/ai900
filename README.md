@@ -89,15 +89,15 @@ The exam uses current Azure service names exclusively. Deprecated names appear o
 | Cognitive Services | **Azure AI Services** |
 | LUIS | **CLU (Conversational Language Understanding)** |
 | QnA Maker | **Custom Question Answering** |
-| AI Studio | **Azure AI Foundry** (ai.azure.com) |
-| Language Studio | **Deprecated** -- use Azure AI Foundry portal |
+| AI Studio | **Microsoft Foundry** (ai.azure.com) |
+| Language Studio | **Deprecated** -- use Microsoft Foundry portal |
 
 ## Key Azure Portals
 
 | Portal | URL | Notes |
 |--------|-----|-------|
 | Azure Portal | portal.azure.com | Resource management |
-| Azure AI Foundry | ai.azure.com | Primary for Language, GenAI, model catalog |
+| Microsoft Foundry | ai.azure.com | Primary for Language, GenAI, model catalog |
 | Azure ML Studio | ml.azure.com | AutoML, Designer, endpoints |
 | Vision Studio | portal.vision.cognitive.azure.com | Image Analysis, OCR, Face |
 | Speech Studio | speech.microsoft.com | Speech-to-text, text-to-speech |

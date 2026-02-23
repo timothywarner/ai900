@@ -570,7 +570,7 @@ def demo_content_filter(client: AzureOpenAI, config: AzureConfig) -> None:
             "  - Medium -- Moderate concerns, may be filtered\n"
             "  - High -- Severe content, always filtered\n\n"
             "Content filters are enabled by default and can be "
-            "customized in Azure AI Foundry.",
+            "customized in Microsoft Foundry.",
             title="Content Safety Overview",
             style="green",
         )
@@ -692,13 +692,13 @@ QUIZ_ITEMS: tuple[QuizItem, ...] = (
         ),
         options=(
             "A) Azure Portal",
-            "B) Azure AI Foundry (formerly Azure AI Studio)",
+            "B) Microsoft Foundry (formerly Azure AI Studio)",
             "C) Visual Studio Code",
             "D) Azure DevOps",
         ),
         answer_index=1,
         explanation=(
-            "Azure AI Foundry (previously called Azure AI Studio / "
+            "Microsoft Foundry (previously called Azure AI Studio / "
             "Azure OpenAI Studio) is the dedicated portal for deploying "
             "models, testing prompts, and configuring content filters."
         ),

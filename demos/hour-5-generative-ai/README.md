@@ -1,4 +1,4 @@
-# Hour 5: Generative AI & Azure AI Foundry
+# Hour 5: Generative AI & Microsoft Foundry
 
 **Duration:** 1 hour
 **Exam Weight:** 20-25% (HIGHEST!)
@@ -9,15 +9,15 @@
 - **Identify features of generative AI solutions**
 - **Common scenarios for generative AI**
 - **Responsible AI considerations for generative AI**
-- **Features and capabilities of Azure AI Foundry**
+- **Features and capabilities of Microsoft Foundry**
 - **Features and capabilities of Azure OpenAI Service**
-- **Features and capabilities of Azure AI Foundry model catalog**
+- **Features and capabilities of Microsoft Foundry model catalog**
 
 ## Key Concepts (10 min theory)
 
 ### What's New in May 2025
 
-1. **Azure AI Foundry** - The unified platform for all AI development
+1. **Microsoft Foundry** - The unified platform for all AI development
    - Single portal for all Azure AI services
    - Model catalog with 1,600+ models
    - Built-in responsible AI tools
@@ -37,12 +37,12 @@
 
 ## Demo Scripts
 
-### Demo 1: Azure AI Foundry Tour (15 min)
+### Demo 1: Microsoft Foundry Tour (15 min)
 
 ```python
 # ai-foundry-demo.py
 """
-Live Portal Demo - Azure AI Foundry
+Live Portal Demo - Microsoft Foundry
 
 1. Navigate to ai.azure.com
 2. Show unified experience:
@@ -204,7 +204,7 @@ print(f"AI Response: {response.choices[0].message.content}")
 
 # Scenario 2: Marketing Content Generation
 print("\n📢 Scenario 2: Marketing Content Creation")
-product_info = "Azure AI Foundry: Unified platform for AI development"
+product_info = "Microsoft Foundry: Unified platform for AI development"
 
 marketing_response = client.chat.completions.create(
     model="gpt-4",
@@ -233,7 +233,7 @@ print("Temperature = 1: Maximum randomness")
 | **Top-p** | Probability threshold | 0.9 = Top 90% likely tokens |
 | **Fine-tuning** | Customizing pre-trained model | Train on company data |
 
-### Azure AI Foundry Features (MEMORIZE)
+### Microsoft Foundry Features (MEMORIZE)
 
 1. **Model Catalog**: 1,600+ models from Microsoft, OpenAI, Hugging Face, Meta
 2. **Deployment Options**:
@@ -247,7 +247,7 @@ print("Temperature = 1: Maximum randomness")
 
 ### Practice Questions
 
-**Q1:** What's the main purpose of Azure AI Foundry?
+**Q1:** What's the main purpose of Microsoft Foundry?
 
 - A) Only for Azure OpenAI
 - B) Unified platform for all AI development
@@ -268,7 +268,7 @@ print("Temperature = 1: Maximum randomness")
 - C) Generative AI
 - D) Cognitive AI
 
-**Q4:** How many models are available in Azure AI Foundry model catalog?
+**Q4:** How many models are available in Microsoft Foundry model catalog?
 
 - A) 100+
 - B) 500+
@@ -296,12 +296,12 @@ print("Temperature = 1: Maximum randomness")
 - Generative AI is 20-25% of exam (HIGHEST weight!)
 - Always discuss responsible AI considerations
 - Show practical business applications
-- Emphasize Azure AI Foundry as the unified platform
+- Emphasize Microsoft Foundry as the unified platform
 - Temperature and prompt engineering are favorite exam topics
 
 ## Resources
 
-- [Azure AI Foundry](https://ai.azure.com)
+- [Microsoft Foundry](https://ai.azure.com)
 - [Azure OpenAI Documentation](https://docs.microsoft.com/azure/ai-services/openai/)
 - [Model Catalog](https://ai.azure.com/explore/models)
 - [Prompt Engineering Guide](https://docs.microsoft.com/azure/ai-services/openai/concepts/prompt-engineering)

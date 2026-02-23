@@ -34,14 +34,14 @@
 - [Azure AI Document Intelligence](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/)
 - [Azure AI Content Safety](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/)
 - [Azure Bot Service](https://learn.microsoft.com/en-us/azure/bot-service/)
-- [Azure AI Foundry Documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/)
+- [Microsoft Foundry Documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/)
 
 ## Hands-On
 
 ### Getting Started
 
 - [Azure Free Account](https://azure.microsoft.com/free/)
-- [Azure AI Foundry Portal](https://ai.azure.com/)
+- [Microsoft Foundry Portal](https://ai.azure.com/)
 - [Azure Portal](https://portal.azure.com/)
 
 ### Microsoft Learn Training Paths
