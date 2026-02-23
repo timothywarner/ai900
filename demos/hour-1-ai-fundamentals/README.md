@@ -1,16 +1,18 @@
-# 🎯 Hour 1: AI Fundamentals & Azure AI Platform
+# AI Fundamentals & Azure AI Platform
 
-**Duration:** 1 hour  
-**Exam Weight:** 15-20%  
+**Duration:** 1 hour
+**Exam Weight:** 15-20%
 **Philosophy:** Start with a bang! Show the power of Azure AI in the first hour.
 
-## 🎓 Exam Focus Areas
+## Exam Focus Areas
+
 - **Identify features of common AI workloads**
 - **Identify guiding principles for responsible AI**
 - **Identify common types of AI workloads**
 - **Identify Azure services for AI workloads**
 
-## 📚 Key Concepts (10 min theory)
+## Key Concepts (10 min theory)
+
 1. **AI vs ML vs Deep Learning**
    - AI: Simulation of human intelligence
    - ML: Algorithms that learn from data
@@ -24,16 +26,17 @@
    - OpenAI: Generate creative content
 
 3. **Responsible AI Principles** (MEMORIZE THESE!)
-   - ✅ Fairness
-   - ✅ Reliability & Safety
-   - ✅ Privacy & Security
-   - ✅ Inclusiveness
-   - ✅ Transparency
-   - ✅ Accountability
+   - Fairness
+   - Reliability & Safety
+   - Privacy & Security
+   - Inclusiveness
+   - Transparency
+   - Accountability
 
-## 🔥 Demo Scripts
+## Demo Scripts
 
 ### Demo 1: Azure Portal Tour (10 min)
+
 ```bash
 # No code needed - Portal walkthrough
 # 1. Navigate to portal.azure.com
@@ -45,6 +48,7 @@
 ```
 
 ### Demo 2: Multi-Service Demo (15 min)
+
 ```python
 # multi-service-demo.py
 import os
@@ -73,15 +77,16 @@ print(f"Confidence: {analysis.description.captions[0].confidence:.2%}")
 
 print("\n👤 Face Detection:")
 # Detect faces
-faces = face_client.face.detect_with_url(image_url, detection_model='detection_03', 
+faces = face_client.face.detect_with_url(image_url, detection_model='detection_03',
                                          return_face_attributes=['age', 'emotion'])
 for face in faces:
     print(f"Age: {face.face_attributes.age}")
-    print(f"Primary emotion: {max(face.face_attributes.emotion.__dict__, 
+    print(f"Primary emotion: {max(face.face_attributes.emotion.__dict__,
                                 key=face.face_attributes.emotion.__dict__.get)}")
 ```
 
 ### Demo 3: Responsible AI Dashboard (5 min)
+
 ```python
 # responsible-ai-demo.py
 # This is a conceptual demo - explain while showing Azure ML Studio
@@ -108,9 +113,10 @@ for item in checklist:
     print(item)
 ```
 
-## 💡 Exam Tips & Tricks
+## Exam Tips & Tricks
 
-### ⚡ Quick Wins
+### Quick Wins
+
 1. **Service Selection**: Know which service for which task
    - Text in images? → Computer Vision OCR
    - Chatbot? → Bot Service + LUIS/QnA Maker
@@ -127,39 +133,46 @@ for item in checklist:
    - Pay-per-transaction model
    - Reserved capacity for high volume
 
-### 📝 Practice Questions
+### Practice Questions
 
 **Q1:** Which Azure service would you use to extract text from scanned invoices?
+
 - A) Azure Machine Learning
-- B) Computer Vision OCR ✅
+- B) Computer Vision OCR
 - C) Translator
 - D) Bot Service
 
 **Q2:** An AI system for hiring recommendations shows bias against certain groups. Which responsible AI principle is violated?
+
 - A) Reliability
-- B) Fairness ✅
+- B) Fairness
 - C) Privacy
 - D) Accountability
 
 **Q3:** What distinguishes Deep Learning from traditional Machine Learning?
-- A) Deep Learning uses neural networks with multiple layers ✅
+
+- A) Deep Learning uses neural networks with multiple layers
 - B) Deep Learning is always more accurate
 - C) Deep Learning requires less data
 - D) Deep Learning is faster to train
 
-## 🚀 Hands-on Challenge
+## Hands-on Challenge
+
 Give learners 5 minutes to:
+
 1. Create their own Computer Vision resource
 2. Test it with a personal image
 3. Share the most interesting insight the AI found
 
-## 📌 Remember
+## Remember
+
 - Keep energy HIGH - this sets the tone!
 - Use real-world examples they can relate to
 - Emphasize that AI-900 tests practical application, not theory
 - Share your excitement about Azure AI capabilities
 
-## 🔗 Resources
+## Resources
+
 - [Azure AI Services Documentation](https://docs.microsoft.com/azure/cognitive-services/)
 - [Responsible AI Principles](https://www.microsoft.com/ai/responsible-ai)
 - [AI-900 Skills Measured](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wGpB)

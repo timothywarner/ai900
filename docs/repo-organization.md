@@ -6,13 +6,13 @@ This document outlines the organization of this repository for easy browsing and
 
 We've organized this repository to align with the AI-900 exam's objective domains (as of April 24, 2024). The main structure is:
 
-```
-📂 demos
- ┣ 📂 01-ai-overview           # AI workloads and considerations (15-20%)
- ┣ 📂 02-machine-learning      # Machine learning principles on Azure (20-25%)
- ┣ 📂 03-computer-vision       # Computer vision workloads (15-20%)
- ┣ 📂 04-nlp                   # Natural Language Processing workloads (15-20%)
- ┗ 📂 05-generative-ai         # Generative AI workloads (15-20%)
+```text
+demos
+ |- 01-ai-overview           # AI workloads and considerations (15-20%)
+ |- 02-machine-learning      # Machine learning principles on Azure (20-25%)
+ |- 03-computer-vision       # Computer vision workloads (15-20%)
+ |- 04-nlp                   # Natural Language Processing workloads (15-20%)
+ |- 05-generative-ai         # Generative AI workloads (15-20%)
 ```
 
 ## Key Files
@@ -24,18 +24,23 @@ We've organized this repository to align with the AI-900 exam's objective domain
 ## Domain-Specific Content
 
 ### [01-ai-overview](./demos/01-ai-overview)
+
 Content related to AI fundamentals, Azure AI services overview, and responsible AI principles.
 
 ### [02-machine-learning](./demos/02-machine-learning)
+
 Azure Machine Learning workspace, automated ML, and no-code ML examples.
 
 ### [03-computer-vision](./demos/03-computer-vision)
+
 Computer vision demos including image analysis, face detection, and OCR.
 
 ### [04-nlp](./demos/04-nlp)
+
 Natural language processing examples including text analytics, translation, and language understanding.
 
 ### [05-generative-ai](./demos/05-generative-ai)
+
 Azure OpenAI Service demos, prompt engineering techniques, and generative AI capabilities.
 
 ## Repository Optimization
@@ -51,6 +56,7 @@ This repository has been optimized for teaching purposes:
 ## Media and Assets
 
 Media assets have been organized to support teaching demonstrations:
+
 - Images are placed in domain-specific folders
 - Sample datasets are stored in relevant domains
-- PowerPoint presentations are tracked with Git LFS 
+- PowerPoint presentations are tracked with Git LFS

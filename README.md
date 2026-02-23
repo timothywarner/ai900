@@ -1,4 +1,4 @@
-# 🤖 ✨ Microsoft Azure AI Fundamentals (AI-900) Certification Prep (2nd Edition)
+# Microsoft Azure AI Fundamentals (AI-900) Certification Prep
 
 ![Microsoft Azure AI Fundamentals](images/ai900-cover.png)
 
@@ -6,107 +6,133 @@
 
 Short link: [go.techtrainertim.com/ai900](https://github.com/timothywarner/ai900/)
 
-Welcome to the official preparation course for the Microsoft Azure AI Fundamentals (AI-900) certification exam. This training program is designed to help you master Azure AI services and achieve certification. 🎯
+Official preparation course for the **Microsoft Azure AI Fundamentals (AI-900)** certification exam. O'Reilly live training -- 5 hours, 80% demos, 20% theory.
 
-## 📝 Exam Information
+## Exam Information
 
-- **Name**: Microsoft Azure AI Fundamentals
 - **Exam Code**: AI-900
-- **Last Updated**: April 24, 2024
+- **Objectives Updated**: May 2, 2025
 - **Official Page**: [Microsoft Learn AI-900](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/)
+- **Practice Assessment**: [Free official practice questions](https://learn.microsoft.com/credentials/certifications/exams/ai-900/practice/assessment?assessment-type=practice&assessmentId=26)
+- **Exam Sandbox**: [aka.ms/examdemo](https://aka.ms/examdemo)
 
-## 🎓 Course Overview
+## Exam Domains (May 2025 Update)
 
-This course provides hands-on experience and in-depth knowledge of Microsoft Azure AI services, including Azure OpenAI Service, Cognitive Services, Machine Learning, and responsible AI practices.
+| Domain | Weight |
+|--------|--------|
+| Describe AI workloads and considerations | 15-20% |
+| Describe fundamental principles of machine learning on Azure | 15-20% |
+| Describe features of computer vision workloads on Azure | 15-20% |
+| Describe features of NLP workloads on Azure | 15-20% |
+| **Describe features of generative AI workloads on Azure** | **20-25% (HIGHEST)** |
 
-## 🎯 Certification Exam Domains
+For full objective details, see [AI-900-exam-objectives.md](./docs/AI-900-exam-objectives.md).
 
-| Domain                                                    | Weight     |
-|------------------------------------------------------------|------------|
-| Describe Artificial Intelligence workloads and considerations | 15-20%     |
-| Describe fundamental principles of machine learning on Azure  | 15-20%     |
-| Describe features of computer vision workloads on Azure       | 15-20%     |
-| Describe features of Natural Language Processing workloads    | 15-20%     |
-| Describe features of generative AI workloads on Azure         | 20-25% (HIGHEST!) |
+## Repository Structure
 
-For the complete, detailed exam objectives, see [AI-900-exam-objectives.md](./docs/AI-900-exam-objectives.md)
+```text
+ai900/
+├── demos/                          # Live class demos (Python + uv)
+│   ├── assets/                     # Shared media & datasets (LFS-tracked)
+│   ├── hour-1-ai-fundamentals/     # Vision, Content Safety, RAI
+│   ├── hour-2-machine-learning/    # sklearn classification/regression/clustering
+│   ├── hour-3-computer-vision/     # Image Analysis, OCR, Face, Doc Intel
+│   ├── hour-4-nlp/                 # Sentiment, NER, Speech, CLU
+│   └── hour-5-generative-ai/       # GPT-4o, DALL-E 3, prompt engineering, RAG
+├── docs/                           # Course materials & exam prep
+│   ├── warner-ai900-nov-2025.pptx  # Slide deck
+│   ├── AI-900-exam-objectives.md   # Full objective domain
+│   ├── AI-900-CORE-RESOURCES.md    # Curated study materials
+│   ├── PRACTICE-QUESTIONS-GUIDE.md # Practice exam resources
+│   └── ai900-practice-question-prompt.txt
+├── bicep/                          # CAF-aligned IaC for lab environment
+├── feb-2026/                       # Current delivery course plan
+│   └── to-be-archived/             # Legacy content staged for removal
+├── images/                         # README cover image
+└── scripts/                        # Utility scripts
+```
 
-Quick navigation: see the curated [Docs Index](./docs/INDEX.md) for a guided tour of demos, apps, and course materials.
+## Running the Demos
 
-## 🎯 Learning Objectives
+Each demo is a standalone Python project managed with [uv](https://docs.astral.sh/uv/). You need Python 3.11+ and uv installed.
 
-By completing this course, you will:
-- 🚀 Understand core AI concepts and Microsoft's approach to responsible AI
-- 💻 Gain practical experience with Azure Machine Learning
-- 🔍 Implement computer vision solutions using Azure Cognitive Services
-- 🗣️ Build natural language processing solutions with Azure services
-- 🤖 Create generative AI solutions with Azure OpenAI Service
-- 📝 Prepare effectively for the AI-900 certification exam
+```bash
+cd demos/hour-1-ai-fundamentals
+uv sync                   # creates .venv and installs dependencies
+uv run python main.py     # launches interactive menu
+```
 
-## 📚 Official Learning Resources
+Repeat for any `hour-N-*` folder. All demos share a single `demos/.env` file for Azure credentials:
+
+```bash
+cp demos/.env.example demos/.env
+# Fill in your Azure AI Services keys and endpoints
+```
+
+## Bicep Deployment
+
+Deploy the full lab environment with one command:
+
+```bash
+az deployment group create \
+  --resource-group AI900-Feb2026 \
+  --template-file bicep/main.bicep \
+  --parameters bicep/parameters/dev.bicepparam
+```
+
+## Azure Terminology (Current as of May 2025)
+
+The exam uses current Azure service names exclusively. Deprecated names appear only as **wrong** answers.
+
+| Deprecated Name | Current Name |
+|-----------------|--------------|
+| Cognitive Services | **Azure AI Services** |
+| LUIS | **CLU (Conversational Language Understanding)** |
+| QnA Maker | **Custom Question Answering** |
+| AI Studio | **Azure AI Foundry** (ai.azure.com) |
+| Language Studio | **Deprecated** -- use Azure AI Foundry portal |
+
+## Key Azure Portals
+
+| Portal | URL | Notes |
+|--------|-----|-------|
+| Azure Portal | portal.azure.com | Resource management |
+| Azure AI Foundry | ai.azure.com | Primary for Language, GenAI, model catalog |
+| Azure ML Studio | ml.azure.com | AutoML, Designer, endpoints |
+| Vision Studio | portal.vision.cognitive.azure.com | Image Analysis, OCR, Face |
+| Speech Studio | speech.microsoft.com | Speech-to-text, text-to-speech |
+| Custom Vision | customvision.ai | Image classification, object detection |
+
+## Study Resources
+
+### In This Repo
+
+- [Practice Questions Guide](./docs/PRACTICE-QUESTIONS-GUIDE.md) -- 15 practice exam resources and study strategies
+- [AI-900 Core Resources](./docs/AI-900-CORE-RESOURCES.md) -- Curated study materials, practice exams, MS Learn paths
+- [MCP Microsoft Docs Server Guide](./docs/MCP-DOCS-SERVER-GUIDE.md) -- Use Claude AI + MS Docs for interactive cert prep
+- [Docs Index](./docs/INDEX.md) -- Guided tour of all course materials
 
 ### Microsoft Learn Paths
-- [Get started with artificial intelligence on Azure](https://docs.microsoft.com/en-us/learn/paths/get-started-with-artificial-intelligence-on-azure/)
-- [Create no-code predictive models with Azure Machine Learning](https://docs.microsoft.com/en-us/learn/paths/create-no-code-predictive-models-azure-machine-learning/)
-- [Explore computer vision in Microsoft Azure](https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/)
-- [Explore natural language processing](https://docs.microsoft.com/en-us/learn/paths/explore-natural-language-processing/)
-- [Explore Generative AI with Azure](https://learn.microsoft.com/en-us/training/paths/introduction-generative-ai/)
 
-### Azure Documentation
-- [Azure AI Platform](https://azure.microsoft.com/en-us/overview/ai-platform/)
-- [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)
-- [Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/)
-- [Microsoft Responsible AI](https://www.microsoft.com/en-us/ai/responsible-ai)
+- [Get started with AI on Azure](https://learn.microsoft.com/training/paths/get-started-with-artificial-intelligence-on-azure/)
+- [Create no-code predictive models with Azure ML](https://learn.microsoft.com/training/paths/create-no-code-predictive-models-azure-machine-learning/)
+- [Explore computer vision in Microsoft Azure](https://learn.microsoft.com/training/paths/explore-computer-vision-microsoft-azure/)
+- [Explore natural language processing](https://learn.microsoft.com/training/paths/explore-natural-language-processing/)
+- [Explore generative AI with Azure](https://learn.microsoft.com/training/paths/introduction-generative-ai/)
 
-### 📝 Comprehensive Study Resources
+### Register for Exam
 
-#### 🎯 Essential Study Guides (IN THIS REPO!)
-- **[📚 Complete Practice Questions Guide](./docs/PRACTICE-QUESTIONS-GUIDE.md)** - 15 practice exam resources, study strategies, sample questions
-- **[🤖 MCP Microsoft Docs Server Guide](./docs/MCP-DOCS-SERVER-GUIDE.md)** - Use Claude AI + MS Docs for interactive cert prep
-- **[📖 AI-900 Core Resources](./AI-900-CORE-RESOURCES.md)** - Comprehensive list of study materials, practice exams, MS Learn paths
+- [Pearson VUE Exam Registration](https://home.pearsonvue.com/microsoft)
+- [Microsoft Certification Deals](https://learn.microsoft.com/credentials/certifications/deals)
 
-#### 🆓 Free Practice Resources
-- **[Microsoft Learn Practice Assessment](https://learn.microsoft.com/en-us/credentials/certifications/practice-assessments-for-microsoft-certifications)** - Official FREE practice questions
-- **[Exam Sandbox](https://go.microsoft.com/fwlink/?linkid=2226877)** - Experience the exam interface
-- **[ExamTopics AI-900](https://www.examtopics.com/exams/microsoft/ai-900/)** - Community practice questions
-- **[ITExams AI-900](https://www.itexams.com/info/AI-900)** - Free practice exams (updated Nov 2025)
-- **[Whizlabs Free Questions](https://www.whizlabs.com/blog/microsoft-azure-ai-fundamentals-questions/)** - 30 free sample questions
+## Prerequisites
 
-#### 💰 Premium Practice Exams
-- **[MeasureUp AI-900 Official](https://www.measureup.com/microsoft-practice-test-ai-900-microsoft-azure-ai-fundamentals.html)** - $99 - Official Microsoft practice test
-- **[MeasureUp via Pearson VUE](https://govstore.pearsonvue.com/ai-900-microsoft-azure-ai-fundamentals-microsoft-official-practice-test/p/MU180-AI-900)** - Bundle with exam voucher
-- **[Whizlabs Complete Course](https://www.whizlabs.com/microsoft-azure-certification-ai-900/)** - ~$25 - 250+ questions + labs
-- **[Udemy Practice Tests](https://www.udemy.com/course/ai-900-azure-ai-fundamentals-practice-tests-course/)** - $10-20 on sale - Highest rated (4.5/5, 13K students)
+- Basic understanding of cloud computing concepts
+- Microsoft Azure subscription ([free trial](https://azure.microsoft.com/free/) or paid)
+- Python 3.11+ and [uv](https://docs.astral.sh/uv/) for running demos
+- Interest in artificial intelligence and machine learning
 
-#### 📖 Official Microsoft Learning
-- **[AI-900 Exam Page](https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-900/)**
-- **[Official Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900)**
-- **[Microsoft Learn AI-900 Path](https://learn.microsoft.com/en-us/training/courses/ai-900t00)**
-- **[AI-900 Learning Paths](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/)**
-
-#### 📅 Register for Exam
-- **[Pearson VUE Exam Registration](https://home.pearsonvue.com/microsoft)** - Schedule your exam
-- **[Microsoft Certification Deals](https://learn.microsoft.com/en-us/credentials/certifications/deals)** - Discounts and vouchers
-
-## 🛠️ Hands-on Labs & Demos
-
-This repository contains practical demos and hands-on labs for each exam domain:
-
-- **AI Workloads & Considerations**: Responsible AI principles, Azure AI services overview
-- **Machine Learning on Azure**: Azure ML workspace, automated ML, no-code ML
-- **Computer Vision**: Image analysis, face detection, OCR, custom vision
-- **Natural Language Processing**: Text analytics, translator, language understanding
-- **Generative AI**: Azure OpenAI Service, prompt engineering, responsible AI practices
-
-## 📋 Prerequisites
-
-- 💻 Basic understanding of cloud computing concepts
-- 🌐 Familiarity with Microsoft Azure (helpful but not required)
-- 🔑 Microsoft Azure subscription (free trial or paid)
-- 📝 Interest in artificial intelligence and machine learning
-
-## 👨‍🏫 Instructor Contact
+## Instructor Contact
 
 - **Name:** Tim Warner
 - **Title:** Microsoft MVP & Certified Trainer
@@ -118,6 +144,6 @@ This repository contains practical demos and hands-on labs for each exam domain:
 - **Email:** [tim@techtrainertim.com](mailto:tim@techtrainertim.com)
 - **Microsoft Learn:** [TimothyWarner](https://learn.microsoft.com/users/timothywarner/transcript)
 
-## 💬 License
+## License
 
 This course material is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

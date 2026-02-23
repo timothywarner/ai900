@@ -1,0 +1,14 @@
+[project]
+name = "hour-4-nlp"
+version = "1.0.0"
+description = "AI-900 Hour 4: Natural Language Processing - Azure AI Language & Speech demos"
+requires-python = ">=3.13"
+dependencies = [
+    "azure-ai-textanalytics>=5.3.0",
+    "azure-cognitiveservices-speech>=1.40.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+nlp-demo = "main:main"

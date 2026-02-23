@@ -1,0 +1,11 @@
+[project]
+name = "hour-1-ai-fundamentals"
+version = "1.0.0"
+description = "AI-900 Hour 1: AI Fundamentals & Responsible AI - Console Demo"
+requires-python = ">=3.13"
+dependencies = [
+    "azure-ai-vision-imageanalysis>=1.0.0",
+    "azure-ai-contentsafety>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+]

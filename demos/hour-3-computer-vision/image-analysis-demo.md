@@ -7,6 +7,7 @@ In this hands-on lab, you'll learn how to use the Azure Computer Vision service 
 ## Learning Objectives
 
 By the end of this lab, you will be able to:
+
 - Create and configure a Computer Vision resource in Azure
 - Use the Computer Vision API to analyze images
 - Extract visual features, objects, and text from images
@@ -41,16 +42,20 @@ By the end of this lab, you will be able to:
 1. Create a new folder for your project.
 2. Open a terminal or command prompt and navigate to your project folder.
 3. Create a virtual environment:
+
    ```bash
    python -m venv venv
    ```
+
 4. Activate the virtual environment:
    - Windows: `venv\Scripts\activate`
    - macOS/Linux: `source venv/bin/activate`
 5. Install the required packages:
+
    ```bash
    pip install azure-cognitiveservices-vision-computervision pillow matplotlib
    ```
+
 6. Create a new file named `analyze_image.py`.
 
 ## Step 3: Write the Image Analysis Code
@@ -140,9 +145,11 @@ print(f"- Is black and white: {results.color.is_bw_img}")
 
 1. Save the file.
 2. In your terminal or command prompt (with the virtual environment activated), run:
+
    ```bash
    python analyze_image.py
    ```
+
 3. The application will:
    - Display the image
    - Analyze the image using the Computer Vision service
@@ -205,4 +212,4 @@ When you're done with the lab, you can delete the Azure resources to avoid incur
 - [Computer Vision Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/)
 - [Computer Vision API Reference](https://docs.microsoft.com/en-us/rest/api/computer-vision/)
 - [Azure Cognitive Services Samples on GitHub](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples)
-- [Microsoft Learn: Analyze images with the Computer Vision service](https://docs.microsoft.com/en-us/learn/modules/analyze-images-computer-vision/) 
+- [Microsoft Learn: Analyze images with the Computer Vision service](https://docs.microsoft.com/en-us/learn/modules/analyze-images-computer-vision/)

@@ -64,4 +64,4 @@ Have an idea to improve the course materials?
 
 If you have any questions about contributing, please contact Tim Warner at [tim@techtrainertim.com](mailto:tim@techtrainertim.com).
 
-Thank you for contributing to helping others learn Azure AI Fundamentals! 
+Thank you for contributing to helping others learn Azure AI Fundamentals!

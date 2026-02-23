@@ -1,20 +1,22 @@
-# 💬 Hour 4: Natural Language Processing
+# Hour 4: Natural Language Processing
 
-**Duration:** 1 hour  
-**Exam Weight:** 15-20%  
+**Duration:** 1 hour
+**Exam Weight:** 15-20%
 **Philosophy:** Teaching Azure to understand human language - practical NLP magic!
 
-## 🎓 Exam Focus Areas
+## Exam Focus Areas
+
 - **Identify features of common NLP workload scenarios**
 - **Identify Azure tools and services for NLP workloads**
 - **Understand key phrase extraction, entity recognition, sentiment analysis**
 - **Know language modeling, speech recognition, and translation**
 
-## 📚 Key Concepts (5 min theory)
+## Key Concepts (5 min theory)
 
-### NLP Service Ecosystem (UPDATED May 2025!)
+### NLP Service Ecosystem (UPDATED May 2025)
+
 | Old Name | New Name | Purpose |
-|----------|----------|---------|
+| ---------- | ---------- | --------- |
 | Text Analytics | **Azure AI Language** | Text analysis & understanding |
 | LUIS | **Conversational Language Understanding (CLU)** | Intent & entity extraction |
 | QnA Maker | **Custom Question Answering** | FAQ-style Q&A |
@@ -22,6 +24,7 @@
 | Speech Services | **Azure AI Speech** | Speech-to-text & text-to-speech |
 
 ### Core NLP Tasks
+
 1. **Sentiment Analysis**: Positive/Negative/Neutral
 2. **Key Phrase Extraction**: Main topics
 3. **Entity Recognition**: People, places, organizations
@@ -29,9 +32,10 @@
 5. **Translation**: 100+ languages
 6. **Speech Recognition**: Audio to text
 
-## 🔥 Demo Scripts
+## Demo Scripts
 
 ### Demo 1: Azure AI Language Service (15 min)
+
 ```python
 # language-service-demo.py
 from azure.ai.textanalytics import TextAnalyticsClient
@@ -79,6 +83,7 @@ for result in pii_results:
 ```
 
 ### Demo 2: Conversational Language Understanding (CLU) - Replacing LUIS (15 min)
+
 ```python
 # clu-demo.py
 """
@@ -88,17 +93,17 @@ Live Demo: Pizza Ordering Bot with CLU
 2. Create new Conversational Language Understanding project:
    - Name: "PizzaOrderBot"
    - Language: English
-   
+
 3. Add intents:
    - OrderPizza: "I want to order a large pepperoni pizza"
    - CheckStatus: "What's the status of my order?"
    - CancelOrder: "I need to cancel my order"
-   
+
 4. Add entities:
    - Size: small, medium, large
    - Topping: pepperoni, mushroom, cheese
    - OrderNumber: pattern-based entity
-   
+
 5. Train and test the model
 """
 
@@ -137,7 +142,7 @@ for query in test_queries:
             }
         }
     )
-    
+
     prediction = result["result"]["prediction"]
     print(f"\nQuery: '{query}'")
     print(f"Intent: {prediction['topIntent']} ({prediction['intents'][0]['confidence']:.2%})")
@@ -148,6 +153,7 @@ for query in test_queries:
 ```
 
 ### Demo 3: Custom Question Answering (Replacing QnA Maker) (10 min)
+
 ```python
 # custom-qa-demo.py
 """
@@ -158,7 +164,7 @@ Live Demo: FAQ Bot with Custom Question Answering
 3. Add knowledge sources:
    - Import from URL: https://docs.microsoft.com/faq
    - Add manual Q&A pairs
-   
+
 4. Edit and enrich:
    - Add alternative questions
    - Set up follow-up prompts
@@ -189,18 +195,19 @@ for question in questions:
         project_name=project_name,
         deployment_name=deployment_name
     )
-    
+
     print(f"\nQ: {question}")
     if response.answers:
         print(f"A: {response.answers[0].answer}")
         print(f"Confidence: {response.answers[0].confidence:.2%}")
 ```
 
-## 💡 Exam Tips & Tricks
+## Exam Tips & Tricks
 
-### ⚡ Service Selection Matrix
+### Service Selection Matrix
+
 | Scenario | Service | Key Feature |
-|----------|---------|-------------|
+| ---------- | --------- | ------------- |
 | Analyze customer reviews | Azure AI Language | Sentiment & opinions |
 | Build a chatbot | CLU + Bot Service | Intent recognition |
 | Create FAQ bot | Custom Question Answering | Q&A pairs |
@@ -208,7 +215,8 @@ for question in questions:
 | Transcribe meetings | Azure AI Speech | Real-time transcription |
 | Extract form data | Document Intelligence | Structured extraction |
 
-### 🎯 Key Differentiators
+### Key Differentiators
+
 1. **CLU vs Custom Question Answering**
    - CLU: Complex intents & entities
    - Custom QA: Simple Q&A matching
@@ -222,47 +230,55 @@ for question in questions:
    - PII entities: SSN, credit cards, emails
    - Key phrases: Main topics/concepts
 
-### 📝 Practice Questions
+### Practice Questions
 
 **Q1:** You need to build a bot that understands "Book a flight to Seattle tomorrow". Which service?
+
 - A) Custom Question Answering
-- B) Conversational Language Understanding (CLU) ✅
+- B) Conversational Language Understanding (CLU)
 - C) Translator
 - D) Azure AI Speech
 
 **Q2:** A company wants to analyze customer support emails for satisfaction. Which feature?
+
 - A) Key phrase extraction
 - B) Entity recognition
-- C) Sentiment analysis ✅
+- C) Sentiment analysis
 - D) Language detection
 
-**Q3:** You need to extract data from invoices. Which service? 
+**Q3:** You need to extract data from invoices. Which service?
+
 - A) Azure AI Language
-- B) Azure AI Document Intelligence ✅
+- B) Azure AI Document Intelligence
 - C) CLU
 - D) Custom Question Answering
 
 **Q4:** What's the maximum number of languages supported by Translator?
+
 - A) 50
 - B) 75
-- C) 100+ ✅
+- C) 100+
 - D) 200
 
-## 🚀 Hands-on Challenge
+## Hands-on Challenge
+
 **Language Detective Challenge:**
+
 1. Analyze a movie review for sentiment
 2. Extract key phrases
 3. Identify any people/places mentioned
 4. Winner: Most interesting insight found!
 
-## 📌 Remember
+## Remember
+
 - Show real-world applications (customer service, content moderation)
-- Emphasize the rebranding (LUIS→CLU, QnA Maker→Custom QA)
+- Emphasize the rebranding (LUIS to CLU, QnA Maker to Custom QA)
 - AI-900 loves "which service for what" questions
 - Always mention language support capabilities
 
-## 🔗 Resources
+## Resources
+
 - [Azure AI Language Documentation](https://learn.microsoft.com/en-us/azure/ai-services/language-service/)
 - [CLU Migration Guide](https://learn.microsoft.com/en-us/azure/ai-services/luis/migrate-to-clu)
 - [Custom Question Answering](https://learn.microsoft.com/en-us/azure/ai-services/language-service/question-answering/)
-- [Azure AI Speech](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/) 
+- [Azure AI Speech](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/)

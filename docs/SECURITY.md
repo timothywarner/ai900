@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-If there are any vulnerability in **Exam AI-900: Microsoft Azure AI Fundamentals** project, don't hesitate to _report them_.
+If there are any vulnerability in **Exam AI-900: Microsoft Azure AI Fundamentals** project, don't hesitate to *report them*.
 
 1. Use any of the [private contact addresses](https://github.com/timothywarner/ai900#support).
 2. Describe the vulnerability.

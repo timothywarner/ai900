@@ -1,34 +1,38 @@
-# 👁️ Hour 3: Computer Vision Workloads
+# Hour 3: Computer Vision Workloads
 
-**Duration:** 1 hour  
-**Exam Weight:** 15-20%  
+**Duration:** 1 hour
+**Exam Weight:** 15-20%
 **Philosophy:** Make computers "see" - visual demos that wow!
 
-## 🎓 Exam Focus Areas
+## Exam Focus Areas
+
 - **Identify common types of computer vision solutions**
 - **Identify Azure tools and services for computer vision tasks**
 - **Understand image classification vs object detection**
 - **Know OCR capabilities and use cases**
 
-## 📚 Key Concepts (5 min theory)
+## Key Concepts (5 min theory)
 
-### Service Comparison (MEMORIZE!)
+### Service Comparison (MEMORIZE)
+
 | Service | Use Case | Key Feature |
-|---------|----------|-------------|
+| --------- | ---------- | ------------- |
 | **Computer Vision** | General image analysis | Pre-built, ready to use |
 | **Custom Vision** | Specific to your needs | Train with your images |
 | **Face** | People & emotions | Privacy-focused |
 | **Form Recognizer** | Documents & forms | Structured data extraction |
 
 ### Vision Tasks
+
 1. **Image Classification**: What is it? (cat, dog, car)
 2. **Object Detection**: Where is it? (bounding boxes)
 3. **OCR**: What text is there? (printed, handwritten)
 4. **Face Detection**: Who is it? (identity, emotion, age)
 
-## 🔥 Demo Scripts
+## Demo Scripts
 
 ### Demo 1: Computer Vision Deep Dive (15 min)
+
 ```python
 # computer-vision-demo.py
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
@@ -86,6 +90,7 @@ print("This requires Computer Vision container + edge device")
 ```
 
 ### Demo 2: Custom Vision Project (15 min)
+
 ```python
 # custom-vision-demo.py
 """
@@ -133,6 +138,7 @@ for prediction in results.predictions:
 ```
 
 ### Demo 3: Face API Features (10 min)
+
 ```python
 # face-api-demo.py
 from azure.cognitiveservices.vision.face import FaceClient
@@ -157,7 +163,7 @@ for i, face in enumerate(faces):
     print(f"  Age: {face.face_attributes.age}")
     print(f"  Gender: {face.face_attributes.gender}")
     print(f"  Glasses: {face.face_attributes.glasses}")
-    
+
     # Find dominant emotion
     emotions = face.face_attributes.emotion
     emotion_dict = {
@@ -178,20 +184,22 @@ print("\n🔍 Face Verification: Are these the same person?")
 # Compare two faces - returns confidence they're the same person
 ```
 
-## 💡 Exam Tips & Tricks
+## Exam Tips & Tricks
 
-### ⚡ Service Selection Guide
+### Service Selection Guide
+
 **"Which service should I use?"** - Common exam question!
 
 | Scenario | Service | Why |
-|----------|---------|-----|
+| ---------- | --------- | ----- |
 | Read street signs | Computer Vision OCR | Pre-built, works immediately |
 | Identify company logos | Custom Vision | Need to train on specific logos |
 | Verify employee identity | Face API | Designed for face verification |
 | Extract data from invoices | Form Recognizer | Structured document data |
 | Analyze store traffic | Spatial Analysis | People counting & movement |
 
-### 🎯 Key Differentiators
+### Key Differentiators
+
 1. **Computer Vision vs Custom Vision**
    - Computer Vision: 86+ categories pre-trained
    - Custom Vision: You define categories, min 5 images each
@@ -204,47 +212,55 @@ print("\n🔍 Face Verification: Are these the same person?")
    - OCR: Just extract text
    - Form Recognizer: Understand document structure
 
-### 📝 Practice Questions
+### Practice Questions
 
 **Q1:** You need to count people entering a store. Which service?
+
 - A) Face API
 - B) Custom Vision
-- C) Computer Vision with Spatial Analysis ✅
+- C) Computer Vision with Spatial Analysis
 - D) Form Recognizer
 
 **Q2:** What's the minimum number of images needed per tag in Custom Vision?
+
 - A) 1
-- B) 5 ✅
+- B) 5
 - C) 10
 - D) 50
 
 **Q3:** You want to extract text from handwritten notes. Which feature?
+
 - A) Computer Vision Image Analysis
-- B) Computer Vision OCR/Read API ✅
+- B) Computer Vision OCR/Read API
 - C) Custom Vision
 - D) Face API
 
 **Q4:** A company wants to verify that the person using a keycard matches their photo ID. Which service?
+
 - A) Computer Vision
 - B) Custom Vision
-- C) Face API ✅
+- C) Face API
 - D) Form Recognizer
 
-## 🚀 Hands-on Challenge
+## Hands-on Challenge
+
 **Vision Scavenger Hunt:**
+
 1. Take a photo with your phone
 2. Upload to Computer Vision
 3. Find the most unusual object/tag detected
 4. Share with the class!
 
-## 📌 Remember
+## Remember
+
 - Always show visual results - this is COMPUTER VISION!
 - Emphasize privacy/ethics when using Face API
 - Custom Vision is perfect for domain-specific needs
 - AI-900 loves "which service for which scenario" questions
 
-## 🔗 Resources
+## Resources
+
 - [Computer Vision Documentation](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
 - [Custom Vision Portal](https://customvision.ai)
 - [Face API Documentation](https://docs.microsoft.com/azure/cognitive-services/face/)
-- [OCR Language Support](https://docs.microsoft.com/azure/cognitive-services/computer-vision/language-support) 
+- [OCR Language Support](https://docs.microsoft.com/azure/cognitive-services/computer-vision/language-support)

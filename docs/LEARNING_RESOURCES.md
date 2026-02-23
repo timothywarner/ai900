@@ -5,7 +5,7 @@
 ### Microsoft Learn - AI-900 Learning Paths
 
 | Learning Path | Description | Link |
-|--------------|-------------|------|
+| -------------- | ------------- | ------ |
 | AI Fundamentals | Complete certification learning path | [Microsoft Learn AI-900](https://learn.microsoft.com/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/) |
 | Machine Learning Fundamentals | Core ML concepts | [Fundamentals of Machine Learning](https://learn.microsoft.com/en-us/training/paths/machine-learning-foundations-using-data-science/) |
 | Computer Vision | Vision AI services | [Computer Vision in Azure](https://learn.microsoft.com/en-us/training/paths/explore-computer-vision-microsoft-azure/) |
@@ -25,7 +25,7 @@
 ### Microsoft Learn Sandbox Labs
 
 | Lab | Description | Link |
-|-----|-------------|------|
+| ----- | ------------- | ------ |
 | Azure Machine Learning | Create and train models | [Explore Azure Machine Learning](https://learn.microsoft.com/en-us/training/modules/intro-to-azure-machine-learning-service/) |
 | Automated ML | No-code model training | [Use Automated Machine Learning](https://learn.microsoft.com/en-us/training/modules/use-automated-machine-learning/) |
 | Azure AI Vision | Analyze images | [Analyze images with Azure AI Vision](https://learn.microsoft.com/en-us/training/modules/analyze-images/) |
@@ -55,7 +55,7 @@
 ### Other Reputable Providers
 
 | Provider | Link | Notes |
-|----------|------|-------|
+| ---------- | ------ | ------- |
 | Whizlabs | [AI-900 Practice Tests](https://www.whizlabs.com/microsoft-azure-certification-ai-900/) | Multiple practice exams |
 | Udemy | [AI-900 Practice Tests](https://www.udemy.com/courses/search/?q=ai-900%20practice%20test) | Various instructors, check reviews |
 
@@ -66,7 +66,7 @@
 ### Azure AI Services
 
 | Service | Documentation | Quickstart |
-|---------|--------------|------------|
+| --------- | -------------- | ------------ |
 | Azure AI Services Overview | [Documentation](https://learn.microsoft.com/en-us/azure/ai-services/) | [What are Azure AI services?](https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services) |
 | Azure Machine Learning | [Documentation](https://learn.microsoft.com/en-us/azure/machine-learning/) | [Quickstart](https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources) |
 | Azure AI Vision | [Documentation](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/) | [Quickstart](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library) |
@@ -112,7 +112,7 @@
 ### Machine Learning Types
 
 | Type | Description | Documentation |
-|------|-------------|---------------|
+| ------ | ------------- | --------------- |
 | Supervised Learning | Labeled training data | [ML Fundamentals](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/) |
 | Unsupervised Learning | Unlabeled data, find patterns | [Clustering](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#clustering) |
 | Regression | Predict numeric values | [Regression models](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#regression) |
@@ -121,7 +121,7 @@
 ### Azure OpenAI Models
 
 | Model Family | Purpose | Documentation |
-|-------------|---------|---------------|
+| ------------- | --------- | --------------- |
 | GPT-4 / GPT-4 Turbo | Text generation, reasoning | [GPT-4 models](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#gpt-4-models) |
 | GPT-3.5 Turbo | Cost-effective text generation | [GPT-3.5 models](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#gpt-35-models) |
 | DALL-E | Image generation | [DALL-E models](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#dall-e-models) |

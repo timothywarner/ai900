@@ -22,6 +22,7 @@ d. Reinforcement learning
 **Correct answer: b. Regression**
 
 **Explanation:**
+
 - **b. Regression (CORRECT)** - Regression predicts continuous numeric values. Predicting sales units (a number) is a classic regression problem.
   - Reference: [What is machine learning? - Regression](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#regression)
 
@@ -48,6 +49,7 @@ d. Reinforcement learning
 **Correct answer: b. Supervised learning**
 
 **Explanation:**
+
 - **b. Supervised learning (CORRECT)** - This scenario uses labeled training data (images marked as pneumonia/no pneumonia) to train the model, which is the definition of supervised learning.
   - Reference: [Supervised learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#supervised-machine-learning)
 
@@ -74,6 +76,7 @@ d. Feature scaling issues
 **Correct answer: b. Overfitting**
 
 **Explanation:**
+
 - **b. Overfitting (CORRECT)** - When a model memorizes training data patterns (high training accuracy) but fails to generalize to new data (low test accuracy), it's overfitting.
   - Reference: [Prevent overfitting and imbalanced data](https://learn.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls)
 
@@ -100,6 +103,7 @@ d. Azure Machine Learning pipelines
 **Correct answer: b. Automated Machine Learning (AutoML)**
 
 **Explanation:**
+
 - **b. Automated Machine Learning (AutoML) (CORRECT)** - AutoML automatically trains and tunes multiple models to find the best one, requiring minimal configuration.
   - Reference: [What is automated machine learning?](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml)
 
@@ -126,6 +130,7 @@ d. The algorithm used for training
 **Correct answer: b. An input variable used to make predictions**
 
 **Explanation:**
+
 - **b. An input variable used to make predictions (CORRECT)** - Features are the input columns/variables that the model uses to learn patterns and make predictions.
   - Reference: [Machine learning fundamentals - Features and labels](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/3-features-labels)
 
@@ -152,6 +157,7 @@ d. Deep learning
 **Correct answer: c. Clustering**
 
 **Explanation:**
+
 - **c. Clustering (CORRECT)** - Clustering is an unsupervised learning technique that groups similar data points without predefined labels, perfect for customer segmentation.
   - Reference: [What is automated ML? - Clustering](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#clustering)
 
@@ -178,6 +184,7 @@ d. To meet regulatory compliance requirements
 **Correct answer: b. To ensure the model can generalize to new, unseen data**
 
 **Explanation:**
+
 - **b. To ensure the model can generalize to new, unseen data (CORRECT)** - Data splitting allows you to train on one set, tune on validation, and test final performance on unseen data to verify generalization.
   - Reference: [Training and validation data](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/4-model-training-validation)
 
@@ -204,6 +211,7 @@ d. Long Short-Term Memory (LSTM) networks
 **Correct answer: b. Convolutional Neural Networks (CNN)**
 
 **Explanation:**
+
 - **b. Convolutional Neural Networks (CNN) (CORRECT)** - CNNs use convolutional layers to detect spatial patterns and features in images, making them ideal for computer vision tasks.
   - Reference: [Deep learning vs machine learning - CNNs](https://learn.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning#convolutional-neural-networks)
 
@@ -230,6 +238,7 @@ d. Azure Machine Learning compute cluster
 **Correct answer: c. Azure Machine Learning endpoint**
 
 **Explanation:**
+
 - **c. Azure Machine Learning endpoint (CORRECT)** - Endpoints (managed or Kubernetes) host deployed models as web services that accept REST API requests for real-time predictions.
   - Reference: [Deploy machine learning models](https://learn.microsoft.com/en-us/azure/machine-learning/concept-endpoints)
 
@@ -256,6 +265,7 @@ d. It requires less training data than other approaches
 **Correct answer: c. It uses self-attention mechanisms to process entire sequences in parallel**
 
 **Explanation:**
+
 - **c. It uses self-attention mechanisms to process entire sequences in parallel (CORRECT)** - Transformers use self-attention to weigh the importance of different parts of the input simultaneously, enabling parallel processing and capturing long-range dependencies.
   - Reference: [What is a transformer model?](https://learn.microsoft.com/en-us/azure/machine-learning/concept-transformer-models)
 
@@ -284,6 +294,7 @@ d. Facial recognition
 **Correct answer: a. Image classification**
 
 **Explanation:**
+
 - **a. Image classification (CORRECT)** - Image classification assigns entire images to predefined categories, which exactly matches the requirement to categorize products.
   - Reference: [Image classification](https://learn.microsoft.com/en-us/training/modules/analyze-images/2-image-classification)
 
@@ -310,6 +321,7 @@ d. Facial analysis
 **Correct answer: b. Object detection**
 
 **Explanation:**
+
 - **b. Object detection (CORRECT)** - Object detection identifies and localizes multiple objects (cars) within an image using bounding boxes with coordinates.
   - Reference: [Object detection](https://learn.microsoft.com/en-us/training/modules/analyze-images/3-object-detection)
 
@@ -336,6 +348,7 @@ d. Azure AI Face
 **Correct answer: b. Azure AI Vision - Read API (OCR)**
 
 **Explanation:**
+
 - **b. Azure AI Vision - Read API (OCR) (CORRECT)** - The Read API performs optical character recognition on both printed and handwritten text in images and PDFs.
   - Reference: [Read text from images with OCR](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-ocr)
 
@@ -362,6 +375,7 @@ d. Azure AI Face
 **Correct answer: b. Azure AI Custom Vision**
 
 **Explanation:**
+
 - **b. Azure AI Custom Vision (CORRECT)** - Custom Vision is specifically designed to train custom image classification and object detection models with your own labeled images without requiring ML expertise.
   - Reference: [What is Custom Vision?](https://learn.microsoft.com/en-us/azure/ai-services/custom-vision-service/overview)
 
@@ -388,6 +402,7 @@ d. Face grouping
 **Correct answer: b. Face verification**
 
 **Explanation:**
+
 - **b. Face verification (CORRECT)** - Face verification compares two faces to determine if they belong to the same person (1:1 matching).
   - Reference: [Face detection and verification](https://learn.microsoft.com/en-us/training/modules/detect-analyze-faces/3-face-analysis)
 
@@ -414,6 +429,7 @@ d. Facial attribute analysis
 **Correct answer: c. Face identification**
 
 **Explanation:**
+
 - **c. Face identification (CORRECT)** - Face identification performs 1:many matching to find a specific person within a database of known faces.
   - Reference: [Face recognition](https://learn.microsoft.com/en-us/training/modules/detect-analyze-faces/4-face-recognition)
 
@@ -440,6 +456,7 @@ d. Azure AI Face
 **Correct answer: b. Azure AI Vision - Image Analysis**
 
 **Explanation:**
+
 - **b. Azure AI Vision - Image Analysis (CORRECT)** - Image Analysis provides comprehensive image understanding including objects, tags, descriptions, colors, categories, brands, landmarks, and more.
   - Reference: [Image Analysis overview](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-image-analysis)
 
@@ -466,6 +483,7 @@ d. Azure AI Language
 **Correct answer: b. Azure AI Document Intelligence**
 
 **Explanation:**
+
 - **b. Azure AI Document Intelligence (CORRECT)** - Document Intelligence (formerly Form Recognizer) extracts text and understands document structure, key-value pairs, and tables from forms and invoices.
   - Reference: [What is Azure AI Document Intelligence?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview)
 
@@ -492,6 +510,7 @@ d. Azure AI Video Indexer
 **Correct answer: c. Azure AI Face**
 
 **Explanation:**
+
 - **c. Azure AI Face (CORRECT)** - Azure AI Face detects faces and analyzes facial attributes including age, emotion, accessories, hair, makeup, and more.
   - Reference: [Face detection and attributes](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/concept-face-detection)
 
@@ -518,6 +537,7 @@ d. Generating image descriptions and captions
 **Correct answer: b. Training models with your own labeled image dataset**
 
 **Explanation:**
+
 - **b. Training models with your own labeled image dataset (CORRECT)** - Custom Vision allows you to train custom classification and object detection models using your own labeled images for domain-specific scenarios.
   - Reference: [Train a Custom Vision model](https://learn.microsoft.com/en-us/azure/ai-services/custom-vision-service/getting-started-build-a-classifier)
 
@@ -546,6 +566,7 @@ d. Language detection
 **Correct answer: b. Sentiment analysis**
 
 **Explanation:**
+
 - **b. Sentiment analysis (CORRECT)** - Sentiment analysis evaluates text and returns sentiment labels (positive, negative, neutral, mixed) with confidence scores.
   - Reference: [Sentiment analysis and opinion mining](https://learn.microsoft.com/en-us/azure/ai-services/language-service/sentiment-opinion-mining/overview)
 
@@ -572,6 +593,7 @@ d. Text translation
 **Correct answer: c. Named entity recognition (NER)**
 
 **Explanation:**
+
 - **c. Named entity recognition (NER) (CORRECT)** - NER identifies and classifies named entities like persons, organizations, locations, dates, quantities, and more.
   - Reference: [Named entity recognition](https://learn.microsoft.com/en-us/azure/ai-services/language-service/named-entity-recognition/overview)
 
@@ -598,6 +620,7 @@ d. Custom text classification
 **Correct answer: b. Language detection**
 
 **Explanation:**
+
 - **b. Language detection (CORRECT)** - Language detection identifies the language of input text, supporting over 100 languages.
   - Reference: [Language detection](https://learn.microsoft.com/en-us/azure/ai-services/language-service/language-detection/overview)
 
@@ -624,6 +647,7 @@ d. Custom Question Answering
 **Correct answer: c. Conversational Language Understanding (CLU)**
 
 **Explanation:**
+
 - **c. Conversational Language Understanding (CLU) (CORRECT)** - CLU (formerly LUIS) is designed to extract intents and entities from conversational user input for chatbots and virtual assistants.
   - Reference: [Conversational Language Understanding](https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview)
 
@@ -650,6 +674,7 @@ d. Azure OpenAI Service
 **Correct answer: b. Custom Question Answering**
 
 **Explanation:**
+
 - **b. Custom Question Answering (CORRECT)** - Custom Question Answering (formerly QnA Maker) builds knowledge bases from FAQs, documents, and URLs to provide automatic answers to questions.
   - Reference: [Custom question answering](https://learn.microsoft.com/en-us/azure/ai-services/language-service/question-answering/overview)
 
@@ -676,6 +701,7 @@ d. Azure OpenAI Service
 **Correct answer: b. Azure AI Speech**
 
 **Explanation:**
+
 - **b. Azure AI Speech (CORRECT)** - Azure AI Speech provides speech-to-text, text-to-speech, speech translation, and speaker recognition capabilities.
   - Reference: [What is Azure AI Speech?](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview)
 
@@ -702,6 +728,7 @@ d. Speaker recognition
 **Correct answer: b. Speech synthesis (text-to-speech)**
 
 **Explanation:**
+
 - **b. Speech synthesis (text-to-speech) (CORRECT)** - Speech synthesis converts written text into spoken audio with various voices, languages, and speaking styles.
   - Reference: [Text-to-speech overview](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/text-to-speech)
 
@@ -728,6 +755,7 @@ d. Conversational Language Understanding
 **Correct answer: c. Azure AI Translator**
 
 **Explanation:**
+
 - **c. Azure AI Translator (CORRECT)** - Azure AI Translator provides text translation between over 100 languages, perfect for translating written communications.
   - Reference: [What is Azure AI Translator?](https://learn.microsoft.com/en-us/azure/ai-services/translator/translator-overview)
 
@@ -754,6 +782,7 @@ d. Language detection
 **Correct answer: c. Named entity recognition (NER) with PII detection**
 
 **Explanation:**
+
 - **c. Named entity recognition (NER) with PII detection (CORRECT)** - NER includes PII entity recognition that identifies and can redact sensitive personal information.
   - Reference: [Named entity recognition with PII detection](https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/overview)
 
@@ -780,6 +809,7 @@ d. CLU is for speech, Custom QA is for text
 **Correct answer: b. CLU extracts intents/entities from conversations, Custom QA provides answers from a knowledge base**
 
 **Explanation:**
+
 - **b. CLU extracts intents/entities from conversations, Custom QA provides answers from a knowledge base (CORRECT)** - CLU understands what users want to do and extracts information from their requests, while Custom QA matches questions to pre-defined answers.
   - Reference: [CLU vs Custom QA comparison](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview#available-features)
 
@@ -808,6 +838,7 @@ d. A tool for hardware acceleration of AI training
 **Correct answer: b. A unified platform for building AI applications with access to a model catalog of 1,600+ models**
 
 **Explanation:**
+
 - **b. A unified platform for building AI applications with access to a model catalog of 1,600+ models (CORRECT)** - Azure AI Foundry (formerly Azure AI Studio) provides a unified development experience with access to models from Microsoft, OpenAI, Meta, Hugging Face, and other providers.
   - Reference: [What is Azure AI Foundry?](https://learn.microsoft.com/en-us/azure/ai-studio/what-is-ai-studio)
 
@@ -834,6 +865,7 @@ d. Text-Embedding-Ada
 **Correct answer: c. DALL-E**
 
 **Explanation:**
+
 - **c. DALL-E (CORRECT)** - DALL-E 2 and DALL-E 3 are image generation models that create images from natural language descriptions.
   - Reference: [Azure OpenAI DALL-E](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#dall-e-models)
 
@@ -860,6 +892,7 @@ d. Limiting the model's creativity
 **Correct answer: b. Providing examples of desired input-output pairs in the prompt**
 
 **Explanation:**
+
 - **b. Providing examples of desired input-output pairs in the prompt (CORRECT)** - Few-shot learning involves including example questions and answers in your prompt to guide the model's response format and behavior.
   - Reference: [Prompt engineering techniques](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
 
@@ -886,6 +919,7 @@ d. frequency_penalty
 **Correct answer: c. temperature**
 
 **Explanation:**
+
 - **c. temperature (CORRECT)** - Temperature (range 0-1) controls randomness: lower values make output more focused and deterministic, higher values make it more random and creative.
   - Reference: [Completion parameters - Temperature](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/completions#temperature)
 
@@ -912,6 +946,7 @@ d. Limiting token usage to reduce costs
 **Correct answer: b. Connecting the model's responses to specific, verified source data**
 
 **Explanation:**
+
 - **b. Connecting the model's responses to specific, verified source data (CORRECT)** - Grounding provides the model with relevant factual information from trusted sources to improve accuracy and reduce hallucinations.
   - Reference: [Grounding data for Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-data)
 
@@ -938,6 +973,7 @@ d. A content filtering mechanism
 **Correct answer: a. A technique that retrieves relevant information from external data sources before generating responses**
 
 **Explanation:**
+
 - **a. A technique that retrieves relevant information from external data sources before generating responses (CORRECT)** - RAG combines information retrieval with generation, searching external data and using retrieved content to inform the model's response.
   - Reference: [Azure OpenAI on your data (RAG)](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-data)
 
@@ -964,6 +1000,7 @@ d. Hardware requirements
 **Correct answer: b. Hallucinations (generating false information)**
 
 **Explanation:**
+
 - **b. Hallucinations (generating false information) (CORRECT)** - Generative models can confidently produce plausible-sounding but factually incorrect information, a unique challenge requiring mitigation strategies.
   - Reference: [Azure OpenAI responsible AI](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/content-filter)
 
@@ -990,6 +1027,7 @@ d. Violence
 **Correct answer: c. Copyright infringement**
 
 **Explanation:**
+
 - **c. Copyright infringement (CORRECT - This is NOT a default category)** - Default content filters cover hate, sexual, violence, and self-harm categories, but copyright detection is not a standard content filter category.
   - Reference: [Content filtering](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/content-filter)
 
@@ -1016,6 +1054,7 @@ d. Database records used for training
 **Correct answer: b. Chunks of text that the model processes, with both input and output measured in tokens**
 
 **Explanation:**
+
 - **b. Chunks of text that the model processes, with both input and output measured in tokens (CORRECT)** - Tokens are pieces of words (roughly 4 characters in English); models process text as tokens, and pricing/limits are based on token count.
   - Reference: [Understanding tokens](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview#tokens)
 
@@ -1042,6 +1081,7 @@ d. To specify the model version to use
 **Correct answer: b. To provide instructions that guide the model's behavior and persona throughout the conversation**
 
 **Explanation:**
+
 - **b. To provide instructions that guide the model's behavior and persona throughout the conversation (CORRECT)** - System messages set the assistant's behavior, tone, and constraints, influencing all subsequent responses.
   - Reference: [Chat completions - System message](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/chatgpt#use-system-messages)
 
@@ -1061,12 +1101,14 @@ d. To specify the model version to use
 **Total Questions:** 40 (10 per segment)
 
 **Segment Breakdown:**
+
 - Machine Learning on Azure: Questions 1-10
 - Computer Vision: Questions 11-20
 - Natural Language Processing: Questions 21-30
 - Generative AI & Azure OpenAI: Questions 31-40
 
 **Study Tips:**
+
 1. Review incorrect answers and read the Microsoft Learn references
 2. Understand WHY incorrect answers are wrong, not just memorizing correct answers
 3. Focus extra time on Generative AI (20-25% of exam - highest weight)
@@ -1074,6 +1116,7 @@ d. To specify the model version to use
 5. Take timed practice tests to build exam stamina
 
 **Next Steps:**
+
 - Complete these questions untimed first to learn concepts
 - Retry questions you missed after studying the reference links
 - Take a full timed practice test (45 minutes for 40 questions)

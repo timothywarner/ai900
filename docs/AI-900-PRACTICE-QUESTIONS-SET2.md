@@ -22,6 +22,7 @@ d. Clustering
 **Correct answer: b. Binary classification**
 
 **Explanation:**
+
 - **b. Binary classification (CORRECT)** - Predicting one of two outcomes (default/no default) is binary classification. The model learns from labeled historical data to classify new applicants.
   - Reference: [Classification in machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#classification)
 
@@ -48,6 +49,7 @@ d. F1 Score
 **Correct answer: c. Recall**
 
 **Explanation:**
+
 - **c. Recall (CORRECT)** - Recall measures the proportion of actual positives correctly identified. High recall minimizes false negatives, crucial when missing a fraud case is costly.
   - Reference: [Evaluate classification models](https://learn.microsoft.com/en-us/training/modules/evaluate-classification-model/)
 
@@ -74,6 +76,7 @@ d. To clean and preprocess the data
 **Correct answer: b. To tune hyperparameters and prevent overfitting during training**
 
 **Explanation:**
+
 - **b. To tune hyperparameters and prevent overfitting during training (CORRECT)** - The validation set is used during development to tune model parameters and make decisions about model configuration without touching the test set.
   - Reference: [Training, validation, and test data](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/4-model-training-validation)
 
@@ -100,6 +103,7 @@ d. A storage account for datasets
 **Correct answer: b. A managed cloud-based workstation for data science**
 
 **Explanation:**
+
 - **b. A managed cloud-based workstation for data science (CORRECT)** - A compute instance is a fully configured, managed development environment in the cloud for notebooks and experimentation.
   - Reference: [What is a compute instance?](https://learn.microsoft.com/en-us/azure/machine-learning/concept-compute-instance)
 
@@ -126,6 +130,7 @@ d. Azure Machine Learning endpoints
 **Correct answer: b. Azure Machine Learning experiments and MLflow**
 
 **Explanation:**
+
 - **b. Azure Machine Learning experiments and MLflow (CORRECT)** - Experiments track runs with logged metrics, parameters, and outputs. MLflow integration provides comprehensive experiment tracking and model management.
   - Reference: [Track ML experiments with MLflow](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-use-mlflow)
 
@@ -154,6 +159,7 @@ d. Image Segmentation
 **Correct answer: c. Object Detection**
 
 **Explanation:**
+
 - **c. Object Detection (CORRECT)** - Object detection identifies and locates multiple objects in images with bounding boxes, including their class and position coordinates.
   - Reference: [Object detection with Custom Vision](https://learn.microsoft.com/en-us/azure/ai-services/custom-vision-service/get-started-build-detector)
 
@@ -180,6 +186,7 @@ d. Spatial analysis
 **Correct answer: b. Image captioning**
 
 **Explanation:**
+
 - **b. Image captioning (CORRECT)** - Image Analysis 4.0 includes captioning that generates natural language descriptions, with dense captions providing descriptions for multiple detected regions.
   - Reference: [Image captions](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/concept-describe-images-40)
 
@@ -206,6 +213,7 @@ d. Azure AI Language
 **Correct answer: b. Azure AI Document Intelligence**
 
 **Explanation:**
+
 - **b. Azure AI Document Intelligence (CORRECT)** - Document Intelligence excels at processing complex documents with tables, forms, and handwriting while understanding document structure.
   - Reference: [Azure AI Document Intelligence](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview)
 
@@ -232,6 +240,7 @@ d. Identifying topics and keywords
 **Correct answer: c. Training custom object detection models**
 
 **Explanation:**
+
 - **c. Training custom object detection models (CORRECT - NOT a capability)** - Video Indexer uses pre-built models for video analysis; training custom object detection requires Custom Vision or Azure ML.
   - Reference: [Video Indexer overview](https://learn.microsoft.com/en-us/azure/azure-video-indexer/video-indexer-overview)
 
@@ -258,6 +267,7 @@ d. 500 images
 **Correct answer: c. 50 images**
 
 **Explanation:**
+
 - **c. 50 images (CORRECT)** - Microsoft recommends at least 50 images per tag for good performance, with more images improving accuracy. The minimum is 5, but 50+ provides better results.
   - Reference: [How to improve your Custom Vision model](https://learn.microsoft.com/en-us/azure/ai-services/custom-vision-service/getting-started-improving-your-classifier)
 
@@ -286,6 +296,7 @@ d. Sentiment analysis
 **Correct answer: c. Custom text classification**
 
 **Explanation:**
+
 - **c. Custom text classification (CORRECT)** - Custom text classification lets you define your own categories and train a model using your labeled documents to classify text into those categories.
   - Reference: [Custom text classification](https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/overview)
 
@@ -312,6 +323,7 @@ d. A conversation turn between user and bot
 **Correct answer: b. A specific piece of information to extract from user input**
 
 **Explanation:**
+
 - **b. A specific piece of information to extract from user input (CORRECT)** - Entities are key pieces of information in user utterances, like dates, locations, product names, or quantities that need to be extracted.
   - Reference: [CLU concepts - Entities](https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/concepts/entity-components)
 
@@ -338,6 +350,7 @@ d. Only synthesized speech in another language
 **Correct answer: c. Both written text and synthesized speech in another language**
 
 **Explanation:**
+
 - **c. Both written text and synthesized speech in another language (CORRECT)** - Speech translation converts spoken audio to both translated text and optionally to synthesized speech in the target language.
   - Reference: [Speech translation](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-translation)
 
@@ -364,6 +377,7 @@ d. To detect the language of input text
 **Correct answer: b. To extract key sentences or generate an abstractive summary of long documents**
 
 **Explanation:**
+
 - **b. To extract key sentences or generate an abstractive summary of long documents (CORRECT)** - Text summarization creates concise summaries through extractive (key sentences) or abstractive (rewritten) methods.
   - Reference: [Text summarization](https://learn.microsoft.com/en-us/azure/ai-services/language-service/summarization/overview)
 
@@ -390,6 +404,7 @@ d. Processing food delivery orders with menu items and quantities
 **Correct answer: b. Answering frequently asked questions from product documentation**
 
 **Explanation:**
+
 - **b. Answering frequently asked questions from product documentation (CORRECT)** - Custom Question Answering is designed for FAQ scenarios where questions match to pre-defined answers from documentation.
   - Reference: [Custom question answering](https://learn.microsoft.com/en-us/azure/ai-services/language-service/question-answering/overview)
 
@@ -418,6 +433,7 @@ d. GPT models require less compute resources
 **Correct answer: b. GPT models generate text while embedding models convert text to numerical vectors**
 
 **Explanation:**
+
 - **b. GPT models generate text while embedding models convert text to numerical vectors (CORRECT)** - GPT models generate natural language responses, while embedding models create vector representations for similarity search and retrieval.
   - Reference: [Understand embeddings](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/understand-embeddings)
 
@@ -444,6 +460,7 @@ d. The temperature of the output
 **Correct answer: b. The maximum length of the model's response**
 
 **Explanation:**
+
 - **b. The maximum length of the model's response (CORRECT)** - max_tokens limits how many tokens the model can generate in its response, controlling output length.
   - Reference: [Completion parameters](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/completions)
 
@@ -470,6 +487,7 @@ d. Meta-prompting
 **Correct answer: b. Chain-of-thought prompting**
 
 **Explanation:**
+
 - **b. Chain-of-thought prompting (CORRECT)** - Chain-of-thought prompting asks the model to show its reasoning process step by step, improving accuracy for complex tasks.
   - Reference: [Prompt engineering techniques](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering)
 
@@ -496,6 +514,7 @@ d. Function calling
 **Correct answer: b. Azure OpenAI on your data**
 
 **Explanation:**
+
 - **b. Azure OpenAI on your data (CORRECT)** - "On your data" connects Azure OpenAI to your data sources (like Azure AI Search) and grounds responses in your specific documents.
   - Reference: [Azure OpenAI on your data](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-data)
 
@@ -522,6 +541,7 @@ d. Embeddings
 **Correct answer: b. Function calling**
 
 **Explanation:**
+
 - **b. Function calling (CORRECT)** - Function calling enables the model to generate structured outputs that trigger specific functions in your application, like database queries or API calls.
   - Reference: [Function calling](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/function-calling)
 
@@ -541,6 +561,7 @@ d. Embeddings
 **Total Questions in Set 2:** 20 (5 per segment)
 
 **Segment Breakdown:**
+
 - Machine Learning on Azure: Questions 41-45
 - Computer Vision: Questions 46-50
 - Natural Language Processing: Questions 51-55
@@ -549,6 +570,7 @@ d. Embeddings
 **Combined with Set 1:** 60 total practice questions
 
 **Study Tips:**
+
 1. Review both question sets for comprehensive coverage
 2. Pay attention to questions you missed - they highlight knowledge gaps
 3. Click through to the Microsoft Learn references for deeper understanding

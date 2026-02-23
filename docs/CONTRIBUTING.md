@@ -22,14 +22,14 @@ To set up a development environment, please follow these steps:
 ## Issues and feature requests
 
 You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature? You can help us by submitting an issue to our [GitHub Repository](https://github.com/timothywarner/ai900/issues). Before you create an issue, make sure you search the archive, maybe your question was already answered.
-Also please check out [GitHub discussions](https://github.com/timothywarner/ai900/discussions) before submitting an issue. 
+Also please check out [GitHub discussions](https://github.com/timothywarner/ai900/discussions) before submitting an issue.
 
 Please try to create bug reports that are:
 
-- _Reproducible._ Include steps to reproduce the problem.
-- _Specific._ Include as much detail as possible: which version, what environment, etc.
-- _Unique._ Do not duplicate existing opened issues.
-- _Scoped to a Single Bug._ One bug per report.
+- *Reproducible.* Include steps to reproduce the problem.
+- *Specific.* Include as much detail as possible: which version, what environment, etc.
+- *Unique.* Do not duplicate existing opened issues.
+- *Scoped to a Single Bug.* One bug per report.
 
 Even better: You could submit a pull request with a fix or new feature!
 

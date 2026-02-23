@@ -7,7 +7,7 @@ Infrastructure as Code templates for deploying a complete Azure AI learning envi
 These templates deploy the Azure AI services covered in the AI-900 certification exam:
 
 | Service | Description | AI-900 Topic |
-|---------|-------------|--------------|
+| --------- | ------------- | -------------- |
 | Azure AI Services | Multi-service (Vision, Language, Speech, Translator) | Computer Vision, NLP |
 | Azure AI Document Intelligence | Document processing and OCR | Computer Vision |
 | Azure AI Search | Full-text and vector search | Generative AI (RAG) |
@@ -19,10 +19,11 @@ These templates deploy the Azure AI services covered in the AI-900 certification
 These templates follow Cloud Adoption Framework best practices:
 
 ### Naming Convention
+
 Resources use consistent naming: `{type}-{project}-{env}-{suffix}`
 
 | Resource Type | Abbreviation | Example |
-|--------------|--------------|---------|
+| -------------- | -------------- | --------- |
 | AI Services | `ai-` | `ai-ai900-dev-x7k9m2` |
 | OpenAI | `oai-` | `oai-ai900-dev-x7k9m2` |
 | ML Workspace | `mlw-` | `mlw-ai900-dev-x7k9m2` |
@@ -32,6 +33,7 @@ Resources use consistent naming: `{type}-{project}-{env}-{suffix}`
 | Log Analytics | `log-` | `log-ai900-dev-x7k9m2` |
 
 ### Security
+
 - **Managed Identities**: All services use system-assigned managed identities
 - **RBAC**: Key Vault uses Azure RBAC instead of access policies
 - **Encryption**: Storage uses Microsoft-managed encryption
@@ -39,11 +41,13 @@ Resources use consistent naming: `{type}-{project}-{env}-{suffix}`
 - **No Public Blobs**: Storage denies public blob access
 
 ### Governance
+
 - **Consistent Tagging**: All resources tagged with Project, Environment, ManagedBy
 - **Diagnostic Settings**: Centralized logging to Log Analytics
 - **Soft Delete**: Enabled on Key Vault to prevent accidental deletion
 
 ### Cost Management
+
 - **Development SKUs**: Uses cost-effective tiers suitable for learning
 - **Daily Caps**: Log Analytics has 1GB daily cap
 - **Optional Services**: OpenAI and ML are optional parameters
@@ -81,6 +85,7 @@ az group create \
 ### 4. Deploy
 
 **Basic deployment (no OpenAI):**
+
 ```bash
 az deployment group create \
   --resource-group rg-ai900-learning \
@@ -89,6 +94,7 @@ az deployment group create \
 ```
 
 **Full deployment (with OpenAI):**
+
 ```bash
 az deployment group create \
   --resource-group rg-ai900-learning \
@@ -97,6 +103,7 @@ az deployment group create \
 ```
 
 **Using parameter file:**
+
 ```bash
 az deployment group create \
   --resource-group rg-ai900-learning \
@@ -107,7 +114,7 @@ az deployment group create \
 ## Parameters
 
 | Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
+| ----------- | ------ | --------- | ------------- |
 | `environment` | string | `dev` | Environment (dev, test, prod) |
 | `location` | string | Resource group location | Azure region |
 | `projectName` | string | `ai900` | Project name (3-10 chars) |
@@ -119,7 +126,7 @@ az deployment group create \
 
 ## Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                    Resource Group                        │
 ├─────────────────────────────────────────────────────────┤
@@ -157,7 +164,7 @@ az deployment group create \
 ### Core Services
 
 | Module | File | Description |
-|--------|------|-------------|
+| -------- | ------ | ------------- |
 | AI Services | `modules/ai-services.bicep` | Multi-service cognitive account |
 | Document Intelligence | `modules/document-intelligence.bicep` | Form/document processing |
 | Search Service | `modules/search-service.bicep` | Full-text and vector search |
@@ -167,7 +174,7 @@ az deployment group create \
 ### Supporting Services
 
 | Module | File | Description |
-|--------|------|-------------|
+| -------- | ------ | ------------- |
 | Storage Account | `modules/storage-account.bicep` | Secure blob storage |
 | Key Vault | `modules/key-vault.bicep` | Secrets management |
 | Log Analytics | `modules/log-analytics.bicep` | Centralized logging |
@@ -215,7 +222,7 @@ az keyvault secret set \
 Estimated monthly costs (USD) for development environment:
 
 | Service | SKU | Est. Cost |
-|---------|-----|-----------|
+| --------- | ----- | ----------- |
 | AI Services | S0 | $1-10 (pay per use) |
 | Document Intelligence | S0 | $1-10 (pay per use) |
 | AI Search | Basic | ~$75 |
@@ -240,30 +247,36 @@ az group delete --name rg-ai900-learning --yes --no-wait
 ### Common Issues
 
 **"Azure OpenAI is not available in this region"**
+
 - Check [Azure OpenAI availability](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#model-summary-table-and-region-availability)
 - Use `eastus`, `eastus2`, or `westeurope`
 
 **"Subscription not approved for Azure OpenAI"**
-- Apply for access at https://aka.ms/oai/access
+
+- Apply for access at <https://aka.ms/oai/access>
 - Set `deployOpenAI=false` to skip OpenAI deployment
 
 **"Resource name already exists"**
+
 - Names must be globally unique
 - Change `uniqueSuffix` parameter
 
 **"Quota exceeded"**
+
 - Check subscription quotas in Azure Portal
 - Request quota increase or use different region
 
 ## Learn More
 
 ### Microsoft Learn
+
 - [Azure AI Services Documentation](https://learn.microsoft.com/azure/ai-services/)
 - [Azure Machine Learning Documentation](https://learn.microsoft.com/azure/machine-learning/)
 - [Azure OpenAI Documentation](https://learn.microsoft.com/azure/ai-services/openai/)
 - [Bicep Documentation](https://learn.microsoft.com/azure/azure-resource-manager/bicep/)
 
 ### Cloud Adoption Framework
+
 - [CAF Naming Convention](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)
 - [CAF Resource Tagging](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/resource-tagging)
 - [CAF Security Best Practices](https://learn.microsoft.com/azure/cloud-adoption-framework/secure/)

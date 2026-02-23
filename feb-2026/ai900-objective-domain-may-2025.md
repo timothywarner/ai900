@@ -1,35 +1,16 @@
-# AI-900 Objective Domain
+# AI-900 Exam Objective Domain (Skills Measured as of May 2, 2025)
 
-Skills measured as of April 24, 2024
+Source: [Microsoft Learn Study Guide](https://learn.microsoft.com/credentials/certifications/resources/study-guides/ai-900)
 
-## Audience profile
+---
 
-This exam is an opportunity for you to demonstrate knowledge of machine learning and AI concepts and related Microsoft Azure services. As a candidate for this exam, you should have familiarity with Exam AI-900's self-paced or instructor-led learning material.
-
-This exam is intended for you if you have both technical and non-technical backgrounds. Data science and software engineering experience are not required. However, you would benefit from having awareness of:
-
-- Basic cloud concepts
-- Client-server applications
-
-You can use Azure AI Fundamentals to prepare for other Azure role-based certifications like Azure Data Scientist Associate or Azure AI Engineer Associate, but it's not a prerequisite for any of them.
-
-## Skills at a glance
-
-- Describe Artificial Intelligence workloads and considerations (15-20%)
-- Describe fundamental principles of machine learning on Azure (20-25%)
-- Describe features of computer vision workloads on Azure (15-20%)
-- Describe features of Natural Language Processing (NLP) workloads on Azure (15-20%)
-- Describe features of generative AI workloads on Azure (15-20%)
-
-## Describe Artificial Intelligence workloads and considerations (15-20%)
+## 1. Describe Artificial Intelligence Workloads and Considerations (15-20%)
 
 ### Identify features of common AI workloads
 
-- Identify features of content moderation and personalization workloads
 - Identify computer vision workloads
 - Identify natural language processing workloads
-- Identify knowledge mining workloads
-- Identify document intelligence workloads
+- Identify document processing workloads
 - Identify features of generative AI workloads
 
 ### Identify guiding principles for responsible AI
@@ -41,7 +22,9 @@ You can use Azure AI Fundamentals to prepare for other Azure role-based certific
 - Describe considerations for transparency in an AI solution
 - Describe considerations for accountability in an AI solution
 
-## Describe fundamental principles of machine learning on Azure (20-25%)
+---
+
+## 2. Describe Fundamental Principles of Machine Learning on Azure (15-20%)
 
 ### Identify common machine learning techniques
 
@@ -49,6 +32,7 @@ You can use Azure AI Fundamentals to prepare for other Azure role-based certific
 - Identify classification machine learning scenarios
 - Identify clustering machine learning scenarios
 - Identify features of deep learning techniques
+- Identify features of the Transformer architecture
 
 ### Describe core machine learning concepts
 
@@ -61,7 +45,9 @@ You can use Azure AI Fundamentals to prepare for other Azure role-based certific
 - Describe data and compute services for data science and machine learning
 - Describe model management and deployment capabilities in Azure Machine Learning
 
-## Describe features of computer vision workloads on Azure (15-20%)
+---
+
+## 3. Describe Features of Computer Vision Workloads on Azure (15-20%)
 
 ### Identify common types of computer vision solution
 
@@ -75,9 +61,11 @@ You can use Azure AI Fundamentals to prepare for other Azure role-based certific
 - Describe capabilities of the Azure AI Vision service
 - Describe capabilities of the Azure AI Face detection service
 
-## Describe features of Natural Language Processing (NLP) workloads on Azure (15-20%)
+---
 
-### Identify features of common NLP Workload Scenarios
+## 4. Describe Features of Natural Language Processing (NLP) Workloads on Azure (15-20%)
+
+### Identify features of common NLP workload scenarios
 
 - Identify features and uses for key phrase extraction
 - Identify features and uses for entity recognition
@@ -91,7 +79,9 @@ You can use Azure AI Fundamentals to prepare for other Azure role-based certific
 - Describe capabilities of the Azure AI Language service
 - Describe capabilities of the Azure AI Speech service
 
-## Describe features of generative AI workloads on Azure (15-20%)
+---
+
+## 5. Describe Features of Generative AI Workloads on Azure (20-25%)
 
 ### Identify features of generative AI solutions
 
@@ -99,8 +89,18 @@ You can use Azure AI Fundamentals to prepare for other Azure role-based certific
 - Identify common scenarios for generative AI
 - Identify responsible AI considerations for generative AI
 
-### Identify capabilities of Azure OpenAI Service
+### Identify generative AI services and capabilities in Microsoft Azure
 
-- Describe natural language generation capabilities of Azure OpenAI Service
-- Describe code generation capabilities of Azure OpenAI Service
-- Describe image generation capabilities of Azure OpenAI Service
+- Describe features and capabilities of Azure AI Foundry
+- Describe features and capabilities of Azure OpenAI service
+- Describe features and capabilities of Azure AI Foundry model catalog
+
+---
+
+## Change Log (May 2, 2025 Update)
+
+| Area | Change |
+| ------ | -------- |
+| AI workloads and considerations | **Major** - Common AI workloads restructured |
+| Machine learning on Azure | % of exam **decreased** |
+| Generative AI workloads | % of exam **increased** + Major restructure (Azure AI Foundry + model catalog added) |

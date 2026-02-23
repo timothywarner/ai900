@@ -1,10 +1,11 @@
-# 🎨 Hour 5: Generative AI & Azure AI Foundry
+# Hour 5: Generative AI & Azure AI Foundry
 
-**Duration:** 1 hour  
-**Exam Weight:** 20-25% (HIGHEST!)  
+**Duration:** 1 hour
+**Exam Weight:** 20-25% (HIGHEST!)
 **Philosophy:** Welcome to the future - create amazing content with AI!
 
-## 🎓 Exam Focus Areas
+## Exam Focus Areas
+
 - **Identify features of generative AI solutions**
 - **Common scenarios for generative AI**
 - **Responsible AI considerations for generative AI**
@@ -12,9 +13,10 @@
 - **Features and capabilities of Azure OpenAI Service**
 - **Features and capabilities of Azure AI Foundry model catalog**
 
-## 📚 Key Concepts (10 min theory)
+## Key Concepts (10 min theory)
 
-### What's New in May 2025!
+### What's New in May 2025
+
 1. **Azure AI Foundry** - The unified platform for all AI development
    - Single portal for all Azure AI services
    - Model catalog with 1,600+ models
@@ -33,9 +35,10 @@
    - Foundation models: Pre-trained on massive datasets
    - Fine-tuning: Customize for specific tasks
 
-## 🔥 Demo Scripts
+## Demo Scripts
 
 ### Demo 1: Azure AI Foundry Tour (15 min)
+
 ```python
 # ai-foundry-demo.py
 """
@@ -47,13 +50,13 @@ Live Portal Demo - Azure AI Foundry
    - Model catalog (1,600+ models)
    - Playground for testing
    - Responsible AI dashboard
-   
+
 3. Model Catalog exploration:
    - Filter by task (text, vision, speech)
    - Compare model capabilities
    - Show model cards with details
    - Deploy options (serverless, managed)
-   
+
 4. Create a project:
    - Name: "AI900-GenAI-Demo"
    - Connect Azure OpenAI resource
@@ -87,6 +90,7 @@ for model, details in models_to_compare.items():
 ```
 
 ### Demo 2: Azure OpenAI Playground Magic (20 min)
+
 ```python
 # azure-openai-demo.py
 from openai import AzureOpenAI
@@ -172,6 +176,7 @@ safety_test = client.chat.completions.create(
 ```
 
 ### Demo 3: Practical Applications (10 min)
+
 ```python
 # practical-genai-demo.py
 """
@@ -190,7 +195,7 @@ customer_query = "My Azure subscription shows unexpected charges"
 response = client.chat.completions.create(
     model="gpt-4",
     messages=[
-        {"role": "system", "content": """You are an Azure support assistant. 
+        {"role": "system", "content": """You are an Azure support assistant.
         Be helpful, empathetic, and provide actionable steps."""},
         {"role": "user", "content": customer_query}
     ]
@@ -216,20 +221,22 @@ print("Temperature = 0.7: Balanced creativity")
 print("Temperature = 1: Maximum randomness")
 ```
 
-## 💡 Exam Tips & Tricks
+## Exam Tips & Tricks
 
-### ⚡ Generative AI Quick Reference
+### Generative AI Quick Reference
+
 | Concept | Definition | Example |
-|---------|-----------|---------|
+| --------- | ------------ | --------- |
 | **Prompt** | Input text to guide AI | "Write a poem about clouds" |
 | **Token** | Unit of text (~4 chars) | "Hello" = 1 token |
 | **Temperature** | Creativity control (0-1) | 0=Factual, 1=Creative |
 | **Top-p** | Probability threshold | 0.9 = Top 90% likely tokens |
 | **Fine-tuning** | Customizing pre-trained model | Train on company data |
 
-### 🎯 Azure AI Foundry Features (MEMORIZE!)
+### Azure AI Foundry Features (MEMORIZE)
+
 1. **Model Catalog**: 1,600+ models from Microsoft, OpenAI, Hugging Face, Meta
-2. **Deployment Options**: 
+2. **Deployment Options**:
    - Serverless API (pay-per-use)
    - Managed compute (dedicated)
 3. **Built-in Tools**:
@@ -238,53 +245,62 @@ print("Temperature = 1: Maximum randomness")
    - Responsible AI dashboard
 4. **Integration**: Works with Azure ML, Azure OpenAI, all Azure AI services
 
-### 📝 Practice Questions
+### Practice Questions
 
 **Q1:** What's the main purpose of Azure AI Foundry?
+
 - A) Only for Azure OpenAI
-- B) Unified platform for all AI development ✅
+- B) Unified platform for all AI development
 - C) Just for model training
 - D) Only for responsible AI
 
 **Q2:** Which parameter controls creativity in text generation?
+
 - A) max_tokens
 - B) top_p
-- C) temperature ✅
+- C) temperature
 - D) frequency_penalty
 
 **Q3:** What type of AI creates new content rather than analyzing existing content?
+
 - A) Predictive AI
 - B) Analytical AI
-- C) Generative AI ✅
+- C) Generative AI
 - D) Cognitive AI
 
 **Q4:** How many models are available in Azure AI Foundry model catalog?
+
 - A) 100+
 - B) 500+
 - C) 1,000+
-- D) 1,600+ ✅
+- D) 1,600+
 
 **Q5:** Which is NOT a responsible AI consideration for generative AI?
+
 - A) Harmful content generation
 - B) Misinformation/hallucinations
 - C) Copyright concerns
-- D) Model size ✅
+- D) Model size
 
-## 🚀 Hands-on Challenge
+## Hands-on Challenge
+
 **AI Creation Contest:**
+
 1. Use GPT-4 to write a haiku about machine learning
 2. Generate an image with DALL-E 3 to illustrate it
 3. Create a LinkedIn post combining both
 4. Best creative combination wins!
 
-## 📌 Remember
+## Remember
+
 - Generative AI is 20-25% of exam (HIGHEST weight!)
 - Always discuss responsible AI considerations
 - Show practical business applications
 - Emphasize Azure AI Foundry as the unified platform
 - Temperature and prompt engineering are favorite exam topics
 
-## 🔗 Resources
+## Resources
+
 - [Azure AI Foundry](https://ai.azure.com)
 - [Azure OpenAI Documentation](https://docs.microsoft.com/azure/ai-services/openai/)
 - [Model Catalog](https://ai.azure.com/explore/models)

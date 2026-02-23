@@ -1,0 +1,12 @@
+[project]
+name = "hour-3-computer-vision"
+version = "1.0.0"
+description = "AI-900 Hour 3: Computer Vision demo — Image Analysis, OCR, Face Detection, Document Intelligence, Custom Vision"
+requires-python = ">=3.13"
+dependencies = [
+    "azure-ai-vision-imageanalysis>=1.0.0",
+    "azure-ai-vision-face>=1.0.0b2",
+    "azure-ai-documentintelligence>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+]

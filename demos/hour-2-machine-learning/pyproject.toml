@@ -1,0 +1,21 @@
+[project]
+name = "ai900-hour2-machine-learning"
+version = "0.1.0"
+description = "AI-900 Hour 2: Machine Learning Fundamentals - Console demo app"
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=2.2",
+    "scikit-learn>=1.6",
+    "python-dotenv>=1.0",
+    "rich>=13.9",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+hour2 = "main:main"
