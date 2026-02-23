@@ -618,35 +618,49 @@ def demo_rag(client: AzureOpenAI, config: AzureConfig) -> None:
 
     # -- Without context (likely hallucination) -------------------------------
     console.print("[bold red]WITHOUT context (no RAG):[/]")
-    text_no_rag, usage_no_rag = chat_completion(
-        client,
-        config.deployment,
-        [{"role": "user", "content": RAG_QUESTION}],
-        temperature=0.3,
-    )
-    console.print(Panel(text_no_rag, style="red"))
-    show_token_usage(usage_no_rag)
+    try:
+        text_no_rag, usage_no_rag = chat_completion(
+            client,
+            config.deployment,
+            [{"role": "user", "content": RAG_QUESTION}],
+            temperature=0.3,
+        )
+        console.print(Panel(text_no_rag, style="red"))
+        show_token_usage(usage_no_rag)
+    except openai.BadRequestError as exc:
+        console.print(f"[red]Content filter triggered or bad request:[/] {exc}")
+        return
+    except openai.APIError as exc:
+        console.print(f"[red]API error:[/] {exc}")
+        return
 
     # -- With context (RAG pattern) -------------------------------------------
     console.print("\n[bold green]WITH context (RAG pattern):[/]")
-    text_rag, usage_rag = chat_completion(
-        client,
-        config.deployment,
-        [
-            {
-                "role": "system",
-                "content": (
-                    "Answer the user's question using ONLY the context below. "
-                    "If the answer is not in the context, say so.\n\n"
-                    f"Context:\n{FICTIONAL_KB}"
-                ),
-            },
-            {"role": "user", "content": RAG_QUESTION},
-        ],
-        temperature=0.3,
-    )
-    console.print(Panel(text_rag, style="green"))
-    show_token_usage(usage_rag)
+    try:
+        text_rag, usage_rag = chat_completion(
+            client,
+            config.deployment,
+            [
+                {
+                    "role": "system",
+                    "content": (
+                        "Answer the user's question using ONLY the context below. "
+                        "If the answer is not in the context, say so.\n\n"
+                        f"Context:\n{FICTIONAL_KB}"
+                    ),
+                },
+                {"role": "user", "content": RAG_QUESTION},
+            ],
+            temperature=0.3,
+        )
+        console.print(Panel(text_rag, style="green"))
+        show_token_usage(usage_rag)
+    except openai.BadRequestError as exc:
+        console.print(f"[red]Content filter triggered or bad request:[/] {exc}")
+        return
+    except openai.APIError as exc:
+        console.print(f"[red]API error:[/] {exc}")
+        return
 
     # -- Explanation ----------------------------------------------------------
     console.print(
