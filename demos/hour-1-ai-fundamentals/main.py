@@ -134,7 +134,7 @@ def _analyze_image() -> None:
             result: ImageAnalysisResult = client.analyze(
                 image_data=image_file.read(),
                 visual_features=[
-                    VisualFeatures.CAPTION,
+                    VisualFeatures.DENSE_CAPTIONS,
                     VisualFeatures.TAGS,
                     VisualFeatures.OBJECTS,
                 ],
@@ -155,12 +155,13 @@ def _display_vision_results(result: ImageAnalysisResult) -> None:
     Args:
         result: The ImageAnalysisResult from the Azure AI Vision SDK.
     """
-    # Caption
-    if result.caption is not None:
+    # Dense Captions (first caption displayed as primary)
+    if result.dense_captions is not None and result.dense_captions.list:
+        top_caption = result.dense_captions.list[0]
         console.print(
             Panel(
-                f"[bold cyan]{result.caption.text}[/]\n"
-                f"Confidence: {result.caption.confidence:.1%}",
+                f"[bold cyan]{top_caption.text}[/]\n"
+                f"Confidence: {top_caption.confidence:.1%}",
                 title="Image Caption",
                 border_style="cyan",
             )
@@ -182,6 +183,8 @@ def _display_vision_results(result: ImageAnalysisResult) -> None:
         obj_table.add_column("Confidence", justify="right")
         obj_table.add_column("Bounding Box", justify="right", style="dim")
         for obj in result.objects.list:
+            if not obj.tags:
+                continue
             bbox = obj.bounding_box
             bbox_str = f"({bbox.x}, {bbox.y}, {bbox.width}x{bbox.height})"
             obj_table.add_row(obj.tags[0].name, f"{obj.tags[0].confidence:.1%}", bbox_str)
@@ -227,7 +230,10 @@ def _content_safety_check() -> None:
     try:
         response = client.analyze_text(request)
     except HttpResponseError as exc:
-        error_msg = exc.error.message if exc.error else str(exc)
+        try:
+            error_msg = exc.error.message if exc.error else str(exc)
+        except AttributeError:
+            error_msg = str(exc)
         console.print(f"[bold red]Azure Content Safety error:[/] {error_msg}")
         return
 

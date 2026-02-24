@@ -2,7 +2,7 @@
 
 ![Microsoft Azure AI Fundamentals](images/ai900-cover.png)
 
-[![Website](https://img.shields.io/badge/Website-TechTrainerTim-blue)](https://techtrainertim.com) [![GitHub](https://img.shields.io/badge/GitHub-timothywarner-blue?logo=github)](https://github.com/timothywarner) [![LinkedIn](https://img.shields.io/badge/LinkedIn-TimothyWarner-blue?logo=linkedin)](https://www.linkedin.com/in/timothywarner)
+[![Website](https://img.shields.io/badge/Website-TechTrainerTim-blue)](https://techtrainertim.com) [![LinkedIn](https://img.shields.io/badge/LinkedIn-TimothyWarner-blue?logo=linkedin)](https://www.linkedin.com/in/timothywarner)
 
 Short link: [go.techtrainertim.com/ai900](https://github.com/timothywarner/ai900/)
 
@@ -16,15 +16,15 @@ Official preparation course for the **Microsoft Azure AI Fundamentals (AI-900)**
 - **Practice Assessment**: [Free official practice questions](https://learn.microsoft.com/credentials/certifications/exams/ai-900/practice/assessment?assessment-type=practice&assessmentId=26)
 - **Exam Sandbox**: [aka.ms/examdemo](https://aka.ms/examdemo)
 
-## Exam Domains (May 2025 Update)
+## Course Flow (5 Segments)
 
-| Domain | Weight |
-|--------|--------|
-| Describe AI workloads and considerations | 15-20% |
-| Describe fundamental principles of machine learning on Azure | 15-20% |
-| Describe features of computer vision workloads on Azure | 15-20% |
-| Describe features of NLP workloads on Azure | 15-20% |
-| **Describe features of generative AI workloads on Azure** | **20-25% (HIGHEST)** |
+| Segment | Topic | Time | Exam Weight |
+|---------|-------|------|-------------|
+| S1 | AI Fundamentals & Responsible AI | 09:00 AM | 15-20% |
+| S2 | Machine Learning | 10:00 AM | 15-20% |
+| S3 | Computer Vision | 11:00 AM | 15-20% |
+| S4 | Natural Language Processing | 12:00 PM | 15-20% |
+| S5 | **Generative AI** | 01:00 PM | **20-25% (highest)** |
 
 For full objective details, see [AI-900-exam-objectives.md](./docs/AI-900-exam-objectives.md).
 
@@ -32,29 +32,61 @@ For full objective details, see [AI-900-exam-objectives.md](./docs/AI-900-exam-o
 
 ```text
 ai900/
+├── .github/                        # GitHub config (CODEOWNERS, templates, Copilot agents)
+│   ├── agents/                     # GitHub Copilot agent definitions
+│   ├── instructions/               # Copilot custom instructions
+│   ├── prompts/                    # Copilot prompt files
+│   └── ISSUE_TEMPLATE/
+├── bicep/                          # CAF-aligned IaC for lab environment
+│   ├── main.bicep
+│   ├── modules/                    # ai-services, openai, doc-intel, ML, etc.
+│   └── parameters/                 # dev.bicepparam, prod.bicepparam
 ├── demos/                          # Live class demos (Python + uv)
+│   ├── .env.example                # Template for Azure credentials
 │   ├── assets/                     # Shared media & datasets (LFS-tracked)
-│   ├── hour-1-ai-fundamentals/     # Vision, Content Safety, RAI
-│   ├── hour-2-machine-learning/    # sklearn classification/regression/clustering
-│   ├── hour-3-computer-vision/     # Image Analysis, OCR, Face, Doc Intel
+│   │   ├── Audio-Video/
+│   │   ├── CSV/
+│   │   ├── OCR/
+│   │   ├── People/
+│   │   ├── Places/
+│   │   └── Things/
+│   ├── hour-1-ai-fundamentals/     # Vision, Content Safety, Responsible AI
+│   ├── hour-2-machine-learning/    # scikit-learn classification/regression/clustering
+│   ├── hour-3-computer-vision/     # Image Analysis, OCR, Face, Document Intelligence
 │   ├── hour-4-nlp/                 # Sentiment, NER, Speech, CLU
-│   └── hour-5-generative-ai/       # GPT-4o, DALL-E 3, prompt engineering, RAG
+│   └── hour-5-generative-ai/      # GPT-4o, DALL-E 3, prompt engineering, RAG
 ├── docs/                           # Course materials & exam prep
-│   ├── warner-ai900-nov-2025.pptx  # Slide deck
+│   ├── warner-ai900-feb-2026.pptx  # Slide deck (current delivery)
 │   ├── AI-900-exam-objectives.md   # Full objective domain
 │   ├── AI-900-CORE-RESOURCES.md    # Curated study materials
+│   ├── AI-900-PRACTICE-QUESTIONS.md
+│   ├── AI-900-PRACTICE-QUESTIONS-SET2.md
 │   ├── PRACTICE-QUESTIONS-GUIDE.md # Practice exam resources
-│   └── ai900-practice-question-prompt.txt
-├── bicep/                          # CAF-aligned IaC for lab environment
+│   ├── MCP-DOCS-SERVER-GUIDE.md    # Claude AI + MS Docs for cert prep
+│   ├── INDEX.md                    # Guided tour of all materials
+│   ├── LEARNING_RESOURCES.md
+│   └── exam-metadata/
 ├── feb-2026/                       # Current delivery course plan
-│   └── to-be-archived/             # Legacy content staged for removal
-├── images/                         # README cover image
-└── scripts/                        # Utility scripts
+│   ├── course-plan-feb-2026.md
+│   └── to-be-archived/            # Legacy content staged for removal
+├── images/                         # README cover images
+├── practice-questions/             # Practice questions by domain
+│   ├── 01-ai-workloads-and-considerations/
+│   ├── 02-machine-learning-on-azure/
+│   ├── 03-computer-vision-workloads/
+│   ├── 04-nlp-workloads/
+│   └── 05-generative-ai-workloads/
+├── scripts/                        # Utility scripts
+│   ├── deploy-ai-services.sh
+│   ├── cleanup-ai-services.sh
+│   ├── validate-links.py
+│   └── github-cli.ps1
+└── temp/                           # Temporary working files
 ```
 
 ## Running the Demos
 
-Each demo is a standalone Python project managed with [uv](https://docs.astral.sh/uv/). You need Python 3.11+ and uv installed.
+Each demo is a standalone Python project managed with [uv](https://docs.astral.sh/uv/). You need Python 3.13+ and uv installed.
 
 ```bash
 cd demos/hour-1-ai-fundamentals
@@ -112,13 +144,9 @@ The exam uses current Azure service names exclusively. Deprecated names appear o
 - [MCP Microsoft Docs Server Guide](./docs/MCP-DOCS-SERVER-GUIDE.md) -- Use Claude AI + MS Docs for interactive cert prep
 - [Docs Index](./docs/INDEX.md) -- Guided tour of all course materials
 
-### Microsoft Learn Paths
+### Microsoft Learn Path
 
-- [Get started with AI on Azure](https://learn.microsoft.com/training/paths/get-started-with-artificial-intelligence-on-azure/)
-- [Create no-code predictive models with Azure ML](https://learn.microsoft.com/training/paths/create-no-code-predictive-models-azure-machine-learning/)
-- [Explore computer vision in Microsoft Azure](https://learn.microsoft.com/training/paths/explore-computer-vision-microsoft-azure/)
-- [Explore natural language processing](https://learn.microsoft.com/training/paths/explore-natural-language-processing/)
-- [Explore generative AI with Azure](https://learn.microsoft.com/training/paths/introduction-generative-ai/)
+- [Introduction to AI in Azure](https://learn.microsoft.com/training/paths/get-started-with-artificial-intelligence-on-azure/) -- 14-module learning path covering all five exam domains
 
 ### Register for Exam
 
@@ -129,20 +157,15 @@ The exam uses current Azure service names exclusively. Deprecated names appear o
 
 - Basic understanding of cloud computing concepts
 - Microsoft Azure subscription ([free trial](https://azure.microsoft.com/free/) or paid)
-- Python 3.11+ and [uv](https://docs.astral.sh/uv/) for running demos
+- Python 3.13+ and [uv](https://docs.astral.sh/uv/) for running demos
 - Interest in artificial intelligence and machine learning
 
-## Instructor Contact
+## Instructor
 
 - **Name:** Tim Warner
 - **Title:** Microsoft MVP & Certified Trainer
 - **Website:** [techtrainertim.com](https://techtrainertim.com)
-- **GitHub:** [@timothywarner](https://github.com/timothywarner)
 - **LinkedIn:** [Timothy Warner](https://linkedin.com/in/timothywarner)
-- **Twitter:** [@TechTrainerTim](https://twitter.com/TechTrainerTim)
-- **YouTube:** [Tech Trainer Tim](https://youtube.com/c/TimothyWarner)
-- **Email:** [tim@techtrainertim.com](mailto:tim@techtrainertim.com)
-- **Microsoft Learn:** [TimothyWarner](https://learn.microsoft.com/users/timothywarner/transcript)
 
 ## License
 
