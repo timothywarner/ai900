@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure AI Content Safety — Analysis Result</title>
+  <style>
+    :root {
+      --azure-blue: #0078d4;
+      --azure-dark: #004578;
+      --azure-light: #deecf9;
+      --blocked-red: #d13438;
+      --allowed-green: #107c10;
+      --safe-bg: #dff6dd;
+      --medium-bg: #fff4ce;
+      --card-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      --radius: 10px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #e8f0fe 0%, #f3e8ff 100%);
+      min-height: 100vh;
+      padding: 2rem;
+      color: #323130;
+    }
+
+    .container { max-width: 960px; margin: 0 auto; }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--azure-blue), #5c2d91);
+      color: white;
+      border-radius: var(--radius);
+      padding: 2rem 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    header h1 { font-size: 1.6rem; font-weight: 600; margin-bottom: 0.3rem; }
+    header .subtitle { opacity: 0.85; font-size: 0.95rem; }
+    .badge-resource {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      margin-top: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Verdict Banner */
+    .verdict {
+      background: var(--blocked-red);
+      color: white;
+      border-radius: var(--radius);
+      padding: 1.4rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: var(--card-shadow);
+      animation: slideIn 0.5s ease-out;
+    }
+    .verdict-icon {
+      width: 52px; height: 52px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    .verdict h2 { font-size: 1.3rem; font-weight: 600; }
+    .verdict p { font-size: 0.9rem; opacity: 0.9; margin-top: 0.15rem; }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--card-shadow);
+      animation: fadeUp 0.6s ease-out both;
+    }
+    .card:nth-child(2) { animation-delay: 0.1s; }
+    .card:nth-child(3) { animation-delay: 0.2s; }
+    .card:nth-child(4) { animation-delay: 0.3s; }
+
+    .card-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #605e5c;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    /* Input Text */
+    .input-text {
+      background: #faf9f8;
+      border-left: 4px solid var(--azure-blue);
+      padding: 1rem 1.2rem;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #323130;
+    }
+    .misspelling {
+      text-decoration: wavy underline #d13438;
+      text-underline-offset: 3px;
+    }
+
+    /* Category Grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 600px) {
+      .category-grid { grid-template-columns: 1fr; }
+    }
+
+    .category-card {
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      transition: transform 0.2s;
+    }
+    .category-card:hover { transform: translateY(-2px); }
+
+    .category-card.safe {
+      background: var(--safe-bg);
+      border: 1px solid #a7e3a5;
+    }
+    .category-card.blocked {
+      background: #fde7e9;
+      border: 1px solid #f1a0a4;
+    }
+
+    .cat-icon {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .safe .cat-icon { background: #c8e6c9; }
+    .blocked .cat-icon { background: #f5b7b9; }
+
+    .cat-name { font-weight: 600; font-size: 0.95rem; }
+    .cat-severity { font-size: 0.82rem; color: #605e5c; margin-top: 0.15rem; }
+    .cat-result {
+      display: inline-block;
+      padding: 0.15rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+    .safe .cat-result { background: var(--allowed-green); color: white; }
+    .blocked .cat-result { background: var(--blocked-red); color: white; }
+
+    /* Severity Bar */
+    .severity-bar-container {
+      display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;
+    }
+    .severity-bar {
+      flex: 1; height: 8px;
+      background: #e1dfdd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .severity-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 1s ease-out;
+    }
+    .severity-fill.s0 { width: 0%; background: var(--allowed-green); }
+    .severity-fill.s4 { width: 66%; background: #f7630c; }
+    .severity-label { font-size: 0.72rem; font-weight: 600; min-width: 1.5rem; text-align: right; }
+
+    /* Threshold Config */
+    .threshold-table { width: 100%; border-collapse: collapse; }
+    .threshold-table th {
+      text-align: left;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #605e5c;
+      padding: 0.5rem 0.8rem;
+      border-bottom: 2px solid #edebe9;
+    }
+    .threshold-table td {
+      padding: 0.7rem 0.8rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #f3f2f1;
+    }
+    .threshold-table tr:last-child td { border-bottom: none; }
+    .threshold-chip {
+      display: inline-block;
+      background: var(--azure-light);
+      color: var(--azure-dark);
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* JSON Panel */
+    .json-toggle {
+      background: none;
+      border: 1.5px solid var(--azure-blue);
+      color: var(--azure-blue);
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 1rem;
+    }
+    .json-toggle:hover { background: var(--azure-blue); color: white; }
+
+    .json-panel {
+      display: none;
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 1.4rem;
+      overflow-x: auto;
+      margin-top: 0.8rem;
+    }
+    .json-panel.open { display: block; animation: fadeUp 0.3s ease-out; }
+    .json-panel pre {
+      color: #d4d4d4;
+      font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+    .json-key { color: #9cdcfe; }
+    .json-string { color: #ce9178; }
+    .json-number { color: #b5cea8; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #8a8886;
+    }
+    footer a { color: var(--azure-blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Animations */
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Azure AI Content Safety</h1>
+      <div class="subtitle">Text Moderation Analysis Result</div>
+      <div class="badge-resource">twai900-contentsafety1 &nbsp;|&nbsp; East US 2 &nbsp;|&nbsp; F0 (Free)</div>
+    </header>
+
+    <div class="verdict">
+      <div class="verdict-icon">&#x1F6D1;</div>
+      <div>
+        <h2>Content Blocked</h2>
+        <p>Rejected by filter in <strong>Violence</strong> category (severity met threshold)</p>
+      </div>
+    </div>
+
+    <!-- Input Text -->
+    <div class="card">
+      <div class="card-title">Analyzed Input</div>
+      <div class="input-text">
+        The dog was given a <span class="misspelling">eutanasa</span> injection due to their severed leg <span class="misspelling">bleding</span> profusely from deep <span class="misspelling">lacarations</span> to the lower extremities, exposing <span class="misspelling">tisssue</span> and nerve.
+      </div>
+    </div>
+
+    <!-- Category Results -->
+    <div class="card">
+      <div class="card-title">Category &amp; Severity Detection</div>
+      <div class="category-grid">
+
+        <div class="category-card blocked">
+          <div class="cat-icon">&#x26A0;</div>
+          <div>
+            <div class="cat-name">Violence</div>
+            <div class="cat-severity">Severity: <strong>Medium</strong> (4/6)</div>
+            <div class="severity-bar-container">
+              <div class="severity-bar"><div class="severity-fill s4"></div></div>
+              <span class="severity-label">4</span>
+            </div>
+            <span class="cat-result">BLOCKED</span>
+          </div>
+        </div>
+
+        <div class="category-card safe">
+          <div class="cat-icon">&#x2714;</div>
+          <div>
+            <div class="cat-name">Hate</div>
+            <div class="cat-severity">Severity: <strong>Safe</strong> (0/6)</div>
+            <div class="severity-bar-container">
+              <div class="severity-bar"><div class="severity-fill s0"></div></div>
+              <span class="severity-label">0</span>
+            </div>
+            <span class="cat-result">ALLOWED</span>
+          </div>
+        </div>
+
+        <div class="category-card safe">
+          <div class="cat-icon">&#x2714;</div>
+          <div>
+            <div class="cat-name">Sexual</div>
+            <div class="cat-severity">Severity: <strong>Safe</strong> (0/6)</div>
+            <div class="severity-bar-container">
+              <div class="severity-bar"><div class="severity-fill s0"></div></div>
+              <span class="severity-label">0</span>
+            </div>
+            <span class="cat-result">ALLOWED</span>
+          </div>
+        </div>
+
+        <div class="category-card safe">
+          <div class="cat-icon">&#x2714;</div>
+          <div>
+            <div class="cat-name">Self-Harm</div>
+            <div class="cat-severity">Severity: <strong>Safe</strong> (0/6)</div>
+            <div class="severity-bar-container">
+              <div class="severity-bar"><div class="severity-fill s0"></div></div>
+              <span class="severity-label">0</span>
+            </div>
+            <span class="cat-result">ALLOWED</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Threshold Config -->
+    <div class="card">
+      <div class="card-title">Filter Configuration (Thresholds)</div>
+      <table class="threshold-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Threshold</th>
+            <th>Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Violence</td>
+            <td><span class="threshold-chip">Medium (4)</span></td>
+            <td>Allow Low &nbsp;/&nbsp; Block Medium &amp; High</td>
+          </tr>
+          <tr>
+            <td>Hate</td>
+            <td><span class="threshold-chip">Medium (4)</span></td>
+            <td>Allow Low &nbsp;/&nbsp; Block Medium &amp; High</td>
+          </tr>
+          <tr>
+            <td>Sexual</td>
+            <td><span class="threshold-chip">Medium (4)</span></td>
+            <td>Allow Low &nbsp;/&nbsp; Block Medium &amp; High</td>
+          </tr>
+          <tr>
+            <td>Self-Harm</td>
+            <td><span class="threshold-chip">Medium (4)</span></td>
+            <td>Allow Low &nbsp;/&nbsp; Block Medium &amp; High</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- JSON Response -->
+    <div class="card">
+      <div class="card-title">Raw API Response</div>
+      <button class="json-toggle" onclick="toggleJson()">Show JSON</button>
+      <div class="json-panel" id="jsonPanel">
+        <pre>{
+  <span class="json-key">"blocklistsMatch"</span>: [],
+  <span class="json-key">"categoriesAnalysis"</span>: [
+    {
+      <span class="json-key">"category"</span>: <span class="json-string">"Hate"</span>,
+      <span class="json-key">"severity"</span>: <span class="json-number">0</span>
+    },
+    {
+      <span class="json-key">"category"</span>: <span class="json-string">"Violence"</span>,
+      <span class="json-key">"severity"</span>: <span class="json-number">4</span>
+    },
+    {
+      <span class="json-key">"category"</span>: <span class="json-string">"Sexual"</span>,
+      <span class="json-key">"severity"</span>: <span class="json-number">0</span>
+    },
+    {
+      <span class="json-key">"category"</span>: <span class="json-string">"SelfHarm"</span>,
+      <span class="json-key">"severity"</span>: <span class="json-number">0</span>
+    }
+  ]
+}</pre>
+      </div>
+    </div>
+
+    <!-- Teaching Notes -->
+    <div class="card">
+      <div class="card-title">Teaching Notes</div>
+      <ul style="padding-left: 1.2rem; line-height: 1.9; font-size: 0.92rem;">
+        <li><strong>Severity scale:</strong> 0 = Safe, 2 = Low, 4 = Medium, 6 = High</li>
+        <li><strong>Threshold logic:</strong> Content at or above the threshold is blocked &mdash; Violence returned 4, threshold was 4, so it was blocked</li>
+        <li><strong>Misspellings don&rsquo;t fool it:</strong> &ldquo;eutanasa&rdquo;, &ldquo;bleding&rdquo;, &ldquo;lacarations&rdquo;, &ldquo;tisssue&rdquo; were all correctly interpreted</li>
+        <li><strong>Independent scoring:</strong> Each category is evaluated separately &mdash; one blocked category blocks the entire content</li>
+        <li><strong>Blocklists:</strong> The <code>blocklistsMatch</code> array is empty because no custom blocklist was configured</li>
+      </ul>
+    </div>
+
+    <footer>
+      Azure AI Content Safety &mdash; AI-900 Certification Prep &bull;
+      <a href="https://learn.microsoft.com/azure/ai-services/content-safety/" target="_blank">Documentation</a>
+    </footer>
+
+  </div>
+
+  <script>
+    function toggleJson() {
+      const panel = document.getElementById('jsonPanel');
+      const btn = document.querySelector('.json-toggle');
+      panel.classList.toggle('open');
+      btn.textContent = panel.classList.contains('open') ? 'Hide JSON' : 'Show JSON';
+    }
+
+    // Animate severity bars on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.severity-fill').forEach(bar => {
+            bar.style.width = bar.classList.contains('s4') ? '66%' : '0%';
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.category-grid').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

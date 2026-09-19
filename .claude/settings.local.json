@@ -18,7 +18,8 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:www.whizlabs.com)",
       "WebFetch(domain:www.udemy.com)",
-      "WebFetch(domain:www.oreilly.com)"
+      "WebFetch(domain:www.oreilly.com)",
+      "mcp__microsoft-learn__microsoft_docs_search"
     ],
     "deny": [],
     "ask": [],
